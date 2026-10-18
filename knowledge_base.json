@@ -1,0 +1,165 @@
+{
+  "akademik_universal": [
+    "Membedah jurnal/PDF bahan kuliah yang tebal menggunakan Gemini Notebook",
+    "Menyusun struktur outline esai, makalah, atau bab skripsi",
+    "Membuat simulasi kuis/soal latihan UTS dan UAS dari materi Dosen",
+    "Menyusun jadwal/matriks belajar mingguan yang efektif",
+    "Latihan wawancara dan persiapan materi presentasi kelompok"
+  ],
+  "lifestyle_kampus": [
+    "Manajemen keuangan dan budgeting bulanan anak kos di Malang",
+    "Ide resep makan hemat & sehat berbasis bahan kosan",
+    "Menyusun itinerary liburan/jalan-jalan hemat pasca ujian",
+    "Manajemen waktu antara jadwal kuliah, organisasi, dan waktu istirahat"
+  ],
+  "karir_dan_persiapan_kerja": [
+    "Review dan optimalisasi tata bahasa Resume / CV magang",
+    "Simulasi pertanyaan interview kerja/magang sesuai bidang",
+    "Riset profil perusahaan dan industri target magang"
+  ],
+  "niche_spesifik_raditya": [
+    "Tips belajar logika pemrograman dasar untuk non-IT",
+    "Brainstorming ide ideasi UI/UX aplikasi sederhana",
+    "Efisiensi tugas administrasi organisasi kampus"
+  ],
+  "content_pillars": [
+    {
+      "name": "📚 Study Hack",
+      "focus": "Gunakan Gemini untuk membantu kegiatan belajar.",
+      "example": "Ubah catatan kuliah menjadi kuis latihan."
+    },
+    {
+      "name": "🧠 Think Better",
+      "focus": "Gunakan Gemini untuk menguji dan memperluas cara berpikir.",
+      "example": "Minta Gemini menyusun argumen tandingan untuk menguji pendapat."
+    },
+    {
+      "name": "✍️ Create",
+      "focus": "Kembangkan ide menjadi karya atau konsep kreatif.",
+      "example": "Ubah ide tugas menjadi storyboard."
+    },
+    {
+      "name": "⏰ Save Time",
+      "focus": "Bantu pekerjaan berulang agar lebih terstruktur dan efisien.",
+      "example": "Ringkas bacaan atau susun daftar tugas."
+    },
+    {
+      "name": "🎓 University Life",
+      "focus": "Bantu menyelesaikan kebutuhan nyata kehidupan mahasiswa.",
+      "example": "Rencanakan semester kuliah."
+    },
+    {
+      "name": "🤯 Experiment",
+      "focus": "Coba prompt yang menyenangkan atau tidak terduga dengan hasil yang aman.",
+      "example": "Jelaskan jurusan saya dengan analogi kreatif."
+    }
+  ],
+  "spreadsheet_approval": {
+    "purpose": "Spreadsheet [RADITYA] Report Influencer-UB.xlsx adalah tracker review dan approval konten oleh REFO.",
+    "workflow": {
+      "bot_output": "Bot menghasilkan ide dan draf produksi dalam file Markdown; keluaran ini bukan pengajuan approval.",
+      "submission_ready_when": "Aset media final, seperti video atau desain, sudah selesai dan tersedia di Google Drive.",
+      "submission_method": "Buat baris spreadsheet secara manual setelah aset final siap direview.",
+      "initial_status": "Please Check",
+      "revision_notes": "Catatan revisi diisi berdasarkan umpan balik reviewer REFO.",
+      "posting_fields": "Isi tanggal rencana, platform, dan tautan publikasi sesuai tahap konten; tautan publikasi baru diisi setelah konten tayang."
+    },
+    "sheet_columns": [
+      {
+        "column": "A",
+        "header": "Num",
+        "meaning": "Nomor urut konten."
+      },
+      {
+        "column": "B",
+        "header": "Name",
+        "meaning": "Judul, ide utama, atau angle konten."
+      },
+      {
+        "column": "C",
+        "header": "Pillar",
+        "meaning": "Pilar kampanye yang paling sesuai."
+      },
+      {
+        "column": "D",
+        "header": "Type",
+        "meaning": "Format atau jenis media konten."
+      },
+      {
+        "column": "E",
+        "header": "Link Folder: RADITYA",
+        "meaning": "Tautan folder Google Drive yang berisi aset final untuk direview."
+      },
+      {
+        "column": "F",
+        "header": "Status",
+        "meaning": "Status review atau publikasi konten."
+      },
+      {
+        "column": "G",
+        "header": "Revision note",
+        "meaning": "Umpan balik atau catatan perbaikan dari reviewer."
+      },
+      {
+        "column": "H",
+        "header": "Date post",
+        "meaning": "Tanggal rencana penayangan."
+      },
+      {
+        "column": "I",
+        "header": "Posted on",
+        "meaning": "Platform tempat konten dipublikasikan, misalnya Instagram, TikTok, atau YouTube."
+      },
+      {
+        "column": "J",
+        "header": "Posted LInk",
+        "meaning": "URL publikasi setelah konten tayang."
+      }
+    ],
+    "dropdown_options": {
+      "Pillar": [
+        "📚 Study Hack",
+        "🧠 Think Better",
+        "✍️ Create",
+        "⏰ Save Time",
+        "🎓 University Life",
+        "🤯 Experiment"
+      ],
+      "Type": [
+        "Reel",
+        "IG Story",
+        "Static/Carousel/Poster",
+        "YouTube Short",
+        "TikTok",
+        "Challenge card / prompt card"
+      ],
+      "Status": [
+        "Please Check",
+        "Need Revision (1)",
+        "Need Revision (2)",
+        "Approved",
+        "Posted"
+      ]
+    },
+    "format_mapping": {
+      "Reels": "Reel",
+      "Story": "IG Story",
+      "Feed/Carousel": "Static/Carousel/Poster",
+      "Poster/Static": "Static/Carousel/Poster",
+      "YouTube Short": "YouTube Short",
+      "TikTok": "TikTok",
+      "Challenge card / prompt card": "Challenge card / prompt card"
+    },
+    "validation_range_note": "Dokumentasi spreadsheet menyebut dropdown pada baris 2-7. Rentang validasi tersebut bukan batas jumlah konten per minggu; catat konten pada baris yang tersedia atau tambahkan baris sesuai kebutuhan.",
+    "dashboard": {
+      "purpose": "Meringkas jumlah konten berdasarkan status approval dan publikasi.",
+      "statuses": [
+        "Please Check",
+        "Need Revision (1)",
+        "Need Revision (2)",
+        "Approved",
+        "Posted"
+      ]
+    }
+  }
+}

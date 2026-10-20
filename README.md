@@ -40,14 +40,27 @@ tersedia:
 
 - **Reels, TikTok, YouTube Short:** hook, rencana pengambilan gambar per adegan,
   teks layar, naskah lisan, demo Gemini, caption, CTA, dan checklist produksi.
-- **Feed/Carousel:** rancangan enam slide dengan teks siap desain, arahan visual,
-  demo Gemini, caption, CTA, dan checklist desain.
+- **Feed/Carousel:** rancangan 4-8 slide sesuai kompleksitas topik, dengan teks
+  siap desain, arahan visual, demo Gemini, caption, CTA, dan checklist desain.
 - **Poster/Static:** teks final dan arahan layout untuk satu desain statis,
   disertai demo Gemini, caption, CTA, dan checklist desain.
 - **Story:** rancangan empat frame, teks layar, demo Gemini, interaksi, caption
   singkat, CTA, dan checklist produksi.
 - **Challenge card / prompt card:** teks kartu dan prompt Gemini yang siap dicoba,
   arahan visual, caption, CTA, dan checklist desain.
+
+### 3. Trial desain carousel
+
+Menu `3` membuat enam PNG 1080 × 1350 untuk trial matriks belajar, tanpa
+memanggil Gemini API. Tiap slide memakai komposisi berbeda—cover editorial,
+kartu masalah, matriks prioritas, kartu prompt, planner mingguan, dan penutup—
+sementara logo, font, warna, nomor slide, dan margin tetap konsisten. Hasil
+trial baru disimpan terpisah di
+`Hasil Desain Carousel\trial_matriks_belajar_flexible`.
+
+Untuk menjalankannya, pastikan Pillow terpasang (`py -m pip install Pillow`),
+lalu pilih menu `3` atau jalankan `py .\carousel_designer.py`. Konten dan
+komposisi trial dapat disesuaikan di `SLIDES` pada `carousel_designer.py`.
 
 Semua draf meminta prompt demo dan contoh hasil yang ditandai sebagai ilustrasi
 bila belum dibuat langsung di Gemini. Buat ulang dan verifikasi hasil sebelum
@@ -120,9 +133,9 @@ Bot menampilkan menu berikut:
    tambahan juga opsional; tekan Enter untuk melewatinya.
 7. Hasil tampil di terminal dan tersimpan di folder `Hasil Draft Konten`.
 
-Format `Static/Carousel/Poster` menghasilkan draf carousel enam slide secara
-default. Masukkan `Poster` atau `Static` secara langsung jika ingin draf satu
-desain statis.
+Format `Static/Carousel/Poster` menghasilkan draf carousel 4-8 slide sesuai
+kompleksitas topik. Masukkan `Poster` atau `Static` secara langsung jika ingin
+draf satu desain statis.
 
 Jalankan kembali `py .\generator.py` untuk setiap konten atau minggu yang ingin
 dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.

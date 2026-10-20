@@ -302,13 +302,16 @@ def generate_content_draft(
         {short_video_instructions}
         """,
         "Carousel": """
-        Buat carousel feed sebanyak 6 slide, siap dialihkan ke desain. Untuk setiap
+        Buat carousel feed dengan jumlah 4-8 slide, siap dialihkan ke desain.
+        Pilih jumlah slide sesuai kompleksitas topik; tidak harus selalu 6 dan
+        jangan menambah slide hanya untuk memenuhi jumlah tertentu. Untuk setiap
         slide, berikan tujuan, teks final yang ringkas dan siap ditempel, serta
-        arahan visual/layout konkret. Jadikan slide 1 cover dan slide 6 rangkuman
-        dengan CTA. Masukkan demo Gemini yang dapat dibaca pada slide isi, serta
-        cantumkan prompt lengkap dan contoh hasil ilustratif yang harus dibuat
-        ulang serta diverifikasi sebelum dipublikasikan. Sertakan caption siap
-        unggah, CTA, hashtag/tag wajib, dan checklist desain serta keamanan data.
+        arahan visual/layout konkret. Jadikan slide pertama sebagai cover dan
+        slide terakhir sebagai rangkuman dengan CTA. Masukkan demo Gemini yang
+        dapat dibaca pada slide isi, serta cantumkan prompt lengkap dan contoh
+        hasil ilustratif yang harus dibuat ulang serta diverifikasi sebelum
+        dipublikasikan. Sertakan caption siap unggah, CTA, hashtag/tag wajib,
+        dan checklist desain serta keamanan data.
         """,
         "Poster": """
         Buat satu desain statis/poster, bukan carousel. Susun output berupa tujuan
@@ -411,8 +414,9 @@ def main():
     print("=== ASSISTANT INFLUENCER GEMINI ACADEMY (UB EDITION) ===")
     print("1. Generate 7 Ide Konten Mingguan (Editorial Plan)")
     print("2. Generate Draf dari Ide Manual")
+    print("3. Render Trial Carousel Matriks Belajar (tanpa API)")
 
-    pilihan = input("Pilih menu (1/2): ").strip()
+    pilihan = input("Pilih menu (1/2/3): ").strip()
     if pilihan == "1":
         minggu = input("Masukkan Minggu Ke-berapa (1-7): ").strip()
         print("\n--- MENGGENERATE RENCANA MINGGUAN ---\n")
@@ -452,8 +456,14 @@ def main():
         print(hasil)
         output_path = save_content_draft(judul, hasil)
         print(f"\nFile Markdown tersimpan: {output_path}")
+    elif pilihan == "3":
+        from carousel_designer import SLIDES, render_carousel
+
+        output_dir = BASE_DIR / "Hasil Desain Carousel" / "trial_matriks_belajar_flexible"
+        render_carousel(SLIDES, output_dir)
+        print(f"\n{len(SLIDES)} slide desain tersimpan di: {output_dir}")
     else:
-        raise ValueError("Pilihan menu tidak valid. Masukkan 1 atau 2.")
+        raise ValueError("Pilihan menu tidak valid. Masukkan 1, 2, atau 3.")
 
 
 if __name__ == "__main__":

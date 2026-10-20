@@ -1,6 +1,33 @@
 # Progres dan Task Proyek Bot Gemini UB
 
-Catatan progres diperbarui 11 Oktober 2026.
+Catatan progres diperbarui 20 Oktober 2026.
+
+## Progres pengembangan sejak awal
+
+- Bot telah dikembangkan untuk dua tahap awal: membuat ide konten mingguan dan
+  membuat draf konten siap produksi. Output disimpan sebagai Markdown, dengan
+  dukungan format seperti Reels, Carousel, Poster/Static, Story, Shorts, TikTok,
+  dan challenge/prompt card.
+- Pada 11 Oktober 2026, alur dasar diperkuat dengan validasi input, penanganan
+  error API, konfigurasi model, penyimpanan hasil, dan pemeriksaan lokal.
+- Pada 18 Oktober 2026, alur draf diperluas untuk input ide manual, referensi
+  spreadsheet/approval REFO, pemetaan format, dan simulasi lokal tanpa
+  memanggil API.
+- Pada 20 Oktober 2026, arah pengembangan berikutnya dibahas: melanjutkan dari
+  draf ke desain carousel siap unggah. Dua set referensi visual (masing-masing
+  enam slide) telah ditinjau. Ukuran 1080 × 1350 px, identitas visual
+  konsisten, aset brand tersedia untuk ditambahkan, dan CTA penutup fleksibel
+  telah disepakati.
+- Spesifikasi kebutuhan awal automasi desain dicatat di
+  `SPESIFIKASI_AUTOMASI_DESAIN_CAROUSEL.md`. Tahap ini masih berupa analisis;
+  fitur pembuatan dan ekspor gambar belum diimplementasikan.
+- Folder `referensi_design_carousel\brand-assets` kini berisi `Main Character.png`,
+  logo Gemini Academy/Gemini, ikon Gemini, dan font Inter. Karakter utama
+  ditetapkan sebagai acuan untuk variasi pose dan ekspresi; ciri identitas
+  kelinci, kostum wisuda, kemeja putih, serta ikon brand harus dipertahankan.
+- `Main Character.png` memiliki latar merah tua, bukan latar transparan.
+  Metode pemisahan/pemakaian latarnya dan konsistensi hasil variasi karakter
+  masih perlu diuji saat implementasi.
 
 ## Kondisi proyek
 
@@ -60,7 +87,7 @@ Catatan progres diperbarui 11 Oktober 2026.
 - Spreadsheet `Raditya` adalah tracker approval REFO untuk aset media final yang sudah tersedia di Drive, bukan untuk ide mingguan atau draf Markdown yang masih akan diproduksi.
 - Output bot tetap berupa Markdown. Tidak ada integrasi atau pengiriman otomatis ke spreadsheet; baris dibuat manual setelah video/desain final siap direview, dengan status awal `Please Check`.
 - Pemetaan format: `Story` ke `IG Story`, `Feed/Carousel` ke `Static/Carousel/Poster`, dan format lainnya mengikuti pilihan Type pada spreadsheet. Dropdown hanya tercatat berlaku pada baris 2-7; ini bukan batas jumlah konten per minggu.
-- Menu draf mendukung Reel, IG Story, Static/Carousel/Poster, YouTube Short, TikTok, dan Challenge card / prompt card. Nilai Static/Carousel/Poster menggunakan carousel enam slide secara default; `Poster` atau `Static` dapat dimasukkan untuk satu desain statis.
+- Menu draf mendukung Reel, IG Story, Static/Carousel/Poster, YouTube Short, TikTok, dan Challenge card / prompt card. Nilai Static/Carousel/Poster menggunakan carousel 4-8 slide sesuai kompleksitas topik; `Poster` atau `Static` dapat dimasukkan untuk satu desain statis.
 - Draf produksi diperkuat dengan shot plan, teks dan naskah yang siap direkam/desain, prompt demo Gemini, caption/CTA/tag, serta checklist produksi. Contoh hasil demo harus diberi label ilustrasi dan dibuat ulang serta diverifikasi di Gemini sebelum syuting/publikasi.
 - `knowledge_base.json` sekarang mencakup pilar kampanye, kolom sheet, opsi dropdown, pemetaan format, fungsi dashboard, dan alur bahwa hanya aset final yang diajukan manual. Prompt editorial plan dan draf memakai referensi ini tanpa mengarang metadata approval.
 - Verifikasi lokal pada 18 Oktober: sintaks Python dan tujuh kasus normalisasi/pemetaan format lolos menggunakan generator Gemini tiruan; tidak ada panggilan API nyata. Keberhasilan respons API tetap belum terkonfirmasi.

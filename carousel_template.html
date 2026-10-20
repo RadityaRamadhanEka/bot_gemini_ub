@@ -478,35 +478,35 @@
     const footer = `<div class="bottom-strip"><span>${esc(s.swipe || "Geser untuk lihat langkah berikutnya")}</span><span class="arrow">⟶</span></div>`;
     const mascot = `<img class="mascot" src="__MASCOT__">`;
     const ribbon = (text, color) => `<div class="ribbon ${color}">${esc(text)}</div>`;
-    const matrix = `<section class="slide-matrix"><div class="pattern"></div><div class="wood"></div>${header}
+    const matrix = () => `<section class="slide-matrix"><div class="pattern"></div><div class="wood"></div>${header}
       <div class="matrix-heading">${ribbon("Solusinya", "yellow")}${ribbon("Matriks Belajar Terstruktur", "green")}</div>
       <div class="matrix-card"><h2>MATRIKS PRIORITAS MINGGUAN</h2><div class="matrix">
         ${s.quadrants.map(q => `<div class="quadrant"><b>${esc(q[0])}</b><span>${esc(q[1])}</span></div>`).join("")}
       </div></div><div class="matrix-note">${esc(s.note)}</div>${footer}</section>`;
-    const events = s.events.map(e => `<div class="event"><span class="day">${esc(e[0])}</span><span class="time">${esc(e[1])}</span><span class="task">${esc(e[2])}</span></div>`).join("");
+    const events = () => s.events.map(e => `<div class="event"><span class="day">${esc(e[0])}</span><span class="time">${esc(e[1])}</span><span class="task">${esc(e[2])}</span></div>`).join("");
     const slidesHtml = {
-      cover: `<section class="slide-cover"><div class="room-glow"></div>${header}
+      cover: () => `<section class="slide-cover"><div class="room-glow"></div>${header}
         ${mascot}<div class="cover-ribbons">${ribbon("Cara buat", "green")}${ribbon("MATRIKS BELAJAR", "blue")}
           <div class="gemini-word"><img src="__GEMINI_ICON__">Gemini</div></div>
         <div class="cover-tag">${esc(s.title)}</div>${footer}</section>`,
-      problem: `<section class="slide-problem"><div class="pattern"></div><div class="wood"></div>${header}${mascot}
+      problem: () => `<section class="slide-problem"><div class="pattern"></div><div class="wood"></div>${header}${mascot}
         <div class="problem-title">${ribbon("Dilema Mahasiswa", "blue")}${ribbon("Tiap Hari Senin", "coral")}</div>
         <div class="speech left">${esc(s.items[0])}</div><div class="speech right">${esc(s.items[1])}</div>
         <div class="problem-note">${esc(s.note)}</div>${footer}</section>`,
       matrix,
-      prompt: `<section class="slide-prompt"><div class="pattern"></div><div class="wood"></div>${header}
+      prompt: () => `<section class="slide-prompt"><div class="pattern"></div><div class="wood"></div>${header}
         <div class="prompt-heading">${ribbon("Salin & Pakai", "coral")}${ribbon("Prompt Ini di Gemini", "green")}</div>
         <div class="prompt-card">“${esc(s.prompt)}”</div>${mascot}
         <div class="prompt-tip">${esc(s.note)}</div>${footer}</section>`,
-      planner: `<section class="slide-planner"><div class="pattern"></div><div class="wood"></div>${header}
+      planner: () => `<section class="slide-planner"><div class="pattern"></div><div class="wood"></div>${header}
         <div class="planner-heading">${ribbon("Biar Nggak Burnout", "blue")}${ribbon("Contoh Jadwal Mingguan", "green")}</div>
-        <div class="planner-card"><h2>RENCANA YANG PUNYA RUANG ISTIRAHAT</h2>${events}</div>${mascot}
+        <div class="planner-card"><h2>RENCANA YANG PUNYA RUANG ISTIRAHAT</h2>${events()}</div>${mascot}
         <div class="planner-note">${esc(s.note)}</div>${footer}</section>`,
-      closing: `<section class="slide-closing">${header}${mascot}
+      closing: () => `<section class="slide-closing">${header}${mascot}
         <div class="closing-heading">${ribbon("Belajar Efektif", "coral")}${ribbon("No Korbanin Waktu Istirahat", "green")}</div>
         <div class="closing-callout">${esc(s.cta)}</div>${footer}</section>`
     };
-    root.innerHTML = slidesHtml[s.layout];
+    root.innerHTML = slidesHtml[s.layout]();
   </script>
 </body>
 </html>

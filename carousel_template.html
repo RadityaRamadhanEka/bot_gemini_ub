@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <title>Trial Carousel Gemini Academy</title>
+  <style>
+    @font-face {
+      font-family: Inter;
+      src: url("__FONT_REGULAR__") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: Inter;
+      src: url("__FONT_BOLD__") format("truetype");
+      font-weight: 700 900;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1350px; overflow: hidden; }
+    body {
+      color: #202124;
+      font-family: Inter, Arial, sans-serif;
+      background: #263a24;
+      -webkit-font-smoothing: antialiased;
+    }
+    #slide {
+      position: relative;
+      isolation: isolate;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #34492f;
+    }
+    .brand {
+      position: absolute;
+      z-index: 5;
+      top: 42px;
+      right: -12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: 72px;
+      padding: 10px 28px 10px 20px;
+      border-radius: 40px 0 0 40px;
+      background: #fff;
+      box-shadow: 0 8px 22px #0002;
+    }
+    .brand img { width: 48px; height: 48px; object-fit: contain; }
+    .brand .logo { width: 282px; height: auto; }
+    .page-no {
+      position: absolute;
+      z-index: 6;
+      top: 56px;
+      left: 34px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      text-shadow: 0 2px 6px #0008;
+    }
+    .pattern {
+      position: absolute;
+      inset: 0 0 260px;
+      background-color: #3e4a2b;
+      background-image:
+        radial-gradient(ellipse at center, transparent 0 20px, #d5d09a42 21px 24px, transparent 25px),
+        radial-gradient(ellipse at center, transparent 0 43px, #ded9a72b 44px 48px, transparent 49px),
+        repeating-linear-gradient(60deg, transparent 0 38px, #d5d09a16 39px 42px, transparent 43px 78px);
+      background-size: 118px 118px, 118px 118px, 118px 118px;
+      background-position: 0 0, 59px 59px, 0 0;
+    }
+    .wood {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 270px;
+      border-top: 18px solid #402719;
+      background:
+        repeating-linear-gradient(0deg, #482c1c 0 7px, #70452b 8px 12px, #5b3824 13px 38px),
+        linear-gradient(90deg, #4c2e1d, #8a5834, #54351f);
+      box-shadow: inset 0 15px 25px #1e160f88;
+    }
+    .bottom-strip {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      bottom: 36px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 42px 0 34px;
+      border-radius: 0 34px 34px 0;
+      background: #079df1;
+      color: #fff;
+      font-size: 25px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px #0004;
+    }
+    .arrow { font-size: 48px; line-height: 1; }
+    .ribbon {
+      position: relative;
+      z-index: 2;
+      width: max-content;
+      max-width: 96%;
+      padding: 10px 34px 14px;
+      border-radius: 100px;
+      color: #fff;
+      font-size: 59px;
+      font-weight: 800;
+      line-height: 1.04;
+      text-align: center;
+      box-shadow: 0 7px 18px #0002;
+    }
+    .ribbon.green { background: #08bb58; }
+    .ribbon.blue { background: #079df1; }
+    .ribbon.coral { background: #f04e5d; }
+    .ribbon.yellow { background: #f0cc22; color: #202124; }
+    .mascot {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border: 9px solid #f3cc21;
+      border-radius: 42px;
+      box-shadow: 0 18px 45px #150b0b70;
+      background: #681c29;
+    }
+    .subcopy {
+      position: relative;
+      z-index: 3;
+      color: #fff;
+      font-size: 29px;
+      font-weight: 700;
+      line-height: 1.22;
+      text-shadow: 0 2px 4px #0004;
+    }
+    .speech {
+      position: absolute;
+      z-index: 3;
+      max-width: 470px;
+      padding: 20px 25px;
+      border-radius: 28px;
+      background: #f1cd20;
+      color: #fff;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.16;
+      box-shadow: 0 9px 24px #0003;
+    }
+    .panel {
+      position: absolute;
+      z-index: 3;
+      border: 9px solid #08bb58;
+      border-radius: 34px;
+      background: #fff2ad;
+      box-shadow: 0 15px 38px #1116;
+    }
+    .slide-cover {
+      background:
+        radial-gradient(ellipse at 78% 35%, #f4dfb8 0 18%, transparent 49%),
+        linear-gradient(145deg, #6b513d 0%, #d8bd92 44%, #46362e 100%);
+    }
+    .slide-cover .room-glow {
+      position: absolute;
+      inset: 150px 0 225px;
+      opacity: .75;
+      background:
+        linear-gradient(90deg, transparent 0 10%, #463a2c65 10% 15%, transparent 15% 25%, #fff8df99 25% 45%, transparent 45% 53%, #40322977 53% 59%, transparent 59%),
+        linear-gradient(0deg, #392b21 0 12%, transparent 12% 82%, #6a4f38 83%);
+      filter: blur(13px);
+    }
+    .slide-cover .mascot {
+      right: 32px;
+      bottom: 118px;
+      width: 535px;
+      height: 725px;
+      object-position: center 24%;
+    }
+    .cover-ribbons {
+      position: absolute;
+      z-index: 3;
+      top: 226px;
+      left: 38px;
+      width: 1000px;
+      text-align: center;
+    }
+    .cover-ribbons .ribbon:nth-child(1) { margin: 0 0 -4px 205px; transform: rotate(2deg); }
+    .cover-ribbons .ribbon:nth-child(2) { margin-left: 0; font-size: 72px; transform: rotate(-1deg); }
+    .cover-ribbons .gemini-word {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 0;
+      padding: 3px 45px 9px;
+      border-radius: 90px;
+      background: #fff;
+      font-size: 96px;
+      font-weight: 500;
+      line-height: 1.08;
+    }
+    .cover-ribbons .gemini-word img { width: 94px; height: 94px; }
+    .cover-tag {
+      position: absolute;
+      z-index: 4;
+      top: 1045px;
+      left: 50px;
+      width: 980px;
+      padding: 14px 24px 18px;
+      border-radius: 22px;
+      background: #08bb58;
+      color: #fff;
+      font-size: 31px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .slide-problem { background: linear-gradient(#3d492c, #45512e 76%, #36291f); }
+    .slide-problem .mascot {
+      left: 184px;
+      top: 335px;
+      width: 710px;
+      height: 768px;
+      object-position: center 19%;
+    }
+    .problem-title {
+      position: absolute;
+      z-index: 3;
+      top: 220px;
+      left: 128px;
+      width: 840px;
+      text-align: center;
+    }
+    .problem-title .ribbon:first-child { margin: 0 auto -2px; }
+    .problem-title .ribbon:last-child { margin: 0 auto; }
+    .slide-problem .speech.left { top: 604px; left: -16px; border-radius: 0 35px 35px 0; }
+    .slide-problem .speech.right { top: 818px; right: -14px; border-radius: 35px 0 0 35px; }
+    .slide-problem .problem-note {
+      position: absolute;
+      z-index: 4;
+      right: -22px;
+      bottom: 168px;
+      width: 800px;
+      padding: 19px 34px 21px;
+      border-radius: 55px 0 0 55px;
+      background: #08bb58;
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .slide-matrix { background: linear-gradient(#3e4a2b 0 75%, #3c281b 75%); }
+    .slide-matrix .matrix-heading {
+      position: absolute;
+      z-index: 3;
+      top: 220px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .slide-matrix .matrix-heading .ribbon { margin: 0 auto -3px; }
+    .matrix-card {
+      position: absolute;
+      z-index: 3;
+      top: 420px;
+      left: 115px;
+      width: 850px;
+      height: 690px;
+      padding: 35px 38px;
+      border: 7px solid #fff;
+      border-radius: 38px;
+      background: #fffaf0;
+      box-shadow: 0 17px 42px #0005;
+    }
+    .matrix-card h2 { margin: 0 0 20px; font-size: 30px; text-align: center; }
+    .matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      height: 560px;
+    }
+    .quadrant {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      color: #fff;
+      text-align: center;
+    }
+    .quadrant:nth-child(1) { background: #5fa487; border-radius: 24px 0 0 0; }
+    .quadrant:nth-child(2) { background: #ef8b71; border-radius: 0 24px 0 0; }
+    .quadrant:nth-child(3) { background: #4773c7; border-radius: 0 0 0 24px; }
+    .quadrant:nth-child(4) { background: #ed626c; border-radius: 0 0 24px 0; }
+    .quadrant b { margin-bottom: 14px; font-size: 31px; }
+    .quadrant span { max-width: 290px; font-size: 22px; line-height: 1.23; }
+    .matrix-note {
+      position: absolute;
+      z-index: 3;
+      left: 80px;
+      right: 80px;
+      bottom: 151px;
+      padding: 18px 28px;
+      border-radius: 45px;
+      background: #08bb58;
+      color: #fff;
+      font-size: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .slide-prompt { background: linear-gradient(#3e4a2b 0 73%, #392619 73%); }
+    .slide-prompt .prompt-heading {
+      position: absolute;
+      z-index: 3;
+      top: 220px;
+      left: 44px;
+      right: 44px;
+      text-align: center;
+    }
+    .slide-prompt .prompt-heading .ribbon:first-child { margin: 0 auto -2px; transform: rotate(-2deg); }
+    .slide-prompt .prompt-heading .ribbon:last-child { margin: 0 auto; transform: rotate(1deg); }
+    .prompt-card {
+      position: absolute;
+      z-index: 3;
+      top: 482px;
+      left: 142px;
+      width: 796px;
+      min-height: 515px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 42px 46px;
+      border: 9px solid #08bb58;
+      border-radius: 38px;
+      background: #f8e99b;
+      color: #ed5260;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.34;
+      text-align: center;
+      box-shadow: 0 16px 38px #0004;
+    }
+    .slide-prompt .mascot {
+      top: 932px;
+      left: 24px;
+      width: 184px;
+      height: 264px;
+      border-width: 6px;
+      border-radius: 24px;
+    }
+    .prompt-tip {
+      position: absolute;
+      z-index: 4;
+      right: 0;
+      bottom: 166px;
+      width: 780px;
+      padding: 18px 30px;
+      border-radius: 45px 0 0 45px;
+      background: #079df1;
+      color: #fff;
+      font-size: 23px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .slide-planner { background: linear-gradient(#3e4a2b 0 75%, #3e291d 75%); }
+    .slide-planner .planner-heading {
+      position: absolute;
+      z-index: 3;
+      top: 220px;
+      left: 55px;
+      right: 55px;
+      text-align: center;
+    }
+    .slide-planner .planner-heading .ribbon { margin: 0 auto -4px; }
+    .planner-card {
+      position: absolute;
+      z-index: 3;
+      top: 463px;
+      left: 98px;
+      width: 884px;
+      padding: 28px 34px 35px;
+      border: 7px solid #fff;
+      border-radius: 34px;
+      background: #fff8e1;
+      box-shadow: 0 15px 38px #0005;
+    }
+    .planner-card h2 { margin: 0 0 15px; font-size: 28px; text-align: center; }
+    .event {
+      display: grid;
+      grid-template-columns: 130px 105px 1fr;
+      gap: 12px;
+      align-items: center;
+      min-height: 117px;
+      border-bottom: 2px solid #e8dfc5;
+    }
+    .event:last-child { border: 0; }
+    .event .day { color: #666; font-size: 19px; font-weight: 700; }
+    .event .time { font-size: 22px; font-weight: 700; }
+    .event .task { padding: 16px 18px; border-radius: 18px; font-size: 22px; font-weight: 700; }
+    .event:nth-of-type(1) .task { background: #f04e5d; }
+    .event:nth-of-type(2) .task { background: #08bb58; color: #fff; }
+    .event:nth-of-type(3) .task { background: #079df1; color: #fff; }
+    .event:nth-of-type(4) .task { background: #f0cc22; }
+    .slide-planner .mascot {
+      right: 34px;
+      bottom: 144px;
+      width: 170px;
+      height: 228px;
+      border-width: 6px;
+      border-radius: 24px;
+    }
+    .planner-note {
+      position: absolute;
+      z-index: 4;
+      left: 70px;
+      bottom: 158px;
+      width: 740px;
+      padding: 18px 23px;
+      border-radius: 24px;
+      background: #f0cc22;
+      font-size: 23px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .slide-closing {
+      background:
+        radial-gradient(ellipse at 25% 30%, #f8e3b8, transparent 43%),
+        linear-gradient(135deg, #b08b62, #e3c99c 48%, #67513e);
+    }
+    .slide-closing .closing-heading {
+      position: absolute;
+      z-index: 3;
+      top: 270px;
+      left: 50px;
+      width: 800px;
+      text-align: center;
+    }
+    .slide-closing .closing-heading .ribbon:first-child { margin: 0 0 -4px 34px; transform: rotate(-5deg); }
+    .slide-closing .closing-heading .ribbon:last-child { margin-left: 76px; font-size: 72px; transform: rotate(1deg); }
+    .slide-closing .mascot {
+      left: 188px;
+      top: 565px;
+      width: 710px;
+      height: 655px;
+      object-position: center 16%;
+    }
+    .closing-callout {
+      position: absolute;
+      z-index: 4;
+      right: 0;
+      bottom: 130px;
+      width: 760px;
+      padding: 19px 28px;
+      border-radius: 38px 0 0 38px;
+      background: #079df1;
+      color: #fff;
+      font-size: 27px;
+      font-weight: 700;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main id="slide"></main>
+  <script>
+    const slides = __SLIDE_DATA__;
+    const index = Math.max(0, Math.min(slides.length - 1,
+      Number(new URLSearchParams(location.search).get("slide") || 0)));
+    const s = slides[index];
+    const esc = value => String(value).replace(/[&<>"']/g, char => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[char]));
+    const root = document.querySelector("#slide");
+    const header = `<span class="page-no">${String(index + 1).padStart(2, "0")}/${String(slides.length).padStart(2, "0")}</span>
+      <div class="brand"><img src="__GEMINI_ICON__"><img class="logo" src="__ACADEMY_LOGO__"></div>`;
+    const footer = `<div class="bottom-strip"><span>${esc(s.swipe || "Geser untuk lihat langkah berikutnya")}</span><span class="arrow">⟶</span></div>`;
+    const mascot = `<img class="mascot" src="__MASCOT__">`;
+    const ribbon = (text, color) => `<div class="ribbon ${color}">${esc(text)}</div>`;
+    const matrix = `<section class="slide-matrix"><div class="pattern"></div><div class="wood"></div>${header}
+      <div class="matrix-heading">${ribbon("Solusinya", "yellow")}${ribbon("Matriks Belajar Terstruktur", "green")}</div>
+      <div class="matrix-card"><h2>MATRIKS PRIORITAS MINGGUAN</h2><div class="matrix">
+        ${s.quadrants.map(q => `<div class="quadrant"><b>${esc(q[0])}</b><span>${esc(q[1])}</span></div>`).join("")}
+      </div></div><div class="matrix-note">${esc(s.note)}</div>${footer}</section>`;
+    const events = s.events.map(e => `<div class="event"><span class="day">${esc(e[0])}</span><span class="time">${esc(e[1])}</span><span class="task">${esc(e[2])}</span></div>`).join("");
+    const slidesHtml = {
+      cover: `<section class="slide-cover"><div class="room-glow"></div>${header}
+        ${mascot}<div class="cover-ribbons">${ribbon("Cara buat", "green")}${ribbon("MATRIKS BELAJAR", "blue")}
+          <div class="gemini-word"><img src="__GEMINI_ICON__">Gemini</div></div>
+        <div class="cover-tag">${esc(s.title)}</div>${footer}</section>`,
+      problem: `<section class="slide-problem"><div class="pattern"></div><div class="wood"></div>${header}${mascot}
+        <div class="problem-title">${ribbon("Dilema Mahasiswa", "blue")}${ribbon("Tiap Hari Senin", "coral")}</div>
+        <div class="speech left">${esc(s.items[0])}</div><div class="speech right">${esc(s.items[1])}</div>
+        <div class="problem-note">${esc(s.note)}</div>${footer}</section>`,
+      matrix,
+      prompt: `<section class="slide-prompt"><div class="pattern"></div><div class="wood"></div>${header}
+        <div class="prompt-heading">${ribbon("Salin & Pakai", "coral")}${ribbon("Prompt Ini di Gemini", "green")}</div>
+        <div class="prompt-card">“${esc(s.prompt)}”</div>${mascot}
+        <div class="prompt-tip">${esc(s.note)}</div>${footer}</section>`,
+      planner: `<section class="slide-planner"><div class="pattern"></div><div class="wood"></div>${header}
+        <div class="planner-heading">${ribbon("Biar Nggak Burnout", "blue")}${ribbon("Contoh Jadwal Mingguan", "green")}</div>
+        <div class="planner-card"><h2>RENCANA YANG PUNYA RUANG ISTIRAHAT</h2>${events}</div>${mascot}
+        <div class="planner-note">${esc(s.note)}</div>${footer}</section>`,
+      closing: `<section class="slide-closing">${header}${mascot}
+        <div class="closing-heading">${ribbon("Belajar Efektif", "coral")}${ribbon("No Korbanin Waktu Istirahat", "green")}</div>
+        <div class="closing-callout">${esc(s.cta)}</div>${footer}</section>`
+    };
+    root.innerHTML = slidesHtml[s.layout];
+  </script>
+</body>
+</html>

@@ -415,8 +415,9 @@ def main():
     print("1. Generate 7 Ide Konten Mingguan (Editorial Plan)")
     print("2. Generate Draf dari Ide Manual")
     print("3. Render Trial Carousel Matriks Belajar (tanpa API)")
+    print("4. Generate visual AI lalu render trial carousel (berpotensi berbiaya)")
 
-    pilihan = input("Pilih menu (1/2/3): ").strip()
+    pilihan = input("Pilih menu (1/2/3/4): ").strip()
     if pilihan == "1":
         minggu = input("Masukkan Minggu Ke-berapa (1-7): ").strip()
         print("\n--- MENGGENERATE RENCANA MINGGUAN ---\n")
@@ -459,11 +460,30 @@ def main():
     elif pilihan == "3":
         from carousel_designer import SLIDES, render_carousel
 
-        output_dir = BASE_DIR / "Hasil Desain Carousel" / "trial_matriks_belajar_flexible"
+        output_dir = BASE_DIR / "Hasil Desain Carousel" / "trial_matriks_belajar_html"
         render_carousel(SLIDES, output_dir)
         print(f"\n{len(SLIDES)} slide desain tersimpan di: {output_dir}")
+    elif pilihan == "4":
+        from carousel_designer import (
+            SLIDES,
+            generate_visual_assets,
+            render_carousel,
+        )
+
+        print(
+            "\nImage generation akan membuat visual yang belum ada (maksimal "
+            "6 gambar) dan dapat memakai kuota atau menimbulkan biaya."
+        )
+        konfirmasi = input("Lanjutkan? Ketik Y untuk setuju: ").strip().casefold()
+        if konfirmasi != "y":
+            print("Dibatalkan; tidak ada permintaan Gemini yang dikirim.")
+            return
+        output_dir = BASE_DIR / "Hasil Desain Carousel" / "trial_matriks_belajar_html"
+        visual_assets = generate_visual_assets(output_dir)
+        render_carousel(SLIDES, output_dir, visual_assets)
+        print(f"\n{len(SLIDES)} slide desain tersimpan di: {output_dir}")
     else:
-        raise ValueError("Pilihan menu tidak valid. Masukkan 1, 2, atau 3.")
+        raise ValueError("Pilihan menu tidak valid. Masukkan 1, 2, 3, atau 4.")
 
 
 if __name__ == "__main__":

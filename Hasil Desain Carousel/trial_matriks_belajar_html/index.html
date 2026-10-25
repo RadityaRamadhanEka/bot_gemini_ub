@@ -31,6 +31,27 @@
       overflow: hidden;
       background: #34492f;
     }
+    #slide > section {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+    }
+    .generated-backdrop {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+    }
+    .generated-backdrop::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #1115 0%, transparent 42%, #1114 100%);
+      content: "";
+    }
+    .has-generated-visual .mascot { display: none; }
     .brand {
       position: absolute;
       z-index: 5;
@@ -251,7 +272,33 @@
       font-weight: 700;
       text-align: center;
     }
-    .slide-matrix { background: linear-gradient(#3e4a2b 0 75%, #3c281b 75%); }
+    .slide-matrix {
+      background:
+        radial-gradient(circle at 88% 18%, #d6edf2 0 140px, transparent 141px),
+        linear-gradient(135deg, #f4f0dc, #e0eee9 60%, #c6e6df);
+    }
+    .slide-matrix::before {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(#2b898018 1px, transparent 1px),
+        linear-gradient(90deg, #2b898018 1px, transparent 1px);
+      background-size: 36px 36px;
+      content: "";
+      mask-image: linear-gradient(90deg, #000 0 62%, transparent 100%);
+    }
+    .slide-matrix::after {
+      position: absolute;
+      right: -130px;
+      bottom: 90px;
+      z-index: 0;
+      width: 430px;
+      height: 430px;
+      border: 32px solid #079df133;
+      border-radius: 50%;
+      content: "";
+    }
     .slide-matrix .matrix-heading {
       position: absolute;
       z-index: 3;
@@ -310,7 +357,32 @@
       font-weight: 700;
       text-align: center;
     }
-    .slide-prompt { background: linear-gradient(#3e4a2b 0 73%, #392619 73%); }
+    .slide-prompt {
+      background:
+        radial-gradient(ellipse at 90% 82%, #f6d9bd 0 180px, transparent 182px),
+        #f9f1d5;
+    }
+    .slide-prompt::before {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: repeating-linear-gradient(0deg, transparent 0 53px, #1599e81c 54px 56px);
+      content: "";
+      mask-image: linear-gradient(180deg, transparent 0 32%, #000 34% 85%, transparent 96%);
+    }
+    .slide-prompt::after {
+      position: absolute;
+      top: 500px;
+      right: 52px;
+      z-index: 0;
+      width: 12px;
+      height: 420px;
+      border-radius: 20px;
+      background: #f04e5d;
+      content: "";
+      transform: rotate(12deg);
+      opacity: .18;
+    }
     .slide-prompt .prompt-heading {
       position: absolute;
       z-index: 3;
@@ -364,7 +436,32 @@
       font-weight: 700;
       text-align: center;
     }
-    .slide-planner { background: linear-gradient(#3e4a2b 0 75%, #3e291d 75%); }
+    .slide-planner {
+      background:
+        radial-gradient(ellipse at 7% 18%, #f8ecc4 0 200px, transparent 202px),
+        linear-gradient(145deg, #b5cad0, #eef0dd 60%, #dfc495);
+    }
+    .slide-planner::before {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(#4773c71b 1px, transparent 1px),
+        linear-gradient(90deg, #4773c71b 1px, transparent 1px);
+      background-size: 44px 44px;
+      content: "";
+    }
+    .slide-planner::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 174px;
+      border-top: 12px solid #6b432b;
+      background: repeating-linear-gradient(0deg, #563822 0 9px, #815334 10px 15px, #69452c 16px 42px);
+      content: "";
+    }
     .slide-planner .planner-heading {
       position: absolute;
       z-index: 3;
@@ -429,6 +526,17 @@
         radial-gradient(ellipse at 25% 30%, #f8e3b8, transparent 43%),
         linear-gradient(135deg, #b08b62, #e3c99c 48%, #67513e);
     }
+    .slide-closing::before {
+      position: absolute;
+      top: 100px;
+      right: -150px;
+      z-index: 0;
+      width: 570px;
+      height: 570px;
+      border: 42px solid #fff7dc80;
+      border-radius: 50%;
+      content: "";
+    }
     .slide-closing .closing-heading {
       position: absolute;
       z-index: 3;
@@ -460,12 +568,32 @@
       font-weight: 700;
       text-align: center;
     }
+    [data-frame="hero-right"] { object-position: 50% 26%; }
+    [data-frame="thinking-center"] { object-position: 50% 17%; transform: scale(1.04); }
+    [data-frame="sticker-left"] { object-position: 50% 8%; border-radius: 48% 48% 28px 28px; }
+    [data-frame="mentor-corner"] { object-position: 50% 24%; border-radius: 50% 50% 24px 24px; }
+    [data-frame="portrait-hero"] { object-position: 50% 5%; border-radius: 48% 48% 34px 34px; }
+    [data-art="blueprint"] .matrix-heading .ribbon {
+      letter-spacing: .01em;
+      box-shadow: 5px 8px 0 #20212418;
+    }
+    [data-art="paper-note"] .prompt-card {
+      border-radius: 12px 34px 12px 34px;
+      box-shadow: 10px 12px 0 #f04e5d24, 0 16px 38px #0003;
+    }
+    [data-art="desk-planner"] .planner-card {
+      transform: rotate(-1deg);
+      border-radius: 8px 28px 8px 28px;
+    }
+    [data-art="warm-editorial"] .closing-heading .ribbon {
+      text-shadow: 0 3px 0 #0002;
+    }
   </style>
 </head>
 <body>
   <main id="slide"></main>
   <script>
-    const slides = [{"layout": "cover", "title": "Bingung Mau Kerjain Tugas Dulu atau Review Materi?", "swipe": "Swipe buat tahu caranya"}, {"layout": "problem", "items": ["Mau review materi kelas tadi pagi, tapi tugas minggu lalu belum beres.", "Mau ngerjain tugas, tapi materinya belum sempat dipelajari."], "note": "Akhirnya malah procrastinating dan sistem kebut semalam. Relate?", "swipe": "Swipe buat lanjut ke solusi"}, {"layout": "matrix", "quadrants": [["KERJAKAN", "Penting dan mendesak"], ["JADWALKAN", "Penting, belum mendesak"], ["DELEGASIKAN", "Mendesak, kurang penting"], ["BATASI", "Tidak mendesak dan kurang penting"]], "note": "Pakai matriks sebagai panduan awal, lalu sesuaikan dengan kondisi dan tenggatmu.", "swipe": "Swipe buat coba prompt-nya"}, {"layout": "prompt", "prompt": "Bantu saya menyusun matriks jadwal belajar mingguan berbasis Prioritas Eisenhower berdasarkan daftar 4 mata kuliah ini: [Sebutkan 4 Matkul & Deadline Tugasnya]. Alokasikan waktu fokus 90 menit per sesi dan sertakan jeda istirahat serta kegiatan organisasi kampus setiap sore/malam.", "note": "Tambahkan jam kuliah dan waktu paling produktifmu.", "swipe": "Swipe untuk lihat contoh jadwal"}, {"layout": "planner", "events": [["SENIN", "15.30", "Tugas Analisis Data"], ["SENIN", "17.00", "Istirahat + rapat organisasi"], ["SELASA", "09.00", "Review materi kuliah"], ["SELASA", "MALAM", "Waktu bebas / hobi"]], "note": "Contoh ilustratif. Sesuaikan jadwal dengan kuliah dan kegiatanmu.", "swipe": "Swipe buat rangkumannya"}, {"layout": "closing", "cta": "Simpan postingan ini untuk dicoba di awal minggu!", "swipe": "Gemini Academy UB"}];
+    const slides = [{"layout": "cover", "art_direction": "cinematic-study", "character_frame": "hero-right", "title": "Bingung Mau Kerjain Tugas Dulu atau Review Materi?", "swipe": "Swipe buat tahu caranya"}, {"layout": "problem", "art_direction": "pattern-story", "character_frame": "thinking-center", "items": ["Mau review materi kelas tadi pagi, tapi tugas minggu lalu belum beres.", "Mau ngerjain tugas, tapi materinya belum sempat dipelajari."], "note": "Akhirnya malah procrastinating dan sistem kebut semalam. Relate?", "swipe": "Swipe buat lanjut ke solusi"}, {"layout": "matrix", "art_direction": "blueprint", "character_frame": "none", "quadrants": [["KERJAKAN", "Penting dan mendesak"], ["JADWALKAN", "Penting, belum mendesak"], ["DELEGASIKAN", "Mendesak, kurang penting"], ["BATASI", "Tidak mendesak dan kurang penting"]], "note": "Pakai matriks sebagai panduan awal, lalu sesuaikan dengan kondisi dan tenggatmu.", "swipe": "Swipe buat coba prompt-nya"}, {"layout": "prompt", "art_direction": "paper-note", "character_frame": "sticker-left", "prompt": "Bantu saya menyusun matriks jadwal belajar mingguan berbasis Prioritas Eisenhower berdasarkan daftar 4 mata kuliah ini: [Sebutkan 4 Matkul & Deadline Tugasnya]. Alokasikan waktu fokus 90 menit per sesi dan sertakan jeda istirahat serta kegiatan organisasi kampus setiap sore/malam.", "note": "Tambahkan jam kuliah dan waktu paling produktifmu.", "swipe": "Swipe untuk lihat contoh jadwal"}, {"layout": "planner", "art_direction": "desk-planner", "character_frame": "mentor-corner", "events": [["SENIN", "15.30", "Tugas Analisis Data"], ["SENIN", "17.00", "Istirahat + rapat organisasi"], ["SELASA", "09.00", "Review materi kuliah"], ["SELASA", "MALAM", "Waktu bebas / hobi"]], "note": "Contoh ilustratif. Sesuaikan jadwal dengan kuliah dan kegiatanmu.", "swipe": "Swipe buat rangkumannya"}, {"layout": "closing", "art_direction": "warm-editorial", "character_frame": "portrait-hero", "cta": "Simpan postingan ini untuk dicoba di awal minggu!", "swipe": "Gemini Academy UB"}];
     const index = Math.max(0, Math.min(slides.length - 1,
       Number(new URLSearchParams(location.search).get("slide") || 0)));
     const s = slides[index];
@@ -476,37 +604,42 @@
     const header = `<span class="page-no">${String(index + 1).padStart(2, "0")}/${String(slides.length).padStart(2, "0")}</span>
       <div class="brand"><img src="file:///D:/ADIT%20KULIAH/LIMAAA/PROJECT/REFO%20-%20GSA/bot_gemini_ub/referensi_design_carousel/brand-assets/Gemini%20Icon%402x-8.png"><img class="logo" src="file:///D:/ADIT%20KULIAH/LIMAAA/PROJECT/REFO%20-%20GSA/bot_gemini_ub/referensi_design_carousel/brand-assets/Gemini%20Academy%20Logo%402x-8.png"></div>`;
     const footer = `<div class="bottom-strip"><span>${esc(s.swipe || "Geser untuk lihat langkah berikutnya")}</span><span class="arrow">⟶</span></div>`;
-    const mascot = `<img class="mascot" src="file:///D:/ADIT%20KULIAH/LIMAAA/PROJECT/REFO%20-%20GSA/bot_gemini_ub/referensi_design_carousel/brand-assets/Main%20Character.png">`;
+    const mascot = `<img class="mascot" data-frame="${esc(s.character_frame || "")}" src="file:///D:/ADIT%20KULIAH/LIMAAA/PROJECT/REFO%20-%20GSA/bot_gemini_ub/referensi_design_carousel/brand-assets/Main%20Character.png">`;
+    const backdrop = s.background_image
+      ? `<div class="generated-backdrop" style="background-image:linear-gradient(180deg,#1115 0%,transparent 42%,#1114 100%),url(&quot;${esc(s.background_image)}&quot;)"></div>`
+      : "";
     const ribbon = (text, color) => `<div class="ribbon ${color}">${esc(text)}</div>`;
-    const matrix = `<section class="slide-matrix"><div class="pattern"></div><div class="wood"></div>${header}
+    const matrix = () => `<section class="slide-matrix">${backdrop}${header}
       <div class="matrix-heading">${ribbon("Solusinya", "yellow")}${ribbon("Matriks Belajar Terstruktur", "green")}</div>
       <div class="matrix-card"><h2>MATRIKS PRIORITAS MINGGUAN</h2><div class="matrix">
         ${s.quadrants.map(q => `<div class="quadrant"><b>${esc(q[0])}</b><span>${esc(q[1])}</span></div>`).join("")}
       </div></div><div class="matrix-note">${esc(s.note)}</div>${footer}</section>`;
-    const events = s.events.map(e => `<div class="event"><span class="day">${esc(e[0])}</span><span class="time">${esc(e[1])}</span><span class="task">${esc(e[2])}</span></div>`).join("");
+    const events = () => s.events.map(e => `<div class="event"><span class="day">${esc(e[0])}</span><span class="time">${esc(e[1])}</span><span class="task">${esc(e[2])}</span></div>`).join("");
     const slidesHtml = {
-      cover: `<section class="slide-cover"><div class="room-glow"></div>${header}
+      cover: () => `<section class="slide-cover">${backdrop}<div class="room-glow"></div>${header}
         ${mascot}<div class="cover-ribbons">${ribbon("Cara buat", "green")}${ribbon("MATRIKS BELAJAR", "blue")}
           <div class="gemini-word"><img src="file:///D:/ADIT%20KULIAH/LIMAAA/PROJECT/REFO%20-%20GSA/bot_gemini_ub/referensi_design_carousel/brand-assets/Gemini%20Icon%402x-8.png">Gemini</div></div>
         <div class="cover-tag">${esc(s.title)}</div>${footer}</section>`,
-      problem: `<section class="slide-problem"><div class="pattern"></div><div class="wood"></div>${header}${mascot}
+      problem: () => `<section class="slide-problem">${backdrop}<div class="pattern"></div><div class="wood"></div>${header}${mascot}
         <div class="problem-title">${ribbon("Dilema Mahasiswa", "blue")}${ribbon("Tiap Hari Senin", "coral")}</div>
         <div class="speech left">${esc(s.items[0])}</div><div class="speech right">${esc(s.items[1])}</div>
         <div class="problem-note">${esc(s.note)}</div>${footer}</section>`,
       matrix,
-      prompt: `<section class="slide-prompt"><div class="pattern"></div><div class="wood"></div>${header}
+      prompt: () => `<section class="slide-prompt">${backdrop}${header}
         <div class="prompt-heading">${ribbon("Salin & Pakai", "coral")}${ribbon("Prompt Ini di Gemini", "green")}</div>
         <div class="prompt-card">“${esc(s.prompt)}”</div>${mascot}
         <div class="prompt-tip">${esc(s.note)}</div>${footer}</section>`,
-      planner: `<section class="slide-planner"><div class="pattern"></div><div class="wood"></div>${header}
+      planner: () => `<section class="slide-planner">${backdrop}${header}
         <div class="planner-heading">${ribbon("Biar Nggak Burnout", "blue")}${ribbon("Contoh Jadwal Mingguan", "green")}</div>
-        <div class="planner-card"><h2>RENCANA YANG PUNYA RUANG ISTIRAHAT</h2>${events}</div>${mascot}
+        <div class="planner-card"><h2>RENCANA YANG PUNYA RUANG ISTIRAHAT</h2>${events()}</div>${mascot}
         <div class="planner-note">${esc(s.note)}</div>${footer}</section>`,
-      closing: `<section class="slide-closing">${header}${mascot}
+      closing: () => `<section class="slide-closing">${backdrop}${header}${mascot}
         <div class="closing-heading">${ribbon("Belajar Efektif", "coral")}${ribbon("No Korbanin Waktu Istirahat", "green")}</div>
         <div class="closing-callout">${esc(s.cta)}</div>${footer}</section>`
     };
-    root.innerHTML = slidesHtml[s.layout];
+    root.innerHTML = slidesHtml[s.layout]();
+    root.firstElementChild.dataset.art = s.art_direction || "";
+    if (s.background_image) root.firstElementChild.classList.add("has-generated-visual");
   </script>
 </body>
 </html>

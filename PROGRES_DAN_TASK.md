@@ -18,9 +18,18 @@ Catatan progres diperbarui 20 Oktober 2026.
   enam slide) telah ditinjau. Ukuran 1080 × 1350 px, identitas visual
   konsisten, aset brand tersedia untuk ditambahkan, dan CTA penutup fleksibel
   telah disepakati.
-- Spesifikasi kebutuhan awal automasi desain dicatat di
-  `SPESIFIKASI_AUTOMASI_DESAIN_CAROUSEL.md`. Tahap ini masih berupa analisis;
-  fitur pembuatan dan ekspor gambar belum diimplementasikan.
+- Spesifikasi kebutuhan dan status prototipe automasi desain dicatat di
+  `SPESIFIKASI_AUTOMASI_DESAIN_CAROUSEL.md`.
+- Pada 20 Oktober 2026, prototipe desain carousel lokal ditambahkan memakai
+  HTML/CSS dan Chrome/Edge. Menu 3 merender enam PNG 1080 × 1350 dengan layout
+  berbeda untuk cover, masalah, matriks, prompt, contoh jadwal, dan CTA,
+  menggunakan logo/font/karakter dari aset brand. Prototipe belum membaca draf
+  Markdown secara otomatis.
+- Arahan desain lanjutan: layout sudah disetujui; prioritas berikutnya adalah
+  kreativitas art direction berdasarkan brief, variasi latar/elemen, tipografi,
+  serta pose karakter. Renderer kini menyediakan opsi image generation Gemini
+  dengan konfirmasi dan cache visual per slide agar tidak membuat permintaan
+  berulang saat render. Hasil pose/visual perlu ditinjau sebelum digunakan.
 - Folder `referensi_design_carousel\brand-assets` kini berisi `Main Character.png`,
   logo Gemini Academy/Gemini, ikon Gemini, dan font Inter. Karakter utama
   ditetapkan sebagai acuan untuk variasi pose dan ekspresi; ciri identitas

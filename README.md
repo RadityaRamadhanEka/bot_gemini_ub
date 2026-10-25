@@ -51,16 +51,39 @@ tersedia:
 
 ### 3. Trial desain carousel
 
-Menu `3` membuat enam PNG 1080 × 1350 untuk trial matriks belajar, tanpa
-memanggil Gemini API. Tiap slide memakai komposisi berbeda—cover editorial,
-kartu masalah, matriks prioritas, kartu prompt, planner mingguan, dan penutup—
-sementara logo, font, warna, nomor slide, dan margin tetap konsisten. Hasil
-trial baru disimpan terpisah di
-`Hasil Desain Carousel\trial_matriks_belajar_flexible`.
+Menu `3` merender enam PNG 1080 × 1350 untuk trial matriks belajar dengan
+HTML/CSS dan Chrome atau Microsoft Edge, tanpa memanggil Gemini API. Komposisi
+slide mengikuti referensi Figma dengan art direction berbeda per fungsi:
+cinematic study, pattern story, blueprint, paper note, desk planner, dan warm
+editorial. Variasi diterapkan pada latar, tekstur, framing maskot, komposisi, dan
+perlakuan tipografi; isi setiap slide tetap dapat disunting. Hasil PNG dan
+pratinjau HTML disimpan terpisah di
+`Hasil Desain Carousel\trial_matriks_belajar_html`.
 
-Untuk menjalankannya, pastikan Pillow terpasang (`py -m pip install Pillow`),
-lalu pilih menu `3` atau jalankan `py .\carousel_designer.py`. Konten dan
-komposisi trial dapat disesuaikan di `SLIDES` pada `carousel_designer.py`.
+Untuk menjalankan, pilih menu `3` atau gunakan `py .\carousel_designer.py`.
+Konten, art direction, dan framing karakter per slide dapat diubah di `SLIDES`
+pada `carousel_designer.py`; pilihan tampilan dan template diatur di
+`carousel_template.html`.
+
+Untuk membuat visual AI mengikuti brief trial, atur `GEMINI_API_KEY` secara
+lokal di PowerShell yang sama, lalu pilih menu `4` atau jalankan:
+
+```powershell
+py .\carousel_designer.py --generate-assets
+```
+
+Image generation meminta konfirmasi sebelum mengirim permintaan. Pembuatan dapat
+menggunakan kuota atau menimbulkan biaya sesuai model dan akun. Model bawaan
+adalah `gemini-nano-banana-2.1`; bila tidak tersedia, atur model gambar yang
+tersedia:
+
+```powershell
+$env:GEMINI_IMAGE_MODEL="MODEL_IMAGE_YANG_TERSEDIA"
+```
+
+Visual disimpan di subfolder `visuals` dan dipakai ulang saat render berikutnya
+agar tidak mengirim permintaan gambar berulang. Hasil pose dan kesesuaian
+maskot perlu ditinjau sebelum digunakan.
 
 Semua draf meminta prompt demo dan contoh hasil yang ditandai sebagai ilustrasi
 bila belum dibuat langsung di Gemini. Buat ulang dan verifikasi hasil sebelum

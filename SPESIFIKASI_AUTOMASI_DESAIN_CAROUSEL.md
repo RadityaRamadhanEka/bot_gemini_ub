@@ -7,10 +7,12 @@ unggah. Spesifikasi disusun dari dua contoh carousel pada folder
 
 ## Status
 
-- **Tahap:** prototipe renderer lokal untuk trial matriks belajar.
-- **Sudah diimplementasikan:** enam PNG 1080 × 1350 dengan variasi layout per
-  fungsi slide; belum ada parser umum untuk mengubah semua draf Markdown menjadi
-  desain otomatis.
+- **Tahap:** prototipe renderer HTML/CSS lokal untuk trial matriks belajar.
+- **Sudah diimplementasikan:** enam PNG 1080 × 1350 dengan variasi layout yang
+  mengacu pada komposisi Figma, termasuk art direction dan framing maskot
+  berbeda per slide. Image generation Gemini tersedia sebagai langkah eksplisit
+  yang memerlukan konfirmasi; belum ada parser umum untuk mengubah semua draf
+  Markdown menjadi desain otomatis.
 - **Output:** satu file PNG per slide di folder konten.
 
 ## Kebutuhan yang sudah disepakati
@@ -139,9 +141,15 @@ logo seolah-olah aset resmi.
 
 ## Keputusan teknis yang belum ditetapkan
 
-Prototipe menggunakan Pillow untuk menggambar elemen grafis dan teks secara
-lokal; tidak memerlukan API key atau layanan generatif. Layout trial telah
-dipisah menjadi variasi cover, pain point, matriks, prompt, planner, dan CTA.
-Langkah lanjutan yang masih diperlukan adalah parser/konfirmasi isi per slide
-dari draf umum, lebih banyak variasi ilustrasi, serta pemeriksaan keterbacaan
-dan margin otomatis sebelum ekspor final.
+Prototipe menggunakan HTML/CSS dan browser Chromium (Google Chrome atau
+Microsoft Edge) untuk merender elemen grafis dan teks. Render biasa tidak
+memerlukan API key. Opsi image generation menggunakan Gemini Interactions API
+dengan model gambar yang dapat dikonfigurasi melalui `GEMINI_IMAGE_MODEL`;
+prosesnya meminta konfirmasi dan menghasilkan hingga enam visual berdasarkan
+brief trial serta aset karakter referensi. Visual tersimpan di subfolder
+`visuals` dan digunakan ulang saat render berikutnya. Tinjau pose dan identitas
+maskot sebelum memakai hasilnya. Data isi/art direction berada di
+`carousel_designer.py`; template visual berada di `carousel_template.html`.
+Langkah lanjutan adalah parser/konfirmasi isi per slide dari draf umum,
+perluasan pilihan art direction, dan pemeriksaan keterbacaan/margin otomatis
+sebelum ekspor final.

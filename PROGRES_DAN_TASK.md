@@ -1,6 +1,6 @@
 # Progres dan Task Proyek Bot Gemini UB
 
-Catatan progres diperbarui 20 Oktober 2026.
+Catatan progres diperbarui 28 Oktober 2026.
 
 ## Progres pengembangan sejak awal
 
@@ -25,6 +25,10 @@ Catatan progres diperbarui 20 Oktober 2026.
   berbeda untuk cover, masalah, matriks, prompt, contoh jadwal, dan CTA,
   menggunakan logo/font/karakter dari aset brand. Prototipe belum membaca draf
   Markdown secara otomatis.
+- Pada 28 Oktober 2026, pengguna melaporkan generate kembali gagal dan bot
+  menampilkan pesan “Gemini sedang sibuk”. Pesan ini konsisten dengan penanganan
+  error HTTP 5xx di bot, tetapi kode HTTP dari percobaan terbaru belum
+  dikonfirmasi; perlu melihat detail teknis yang tampil setelah seluruh retry.
 - Arahan desain lanjutan: layout sudah disetujui; prioritas berikutnya adalah
   kreativitas art direction berdasarkan brief, variasi latar/elemen, tipografi,
   serta pose karakter. Renderer kini menyediakan opsi image generation Gemini
@@ -53,6 +57,7 @@ Catatan progres diperbarui 20 Oktober 2026.
 2. Panggilan dengan `gemini-2.5-flash` mendapat `404 NOT_FOUND`; respons API menyarankan `gemini-3.8-flash`.
 3. Panggilan berikutnya dengan model tersebut mendapat `503 UNAVAILABLE` karena layanan sedang mengalami permintaan tinggi. Keberhasilan API belum terkonfirmasi.
 4. API key pernah tertulis di chat. Anggap key tersebut sudah terekspos dan cabut/revoke; jangan gunakan lagi atau simpan key di file proyek/chat.
+5. Pada 28 Oktober 2026, pengguna melaporkan generate gagal lagi dengan pesan “Gemini sedang sibuk”. Belum ada kode HTTP atau detail teknis dari percobaan ini, sehingga belum dapat dipastikan apakah penyebabnya 503/5xx, kuota 429, atau masalah lain.
 
 ## Perbaikan pada 11 Oktober 2026
 
@@ -89,7 +94,7 @@ Catatan progres diperbarui 20 Oktober 2026.
    ```
 
 6. Jika muncul 429, periksa kuota/rate limit; jika 5xx terus berulang, tunggu lalu coba lagi dan periksa status layanan.
-7. Jangan mencatat atau membagikan API key saat melaporkan error.
+7. Jika pesan “Gemini sedang sibuk” muncul lagi, catat kode HTTP dan detail teknis setelah retry selesai tanpa menyertakan API key atau data sensitif.
 
 ## Konteks spreadsheet approval dan penyempurnaan pada 18 Oktober 2026
 

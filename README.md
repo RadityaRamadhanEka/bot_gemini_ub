@@ -70,10 +70,12 @@ menjadi item approval.
    winget install --id Ollama.Ollama --exact
    ```
 
-2. Buka atau jalankan aplikasi Ollama, lalu unduh model yang direkomendasikan:
+2. Setelah instalasi, tutup dan buka ulang PowerShell atau terminal VS Code
+   agar perintah `ollama` tersedia di PATH.
+3. Buka atau jalankan aplikasi Ollama, lalu unduh model yang direkomendasikan:
 
    ```powershell
-   ollama pull qwen3:8b
+   ollama pull qwen3:4b
    ```
 
 ## Menjalankan bot
@@ -123,11 +125,11 @@ dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.
 
 ## Mengganti model lokal
 
-Model bawaan adalah `qwen3:8b`. Jika ingin model lain, unduh model tersebut
+Model bawaan adalah `qwen3:4b`. Jika ingin model lain, unduh model tersebut
 dengan `ollama pull`, lalu atur `OLLAMA_MODEL` pada PowerShell yang sama:
 
 ```powershell
-$env:OLLAMA_MODEL="qwen3:4b"
+$env:OLLAMA_MODEL="qwen3:8b"
 py .\generator.py
 ```
 
@@ -145,7 +147,7 @@ Markdown Preview.
 
 - **Tidak dapat terhubung ke Ollama:** buka aplikasi Ollama dan pastikan layanan
   berjalan, lalu jalankan ulang bot.
-- **Model belum tersedia:** jalankan `ollama pull qwen3:8b` atau unduh model
+- **Model belum tersedia:** jalankan `ollama pull qwen3:4b` atau unduh model
   yang dipilih melalui `OLLAMA_MODEL`.
 - **Model lambat atau kehabisan memori:** coba model yang lebih kecil, misalnya
   `qwen3:4b`, dan tutup aplikasi lain yang berat.

@@ -10,7 +10,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 SYSTEM_PROMPT_PATH = BASE_DIR / "system_prompt.txt"
 KNOWLEDGE_BASE_PATH = BASE_DIR / "knowledge_base.json"
-DEFAULT_MODEL = "qwen3:8b"
+DEFAULT_MODEL = "qwen3:4b"
 DEFAULT_OLLAMA_HOST = "http://localhost:11434"
 
 
@@ -64,7 +64,14 @@ def _generate_text(prompt, system_instruction, temperature):
         {
             "model": model_name,
             "messages": [
-                {"role": "system", "content": system_instruction},
+                {
+                    "role": "system",
+                    "content": (
+                        f"{system_instruction}\n\n"
+                        "Jangan tampilkan proses penalaran internal; berikan hanya "
+                        "hasil akhir yang diminta."
+                    ),
+                },
                 {"role": "user", "content": prompt},
             ],
             "stream": False,
@@ -113,6 +120,9 @@ def _generate_text(prompt, system_instruction, temperature):
     content = message.get("content") if isinstance(message, dict) else None
     if not isinstance(content, str) or not content.strip():
         raise RuntimeError("Ollama tidak mengembalikan teks untuk permintaan ini.")
+    content = content.rsplit("</think>", 1)[-1].strip()
+    if not content:
+        raise RuntimeError("Ollama tidak mengembalikan jawaban akhir.")
     return content
 
 

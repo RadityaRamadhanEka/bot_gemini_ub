@@ -22,13 +22,15 @@ Catatan progres diperbarui 1 November 2026.
    winget install --id Ollama.Ollama --exact
    ```
 
-2. Jalankan aplikasi Ollama dan unduh model bawaan:
+2. Tutup dan buka ulang terminal setelah instalasi agar perintah `ollama`
+   tersedia di PATH.
+3. Jalankan aplikasi Ollama dan unduh model bawaan:
 
    ```powershell
-   ollama pull qwen3:8b
+   ollama pull qwen3:4b
    ```
 
-3. Jalankan bot dari folder proyek:
+4. Jalankan bot dari folder proyek:
 
    ```powershell
    py .\generator.py
@@ -49,7 +51,7 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
 
 - Integrasi generator teks diganti dari Google Gemini API menjadi endpoint chat
   lokal Ollama.
-- Model bawaan `qwen3:8b`; dapat diganti melalui `OLLAMA_MODEL`. Host Ollama
+- Model bawaan `qwen3:4b`; dapat diganti melalui `OLLAMA_MODEL`. Host Ollama
   dapat dikonfigurasi melalui `OLLAMA_HOST`.
 - Dependensi Python `google-genai` tidak lagi diperlukan oleh generator.
 - Menu generator kini hanya memuat pembuatan ide mingguan dan draf dari ide.

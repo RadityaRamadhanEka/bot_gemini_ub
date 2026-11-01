@@ -1,8 +1,8 @@
 # Bot Gemini Academy UB
 
-Bot berbasis Python yang menggunakan Gemini untuk membantu Raditya Ramadhan
-menyiapkan ide dan draf konten Gemini Academy untuk mahasiswa Universitas
-Brawijaya (UB).
+Bot berbasis Python yang menggunakan Ollama secara lokal untuk membantu Raditya
+Ramadhan menyiapkan ide dan draf konten Gemini Academy untuk mahasiswa
+Universitas Brawijaya (UB). Bot tidak memerlukan API key.
 
 ## Tujuan
 
@@ -49,42 +49,6 @@ tersedia:
 - **Challenge card / prompt card:** teks kartu dan prompt Gemini yang siap dicoba,
   arahan visual, caption, CTA, dan checklist desain.
 
-### 3. Trial desain carousel
-
-Menu `3` merender enam PNG 1080 × 1350 untuk trial matriks belajar dengan
-HTML/CSS dan Chrome atau Microsoft Edge, tanpa memanggil Gemini API. Komposisi
-slide mengikuti referensi Figma dengan art direction berbeda per fungsi:
-cinematic study, pattern story, blueprint, paper note, desk planner, dan warm
-editorial. Variasi diterapkan pada latar, tekstur, framing maskot, komposisi, dan
-perlakuan tipografi; isi setiap slide tetap dapat disunting. Hasil PNG dan
-pratinjau HTML disimpan terpisah di
-`Hasil Desain Carousel\trial_matriks_belajar_html`.
-
-Untuk menjalankan, pilih menu `3` atau gunakan `py .\carousel_designer.py`.
-Konten, art direction, dan framing karakter per slide dapat diubah di `SLIDES`
-pada `carousel_designer.py`; pilihan tampilan dan template diatur di
-`carousel_template.html`.
-
-Untuk membuat visual AI mengikuti brief trial, atur `GEMINI_API_KEY` secara
-lokal di PowerShell yang sama, lalu pilih menu `4` atau jalankan:
-
-```powershell
-py .\carousel_designer.py --generate-assets
-```
-
-Image generation meminta konfirmasi sebelum mengirim permintaan. Pembuatan dapat
-menggunakan kuota atau menimbulkan biaya sesuai model dan akun. Model bawaan
-adalah `gemini-nano-banana-2.1`; bila tidak tersedia, atur model gambar yang
-tersedia:
-
-```powershell
-$env:GEMINI_IMAGE_MODEL="MODEL_IMAGE_YANG_TERSEDIA"
-```
-
-Visual disimpan di subfolder `visuals` dan dipakai ulang saat render berikutnya
-agar tidak mengirim permintaan gambar berulang. Hasil pose dan kesesuaian
-maskot perlu ditinjau sebelum digunakan.
-
 Semua draf meminta prompt demo dan contoh hasil yang ditandai sebagai ilustrasi
 bila belum dibuat langsung di Gemini. Buat ulang dan verifikasi hasil sebelum
 syuting atau publikasi. Draf disimpan di `Hasil Draft Konten` dengan nama dari
@@ -99,23 +63,18 @@ menjadi item approval.
 
 ## Persiapan
 
-1. Pastikan Python dan paket `google-genai` tersedia. Jika paket belum terpasang:
+1. Pastikan Python dan Ollama untuk Windows sudah terpasang. Instal Ollama
+   melalui `winget` jika belum ada:
 
    ```powershell
-   py -m pip install google-genai
+   winget install --id Ollama.Ollama --exact
    ```
 
-2. Buat API key Gemini melalui Google AI Studio. Simpan key dengan aman; jangan
-   menaruhnya di source code, README, atau file proyek.
-3. Buka PowerShell baru. Atur key di sesi tersebut setiap kali akan menjalankan
-   bot:
+2. Buka atau jalankan aplikasi Ollama, lalu unduh model yang direkomendasikan:
 
    ```powershell
-   $env:GEMINI_API_KEY="API_KEY_MILIKMU"
+   ollama pull qwen3:8b
    ```
-
-   Pengaturan ini berlaku hanya untuk sesi PowerShell saat ini. Jika membuka
-   sesi baru, atur kembali API key.
 
 ## Menjalankan bot
 
@@ -123,7 +82,6 @@ Dari PowerShell, pindah ke folder proyek:
 
 ```powershell
 Set-Location "D:\ADIT KULIAH\LIMAAA\PROJECT\REFO - GSA\bot_gemini_ub"
-$env:GEMINI_API_KEY="API_KEY_MILIKMU"
 py .\generator.py
 ```
 
@@ -131,7 +89,7 @@ Bot menampilkan menu berikut:
 
 ```text
 1. Generate 7 Ide Konten Mingguan (Editorial Plan)
-2. Generate Draf Detail Konten Spesifik
+2. Generate Draf dari Ide Manual
 ```
 
 ### Membuat ide mingguan
@@ -163,16 +121,19 @@ draf satu desain statis.
 Jalankan kembali `py .\generator.py` untuk setiap konten atau minggu yang ingin
 dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.
 
-## Konfigurasi model
+## Mengganti model lokal
 
-Model bawaan adalah `gemini-3.8-flash`. Jika model tersebut tidak tersedia untuk
-API key yang digunakan, atur `GEMINI_MODEL` ke nama model yang tersedia sebelum
-menjalankan bot:
+Model bawaan adalah `qwen3:8b`. Jika ingin model lain, unduh model tersebut
+dengan `ollama pull`, lalu atur `OLLAMA_MODEL` pada PowerShell yang sama:
 
 ```powershell
-$env:GEMINI_MODEL="NAMA_MODEL_YANG_TERSEDIA"
+$env:OLLAMA_MODEL="qwen3:4b"
 py .\generator.py
 ```
+
+Ollama berjalan di komputer sendiri; kecepatan bergantung pada spesifikasi
+perangkat. Model yang lebih kecil biasanya lebih ringan, tetapi hasilnya dapat
+kurang terperinci.
 
 ## Membaca file hasil
 
@@ -182,12 +143,9 @@ Markdown Preview.
 
 ## Pemecahan masalah
 
-- **`GEMINI_API_KEY belum disetel`:** atur `$env:GEMINI_API_KEY` di PowerShell
-  yang sama sebelum menjalankan bot.
-- **HTTP 401/403:** periksa key dan akses Gemini API.
-- **HTTP 404:** periksa nama model atau atur `GEMINI_MODEL`.
-- **HTTP 429:** periksa kuota, rate limit, atau billing API.
-- **HTTP 5xx:** layanan sedang sibuk/bermasalah; bot mencoba ulang secara
-  terbatas. Tunggu sebentar sebelum mencoba lagi.
-
-Jangan membagikan API key saat meminta bantuan atau melaporkan error.
+- **Tidak dapat terhubung ke Ollama:** buka aplikasi Ollama dan pastikan layanan
+  berjalan, lalu jalankan ulang bot.
+- **Model belum tersedia:** jalankan `ollama pull qwen3:8b` atau unduh model
+  yang dipilih melalui `OLLAMA_MODEL`.
+- **Model lambat atau kehabisan memori:** coba model yang lebih kecil, misalnya
+  `qwen3:4b`, dan tutup aplikasi lain yang berat.

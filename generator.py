@@ -2,18 +2,16 @@ import json
 import os
 import re
 import sys
-import time
+import urllib.error
+import urllib.request
 from pathlib import Path
-
-from google import genai
-from google.genai import errors, types
 
 
 BASE_DIR = Path(__file__).resolve().parent
 SYSTEM_PROMPT_PATH = BASE_DIR / "system_prompt.txt"
 KNOWLEDGE_BASE_PATH = BASE_DIR / "knowledge_base.json"
-DEFAULT_MODEL = "gemini-3.8-flash"
-MAX_API_ATTEMPTS = 3
+DEFAULT_MODEL = "qwen3:8b"
+DEFAULT_OLLAMA_HOST = "http://localhost:11434"
 
 
 def load_supporting_files():
@@ -45,18 +43,8 @@ def load_supporting_files():
     return system_instruction, knowledge_base
 
 
-def get_api_client():
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError(
-            "GEMINI_API_KEY belum disetel. Atur key di PowerShell dengan "
-            '$env:GEMINI_API_KEY="API_KEY_BARU", lalu jalankan ulang bot.'
-        )
-    return genai.Client(api_key=api_key)
-
-
 def get_model_name():
-    return os.getenv("GEMINI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
+    return os.getenv("OLLAMA_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
 
 
 def validate_week_number(week_number):
@@ -69,61 +57,63 @@ def validate_week_number(week_number):
     return week_number
 
 
-def _api_error_message(error, model_name):
-    if error.code in (401, 403):
-        guidance = (
-            "Periksa GEMINI_API_KEY dan pastikan key memiliki akses ke Gemini API."
-        )
-    elif error.code == 404:
-        guidance = (
-            f"Model '{model_name}' tidak ditemukan atau tidak tersedia untuk key ini. "
-            "Periksa akses model atau atur GEMINI_MODEL ke model yang tersedia."
-        )
-    elif error.code == 429:
-        guidance = "Batas penggunaan atau kuota tercapai. Periksa kuota dan billing API."
-    elif error.code >= 500:
-        guidance = (
-            "Layanan Gemini sedang bermasalah atau sibuk. Tunggu sebentar lalu coba lagi."
-        )
-    else:
-        guidance = "Periksa konfigurasi permintaan dan akses Gemini API."
-    return f"{guidance}\nDetail teknis: {error}"
-
-
 def _generate_text(prompt, system_instruction, temperature):
-    client = get_api_client()
     model_name = get_model_name()
+    host = os.getenv("OLLAMA_HOST", DEFAULT_OLLAMA_HOST).rstrip("/")
+    request_data = json.dumps(
+        {
+            "model": model_name,
+            "messages": [
+                {"role": "system", "content": system_instruction},
+                {"role": "user", "content": prompt},
+            ],
+            "stream": False,
+            "think": False,
+            "options": {"temperature": temperature, "num_ctx": 16384},
+        }
+    ).encode("utf-8")
+    request = urllib.request.Request(
+        f"{host}/api/chat",
+        data=request_data,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
 
-    for attempt in range(MAX_API_ATTEMPTS):
-        try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    temperature=temperature,
-                ),
+    try:
+        with urllib.request.urlopen(request, timeout=600) as response:
+            result = json.load(response)
+    except urllib.error.HTTPError as exc:
+        details = exc.read().decode("utf-8", errors="replace").strip()
+        if exc.code == 404:
+            guidance = (
+                f"Model '{model_name}' belum tersedia. Unduh dengan "
+                f"`ollama pull {model_name}`."
             )
-            if not response.text:
-                raise RuntimeError(
-                    "Gemini tidak mengembalikan teks. Coba ubah prompt atau periksa "
-                    "respons model di Google AI Studio."
-                )
-            return response.text
-        except errors.APIError as exc:
-            if exc.code == 429 or exc.code >= 500:
-                if attempt + 1 < MAX_API_ATTEMPTS:
-                    delay = 2**attempt
-                    print(
-                        f"Gemini sedang sibuk (HTTP {exc.code}); mencoba lagi "
-                        f"dalam {delay} detik ({attempt + 2}/{MAX_API_ATTEMPTS}).",
-                        file=sys.stderr,
-                    )
-                    time.sleep(delay)
-                    continue
-            raise RuntimeError(_api_error_message(exc, model_name)) from exc
+        else:
+            guidance = (
+                f"Ollama mengembalikan HTTP {exc.code}. Periksa apakah Ollama "
+                "berjalan dan model dapat dimuat."
+            )
+        detail_message = f"\nDetail teknis: {details}" if details else ""
+        raise RuntimeError(f"{guidance}{detail_message}") from exc
+    except urllib.error.URLError as exc:
+        raise RuntimeError(
+            "Tidak dapat terhubung ke Ollama di "
+            f"{host}. Pastikan aplikasi Ollama berjalan."
+        ) from exc
+    except TimeoutError as exc:
+        raise RuntimeError(
+            "Ollama tidak merespons dalam 10 menit. Coba model yang lebih kecil "
+            "atau tutup aplikasi lain yang menggunakan banyak memori."
+        ) from exc
+    except json.JSONDecodeError as exc:
+        raise RuntimeError("Respons dari Ollama bukan JSON yang valid.") from exc
 
-    raise RuntimeError("Permintaan ke Gemini gagal setelah beberapa kali percobaan.")
+    message = result.get("message")
+    content = message.get("content") if isinstance(message, dict) else None
+    if not isinstance(content, str) or not content.strip():
+        raise RuntimeError("Ollama tidak mengembalikan teks untuk permintaan ini.")
+    return content
 
 
 def generate_weekly_plan(week_number):
@@ -414,10 +404,8 @@ def main():
     print("=== ASSISTANT INFLUENCER GEMINI ACADEMY (UB EDITION) ===")
     print("1. Generate 7 Ide Konten Mingguan (Editorial Plan)")
     print("2. Generate Draf dari Ide Manual")
-    print("3. Render Trial Carousel Matriks Belajar (tanpa API)")
-    print("4. Generate visual AI lalu render trial carousel (berpotensi berbiaya)")
 
-    pilihan = input("Pilih menu (1/2/3/4): ").strip()
+    pilihan = input("Pilih menu (1/2): ").strip()
     if pilihan == "1":
         minggu = input("Masukkan Minggu Ke-berapa (1-7): ").strip()
         print("\n--- MENGGENERATE RENCANA MINGGUAN ---\n")
@@ -457,33 +445,8 @@ def main():
         print(hasil)
         output_path = save_content_draft(judul, hasil)
         print(f"\nFile Markdown tersimpan: {output_path}")
-    elif pilihan == "3":
-        from carousel_designer import SLIDES, render_carousel
-
-        output_dir = BASE_DIR / "Hasil Desain Carousel" / "trial_matriks_belajar_html"
-        render_carousel(SLIDES, output_dir)
-        print(f"\n{len(SLIDES)} slide desain tersimpan di: {output_dir}")
-    elif pilihan == "4":
-        from carousel_designer import (
-            SLIDES,
-            generate_visual_assets,
-            render_carousel,
-        )
-
-        print(
-            "\nImage generation akan membuat visual yang belum ada (maksimal "
-            "6 gambar) dan dapat memakai kuota atau menimbulkan biaya."
-        )
-        konfirmasi = input("Lanjutkan? Ketik Y untuk setuju: ").strip().casefold()
-        if konfirmasi != "y":
-            print("Dibatalkan; tidak ada permintaan Gemini yang dikirim.")
-            return
-        output_dir = BASE_DIR / "Hasil Desain Carousel" / "trial_matriks_belajar_html"
-        visual_assets = generate_visual_assets(output_dir)
-        render_carousel(SLIDES, output_dir, visual_assets)
-        print(f"\n{len(SLIDES)} slide desain tersimpan di: {output_dir}")
     else:
-        raise ValueError("Pilihan menu tidak valid. Masukkan 1, 2, 3, atau 4.")
+        raise ValueError("Pilihan menu tidak valid. Masukkan 1 atau 2.")
 
 
 if __name__ == "__main__":

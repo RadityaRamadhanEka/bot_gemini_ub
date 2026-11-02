@@ -21,6 +21,10 @@ Universitas Brawijaya (UB). Bot tidak memerlukan API key.
 
 - Membuat editorial plan untuk minggu ke-1 sampai ke-7.
 - Menghasilkan tujuh ide konten dalam tabel Markdown.
+- Memakai fokus editorial berbeda untuk tiap minggu dari `knowledge_base.json`.
+- Menerima konteks khusus mingguan, misalnya periode UTS, kegiatan kampus, atau
+  tema kampanye; jika dikosongkan, bot memakai fokus otomatis.
+- Membandingkan rencana minggu-minggu sebelumnya agar ide tidak berulang.
 - Mengikuti arahan proporsi topik dan format pada `system_prompt.txt`.
 - Menampilkan hasil di terminal dan menyimpan file ke
   `Hasil Ide Konten\hasil_minggu_N.md`, misalnya `hasil_minggu_1.md`.
@@ -98,8 +102,19 @@ Bot menampilkan menu berikut:
 
 1. Masukkan `1`, lalu tekan Enter.
 2. Masukkan nomor minggu dari `1` sampai `7`.
-3. Hasil tampil di terminal dan tersimpan, misalnya, di
+3. Isi konteks/fokus khusus minggu tersebut jika ada, misalnya
+   `minggu UTS, bantu mahasiswa belajar aktif tanpa burnout`. Tekan Enter jika
+   ingin menggunakan fokus otomatis dari `knowledge_base.json`.
+4. Hasil tampil di terminal dan tersimpan, misalnya, di
    `Hasil Ide Konten\hasil_minggu_1.md`.
+
+Sebelum menghasilkan rencana, bot membaca hasil minggu-minggu sebelumnya yang
+tersedia dan meminta model menghindari pengulangan topik maupun angle. Fokus
+otomatis untuk tujuh minggu membentuk alur dari belajar mandiri, keseharian
+kampus, literasi digital, kolaborasi, eksplorasi kreatif, persiapan karier,
+hingga refleksi. Atur peta tersebut pada `weekly_focuses` di
+`knowledge_base.json`; konteks yang dimasukkan saat menjalankan bot hanya
+berlaku untuk rencana itu.
 
 ### Membuat draf konten
 

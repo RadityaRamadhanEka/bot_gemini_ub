@@ -22,6 +22,36 @@
     "Brainstorming ide ideasi UI/UX aplikasi sederhana",
     "Efisiensi tugas administrasi organisasi kampus"
   ],
+  "weekly_focuses": [
+    {
+      "week": 1,
+      "focus": "Fondasi belajar mandiri: memahami materi, membangun kebiasaan belajar, dan memakai Gemini sebagai partner belajar."
+    },
+    {
+      "week": 2,
+      "focus": "Keseharian mahasiswa UB: mengelola waktu, kebutuhan kos, dan aktivitas kampus secara realistis."
+    },
+    {
+      "week": 3,
+      "focus": "Berpikir kritis dan literasi digital: memeriksa informasi, menjaga privasi, dan memverifikasi keluaran AI."
+    },
+    {
+      "week": 4,
+      "focus": "Kolaborasi dan organisasi kampus: komunikasi tim, pembagian kerja, dan penyelesaian masalah bersama."
+    },
+    {
+      "week": 5,
+      "focus": "Eksplorasi kreatif dengan AI: mengembangkan ide, bereksperimen dengan format, dan membuat karya orisinal."
+    },
+    {
+      "week": 6,
+      "focus": "Persiapan karier: mengenali keterampilan, menyusun bukti pengalaman, dan mengeksplorasi peluang secara bertanggung jawab."
+    },
+    {
+      "week": 7,
+      "focus": "Refleksi dan dampak: mengevaluasi proses belajar, merangkum hal yang berguna, dan mengajak komunitas berbagi pengalaman."
+    }
+  ],
   "content_pillars": [
     {
       "name": "📚 Study Hack",

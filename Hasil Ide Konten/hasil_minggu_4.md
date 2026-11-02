@@ -1,9 +1,17 @@
+## Konteks & Fokus Minggu Ini
+
+Minggu ke-4 berfokus pada **kolaborasi dan organisasi kampus**: komunikasi tim, pembagian kerja, dan penyelesaian masalah bersama. Konten ini dirancang untuk memenuhi kebutuhan universal mahasiswa UB (71,4% topik lintas fakultas) dengan 2 konten niche yang memanfaatkan keahlian teknologi Raditya. Semua konten menghindari topik yang sudah digunakan pada minggu-minggu sebelumnya (budgeting, jurnal, simulasi interview, logika pemrograman, matriks jadwal, dan catatan rapat).
+
+---
+
+### **Editorial Plan Minggu ke-4 (Tier C — 7 Konten)**
+
 | No Konten | Pillar | Type | Jenis | Topik / Judul | Inti Prompt Gemini yang Didemokan |
-|------------|--------|------|--------|----------------|-----------------------------------|
-| 1 | 📚 Study Hack | Reel | Rutin | Membuat simulasi kuis/soal latihan UTS dan UAS dari materi Dosen | "Buat 5 soal latihan UTS dari materi kuliah 'Pemrograman Berorientasi Objek' dengan format pilihan ganda dan jawaban kunci." |
-| 2 | ⏱️ Save Time | Static/Carousel/Poster | Rutin | Menyusun jadwal/matriks belajar mingguan yang efektif | "Buat jadwal belajar mingguan yang efektif untuk mahasiswa UB dengan prioritas akademik, organisasi, dan waktu istirahat." |
-| 3 | 🎓 University Life | Static/Carousel/Poster | Rutin | Manajemen keuangan dan budgeting bulanan anak kos di Malang | "Rancang budget bulanan untuk anak kos di Malang dengan anggaran Rp 500.000 untuk kebutuhan pokok dan akademik." |
-| 4 | 📚 Study Hack | Reel | Rutin | Latihan wawancara dan persiapan materi presentasi kelompok | "Buat 3 contoh latihan wawancara untuk kelompok mahasiswa yang sedang mempersiapkan presentasi proyek." |
-| 5 | 🎓 University Life | Static/Carousel/Poster | Rutin | Ide resep makan hemat & sehat berbasis bahan kosan | "Buat 3 resep makanan sehat menggunakan bahan kosan yang terjangkau untuk mahasiswa UB." |
-| 6 | ✍️ Create | Reel | Rutin | Tips belajar logika pemrograman dasar untuk non-IT | "Jelaskan konsep logika pemrograman dasar dengan analogi sederhana untuk mahasiswa non-IT." |
-| 7 | ⏱️ Save Time | Static/Carousel/Poster | Rutin | Efisiensi tugas administrasi organisasi kampus | "Rancang 3 langkah untuk mempercepat proses administrasi organisasi kampus menggunakan alat digital." |
+| :---: | :--- | :--- | :---: | :--- | :--- |
+| **1** | `🎓 University Life` | `Reel` | Rutin | **Template Komunikasi Tim untuk Proyek Kelompok** | *"Bantu saya membuat template komunikasi tim untuk proyek kelompok yang mencakup tujuan, peran, tenggat waktu, dan mekanisme pemantauan. Gunakan bahasa yang jelas dan tidak terlalu teknis untuk mahasiswa UB."* |
+| **2** | `📚 Study Hack` | `Static/Carousel/Poster` | Rutin | **Pembagian Tugas Berdasarkan Keterampilan** | *"Saya adalah mahasiswa yang ingin membagi tugas kelompok berdasarkan keahlian. Tolong susun daftar keterampilan yang umum digunakan dalam proyek kuliah (misalnya analisis data, presentasi, penulisan) dan contoh cara membagi tugas agar tidak ada duplikasi."* |
+| **3** | `🧠 Think Better` | `IG Story` | Rutin | **Penyelesaian Masalah Kolaboratif di Kampus** | *"Berikan 3 contoh masalah sederhana di kampus yang bisa diselesaikan melalui kolaborasi tim, seperti antrean kantin atau parkir kendaraan. Untuk setiap contoh, jelaskan langkah-langkah kolaborasi yang diperlukan."* |
+| **4** | `🎓 University Life` | `Reel` | Rutin | **Menghindari Konflik dalam Organisasi Kampus** | *"Bantu saya membuat panduan 5 langkah untuk menghindari konflik dalam organisasi kampus seperti klub atau proyek kelompok, dengan fokus pada komunikasi proaktif dan penyelesaian masalah."* |
+| **5** | `✍️ Create` | `Static/Carousel/Poster` | Rutin | **UI/UX Sederhana untuk Aplikasi Kolaborasi Tim** | *"Buatkan ide UI/UX sederhana untuk aplikasi kolaborasi tim mahasiswa UB yang bisa mengirimkan tugas, berbagi jadwal, dan melacak progres proyek. Fokus pada kepraktisan dan tidak terlalu kompleks."* |
+| **6** | `⏰ Save Time` | `IG Story` | Rutin | **Template Jadwal Bersama untuk Acara Kampus** | *"Bantu saya menyusun template jadwal bersama untuk acara kampus seperti festival atau lomba, yang mencakup tanggal, waktu, lokasi, dan keterlibatan tim. Pastikan tidak mengandung informasi yang tidak perlu."* |
+| **7** | `🤯 Experiment` | `Reel` | Rutin | **Penggunaan AI untuk Pemantauan Progres Proyek** | *"Bantu saya membuat prompt untuk Gemini yang bisa menghasilkan laporan progres proyek kelompok dalam waktu 10 menit. Prompt harus mencakup kriteria seperti tugas yang selesai, jadwal, dan masalah yang muncul."* |

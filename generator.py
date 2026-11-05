@@ -228,10 +228,12 @@ def save_weekly_plan(week_number, content):
     return output_path
 
 
-def save_content_draft(judul, content):
+def save_content_draft(judul, content, subfolder=None):
     slug = re.sub(r"[^A-Za-z0-9]+", "_", judul).strip("_").lower()
     slug = slug[:80].rstrip("_") or "konten"
     output_dir = BASE_DIR / "Hasil Draft Konten"
+    if subfolder:
+        output_dir /= subfolder
     base_name = f"draft_{slug}"
     output_path = output_dir / f"{base_name}.md"
 
@@ -632,7 +634,7 @@ def main():
             konteks_tambahan=konteks_tambahan,
         )
         print(hasil)
-        output_path = save_content_draft(judul, hasil)
+        output_path = save_content_draft(judul, hasil, subfolder="KulikData")
         print(f"\nFile Markdown tersimpan: {output_path}")
     else:
         raise ValueError("Pilihan menu tidak valid. Masukkan 1, 2, atau 3.")

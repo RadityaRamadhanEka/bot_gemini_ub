@@ -142,7 +142,8 @@ draf satu desain statis.
 2. Tentukan format dan jenis konten (`Rutin` atau `Festival`).
 3. Isi pilar, pesan utama, CTA, atau konteks tambahan jika diinginkan. Topik,
    analogi sehari-hari, dan prompt demo Gemini diambil otomatis dari episode.
-4. Hasil tampil di terminal dan tersimpan di folder `Hasil Draft Konten`.
+4. Hasil tampil di terminal dan tersimpan di
+   `Hasil Draft Konten\KulikData`.
 
 Gunakan data sintetis/fiktif untuk demonstrasi analisis; jangan masukkan data
 pribadi atau transaksi asli. Rincian episode tersedia di

@@ -9,6 +9,8 @@ Catatan progres diperbarui 1 November 2026.
 - Menu 2 membuat draf produksi dari ide yang dimasukkan pengguna dan
   menyimpannya ke `Hasil Draft Konten`. Jika nama file sudah ada, nomor
   ditambahkan agar draf sebelumnya tidak tertimpa.
+- Menu 3 membuat draf dari satu episode Seri Kulik Data With Gemini dengan
+  mengambil topik, analogi, dan prompt demo dari `knowledge_base.json`.
 - Model bahasa berjalan lokal melalui Ollama; bot tidak lagi menggunakan
   Gemini API atau membutuhkan API key.
 - Format Carousel tetap tersedia sebagai format draf konten. Bot tidak lagi
@@ -57,3 +59,10 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
 - Menu generator kini hanya memuat pembuatan ide mingguan dan draf dari ide.
 - Fitur desain carousel dihapus. File renderer, template, spesifikasi, hasil,
   dan aset referensinya tidak lagi menjadi bagian proyek.
+
+## Pembaruan Seri Kulik Data With Gemini
+
+- Menu 3 menampilkan tujuh episode seri, lalu meminta format dan jenis konten
+  sebelum membuat draf produksi.
+- Data episode disimpan di `knowledge_base.json`; dokumen seri untuk dibaca
+  tersedia di `Kulik Data With Gemini\Seri Kulik Data With Gemini.md`.

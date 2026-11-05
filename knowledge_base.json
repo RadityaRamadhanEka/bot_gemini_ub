@@ -22,6 +22,48 @@
     "Brainstorming ide ideasi UI/UX aplikasi sederhana",
     "Efisiensi tugas administrasi organisasi kampus"
   ],
+  "content_series": {
+    "kulik_data_with_gemini": {
+      "title": "Kulik Data With Gemini",
+      "episodes": [
+        {
+          "title": "Data analyst vs data engineer: siapa membaca data, siapa menyiapkan jalurnya?",
+          "analogy": "Di kantin, analyst mencari tahu menu terlaris; engineer memastikan catatan pesanan dari kasir terkumpul dan rapi.",
+          "prompt_demo": "Jelaskan perbedaan data analyst dan data engineer untuk pemula dengan analogi kantin kampus. Berikan contoh pekerjaan harian masing-masing, hasil kerja yang biasanya dibuat, dan satu hal yang sering disalahpahami. Gunakan bahasa sehari-hari dan jelaskan bahwa analoginya hanya penyederhanaan."
+        },
+        {
+          "title": "Dari catatan transaksi ke pertanyaan yang berguna",
+          "analogy": "Sebelum menghitung, pemilik kantin menentukan dulu pertanyaan yang ingin dijawab—misalnya menu apa yang paling laku.",
+          "prompt_demo": "Saya punya data transaksi kantin fiktif dengan kolom tanggal, menu, jumlah, dan harga. Sarankan 5 pertanyaan bisnis sederhana yang bisa dijawab dari kolom tersebut. Untuk tiap pertanyaan, sebutkan kolom yang diperlukan dan jangan menyimpulkan hal yang tidak tersedia di data. Jangan mengarang hasil."
+        },
+        {
+          "title": "Data berantakan itu seperti daftar belanja dengan tulisan berbeda-beda",
+          "analogy": "Nama menu yang sama bisa tercatat dengan ejaan berbeda; ada juga catatan kosong atau transaksi ganda.",
+          "prompt_demo": "Periksa tabel transaksi fiktif berikut untuk menemukan nilai kosong, kemungkinan duplikat, dan nama menu yang penulisannya tidak konsisten. Tampilkan temuan dan usulan perbaikannya dalam tabel. Jangan mengubah data diam-diam; tandai baris yang perlu keputusan manusia. Data: [tempel data sintetis]."
+        },
+        {
+          "title": "SQL itu seperti meminta petugas mencari pesanan tertentu di buku kas",
+          "analogy": "Kita menyebutkan kriteria pencarian—misalnya transaksi untuk satu menu—lalu petugas menyaring catatannya.",
+          "prompt_demo": "Ajari saya query SQL dasar untuk menampilkan transaksi menu 'Nasi Ayam' dari tabel transaksi. Jelaskan setiap baris query dengan bahasa sehari-hari, gunakan hanya SELECT, FROM, dan WHERE, lalu berikan satu latihan serupa tanpa langsung memberi jawabannya."
+        },
+        {
+          "title": "Grafik bukan hiasan: pilih visual yang menjawab pertanyaan",
+          "analogy": "Seperti memilih papan menu yang memudahkan pemilik kantin melihat perubahan penjualan, bukan sekadar membuatnya ramai.",
+          "prompt_demo": "Dari tujuan analisis [tujuan] dan kolom yang tersedia [daftar kolom], sarankan jenis grafik yang paling mudah dipahami dan alasannya. Sebutkan sumbu yang digunakan serta satu cara agar grafik tidak menyesatkan. Jangan membuat angka atau tren yang tidak ada di data."
+        },
+        {
+          "title": "Data engineer dan jalur antar dari kasir ke laporan",
+          "analogy": "Pesanan melewati jalur: dicatat kasir, dikumpulkan, diperiksa, lalu disimpan agar bisa dipakai membuat laporan.",
+          "prompt_demo": "Buat diagram alur sederhana untuk data transaksi kantin fiktif dari sumber kasir sampai siap dipakai membuat laporan. Tunjukkan tahap pengumpulan, pemeriksaan/rapi-rapi, penyimpanan, dan penggunaan. Jelaskan fungsi tiap tahap dengan bahasa nonteknis; jangan masuk ke konfigurasi cloud atau kode."
+        },
+        {
+          "title": "Mini proyek: dari data mentah ke satu insight yang bisa dicek",
+          "analogy": "Seperti merapikan buku kas, menghitung penjualan, lalu menyampaikan satu temuan beserta bukti hitungannya.",
+          "prompt_demo": "Bimbing saya menganalisis tabel transaksi kantin sintetis ini langkah demi langkah: cek kualitas data, hitung total transaksi per menu, lalu rangkum satu temuan yang didukung angka. Tampilkan cara perhitungannya agar bisa saya cek, tanyakan jika format data tidak jelas, dan jangan menyimpulkan sebab-akibat. Data: [tempel data sintetis]."
+        }
+      ]
+    }
+  },
   "weekly_focuses": [
     {
       "week": 1,

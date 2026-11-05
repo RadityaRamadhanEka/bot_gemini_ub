@@ -96,6 +96,7 @@ Bot menampilkan menu berikut:
 ```text
 1. Generate 7 Ide Konten Mingguan (Editorial Plan)
 2. Generate Draf dari Ide Manual
+3. Generate Draft dari Seri Kulik Data With Gemini
 ```
 
 ### Membuat ide mingguan
@@ -134,6 +135,18 @@ berlaku untuk rencana itu.
 Format `Static/Carousel/Poster` menghasilkan draf carousel 4-8 slide sesuai
 kompleksitas topik. Masukkan `Poster` atau `Static` secara langsung jika ingin
 draf satu desain statis.
+
+### Membuat draf dari Seri Kulik Data With Gemini
+
+1. Masukkan `3`, lalu pilih salah satu dari tujuh episode yang ditampilkan.
+2. Tentukan format dan jenis konten (`Rutin` atau `Festival`).
+3. Isi pilar, pesan utama, CTA, atau konteks tambahan jika diinginkan. Topik,
+   analogi sehari-hari, dan prompt demo Gemini diambil otomatis dari episode.
+4. Hasil tampil di terminal dan tersimpan di folder `Hasil Draft Konten`.
+
+Gunakan data sintetis/fiktif untuk demonstrasi analisis; jangan masukkan data
+pribadi atau transaksi asli. Rincian episode tersedia di
+`Kulik Data With Gemini\Seri Kulik Data With Gemini.md`.
 
 Jalankan kembali `py .\generator.py` untuk setiap konten atau minggu yang ingin
 dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.

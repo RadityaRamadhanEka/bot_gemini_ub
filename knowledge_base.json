@@ -135,7 +135,9 @@
         "format_templates": {
           "short_video": "Hook masalah mahasiswa -> kenalkan hack -> screen-record prompt dan demo -> satu insight/verifikasi -> CTA wajib.",
           "carousel": "Cover hook -> masalah -> langkah penggunaan -> prompt siap salin -> contoh hasil/hal yang perlu dicek -> takeaway dan CTA wajib.",
-          "story": "Frame 1 hook/poll -> frame 2 langkah dan prompt -> frame 3 demo/pertanyaan interaktif -> frame 4 takeaway dan CTA wajib."
+          "poster": "Satu desain ringkas: headline masalah -> manfaat hack yang realistis -> langkah singkat/prompt -> CTA pada desain dan caption.",
+          "story": "Frame 1 hook/poll -> frame 2 langkah dan prompt -> frame 3 demo/pertanyaan interaktif -> frame 4 takeaway dan CTA wajib.",
+          "challenge_card": "Satu kartu challenge: judul hack -> instruksi mencoba -> prompt yang bisa disalin -> pengingat verifikasi -> CTA pada caption."
         }
       },
       "mandatory_cta": {

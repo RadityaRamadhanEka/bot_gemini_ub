@@ -41,7 +41,17 @@ Universitas Brawijaya (UB). Bot tidak memerlukan API key.
 - Menampilkan hasil di terminal dan menyimpannya ke
   `Hasil Ide Konten\Belajar Mandiri\belajar_mandiri_N_hacks.md`.
 
-### 3. Draf konten
+### 3. Draf Seri Belajar Mandiri
+
+- Memilih satu dari delapan hacks kampanye, format konten, dan jenis (`Rutin`
+  atau `Festival`).
+- Menggunakan struktur seri yang konsisten sesuai format, prompt demo khusus
+  untuk hack terpilih, panduan screen-record, serta catatan verifikasi dan etika.
+- Menyisipkan CTA lisan dan pembuka caption kampanye secara otomatis. Jika
+  tautan daftar hadir belum diberikan, draf mempertahankan placeholder.
+- Menyimpan draf ke `Hasil Draft Konten\Belajar Mandiri` tanpa menimpa draf lama.
+
+### 4. Draf konten
 
 Jalur draf menerima input manual: judul dan penjelasan ide/isi konten wajib,
 format, dan jenis konten (`Rutin` atau `Festival`). Pilar, pesan utama, prompt
@@ -109,6 +119,8 @@ Bot menampilkan menu berikut:
 2. Generate Draf dari Ide Manual
 3. Generate Draft dari Seri Kulik Data With Gemini
 4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)
+5. Generate Draf dari Seri Belajar Mandiri
+6. Keluar
 ```
 
 ### Membuat ide mingguan
@@ -140,6 +152,17 @@ berlaku untuk rencana itu.
    `Hasil Ide Konten\Belajar Mandiri\belajar_mandiri_N_hacks.md`.
 4. Sumber hack dan CTA dapat diperbarui pada `campaigns.belajar_mandiri` di
    `knowledge_base.json`.
+
+### Membuat draf dari Seri Belajar Mandiri
+
+1. Masukkan `5`, lalu pilih salah satu dari delapan hacks yang ditampilkan.
+2. Pilih format. Tiap format memakai struktur seri yang sesuai; jenis konten
+   default-nya `Festival` dan bisa diganti menjadi `Rutin`.
+3. Masukkan tautan daftar hadir Festival jika tersedia. Jika kosong, placeholder
+   akan dicantumkan dan perlu dilengkapi sebelum publikasi.
+4. Draf berisi prompt demo khusus hack, alur seri, screen-record, CTA lisan dan
+   caption wajib. File disimpan di
+   `Hasil Draft Konten\Belajar Mandiri`.
 
 ### Membuat draf konten
 

@@ -39,7 +39,7 @@ Universitas Brawijaya (UB). Bot tidak memerlukan API key.
 - Meminta tautan daftar hadir Festival saat dijalankan. Jika belum tersedia,
   hasil memakai placeholder yang harus dilengkapi sebelum publikasi.
 - Menampilkan hasil di terminal dan menyimpannya ke
-  `Hasil Ide Konten\belajar_mandiri_N_hacks.md`.
+  `Hasil Ide Konten\Belajar Mandiri\belajar_mandiri_N_hacks.md`.
 
 ### 3. Draf konten
 
@@ -137,7 +137,7 @@ berlaku untuk rencana itu.
    dipublikasikan.
 3. Hasil berisi rencana ide, demo/prompt, CTA lisan dan pembuka caption yang
    wajib disalin ke setiap konten, lalu tersimpan di
-   `Hasil Ide Konten\belajar_mandiri_N_hacks.md`.
+   `Hasil Ide Konten\Belajar Mandiri\belajar_mandiri_N_hacks.md`.
 4. Sumber hack dan CTA dapat diperbarui pada `campaigns.belajar_mandiri` di
    `knowledge_base.json`.
 

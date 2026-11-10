@@ -77,44 +77,67 @@
         {
           "topic": "Menaklukkan materi sulit",
           "title": "Belajar konsep sulit dengan Guided Learning atau Premade Gem (Learning Coach)",
-          "demo": "Minta Gemini menjelaskan satu konsep sulit dengan analogi kehidupan sehari-hari, lalu menguji pemahaman secara bertahap."
+          "demo": "Minta Gemini menjelaskan satu konsep sulit dengan analogi kehidupan sehari-hari, lalu menguji pemahaman secara bertahap.",
+          "prompt_demo": "Jadilah partner belajar untuk topik [topik kuliah]. Jelaskan konsep inti dengan analogi kehidupan sehari-hari, lalu ajukan satu pertanyaan pemahaman dan tunggu jawaban saya sebelum melanjutkan. Setelah saya menjawab, koreksi bagian yang kurang tepat dengan penjelasan singkat. Jangan memberikan jawaban lengkap sebelum saya mencoba."
         },
         {
           "topic": "Persiapan ujian",
           "title": "Membuat latihan soal atau flashcard dari catatan kuliah di Gemini Canvas",
-          "demo": "Gunakan catatan milik sendiri untuk membuat 10 pertanyaan pilihan ganda atau flashcard; jadikan sebagai latihan, bukan kunci jawaban."
+          "demo": "Gunakan catatan milik sendiri untuk membuat 10 pertanyaan pilihan ganda atau flashcard; jadikan sebagai latihan, bukan kunci jawaban.",
+          "prompt_demo": "Dari catatan kuliah yang saya berikan tentang [topik], buat 10 soal pilihan ganda untuk latihan. Jangan tampilkan kunci jawaban dulu. Setelah saya mengirim jawaban, periksa satu per satu, jelaskan alasan singkat berdasarkan catatan, dan tandai jika catatan tidak memuat informasi yang diperlukan."
         },
         {
           "topic": "Presentasi",
           "title": "Mengubah dokumen panjang menjadi draf presentasi 8 slide di Gemini Canvas",
-          "demo": "Minta Gemini merangkum dokumen yang boleh dibagikan menjadi draf 8 slide dengan poin ringkas, lalu tunjukkan opsi ekspor ke Google Slides."
+          "demo": "Minta Gemini merangkum dokumen yang boleh dibagikan menjadi draf 8 slide dengan poin ringkas, lalu tunjukkan opsi ekspor ke Google Slides.",
+          "prompt_demo": "Gunakan dokumen yang saya lampirkan untuk menyusun draf presentasi tepat 8 slide tentang [topik]. Beri tiap slide judul dan maksimal 3 poin ringkas. Gunakan hanya informasi dari dokumen, tandai informasi yang perlu saya verifikasi, dan jangan menambahkan fakta atau sumber yang tidak ada. Setelah draf, tunjukkan opsi ekspor yang tersedia di aplikasi."
         },
         {
           "topic": "Presentasi",
           "title": "Membuat visual presentasi menggunakan Nano Banana",
-          "demo": "Tunjukkan proses menyusun prompt dan membuat visual pendukung presentasi dengan fitur pembuat gambar AI Nano Banana."
+          "demo": "Tunjukkan proses menyusun prompt dan membuat visual pendukung presentasi dengan fitur pembuat gambar AI Nano Banana.",
+          "prompt_demo": "Buat satu ilustrasi pendukung slide tentang [konsep presentasi]. Tampilkan [objek utama] dalam gaya [gaya visual], komposisi sederhana, rasio [rasio], tanpa teks, logo, atau data pribadi. Gambar hanya untuk membantu menjelaskan konsep dan tidak boleh menyiratkan data atau hasil penelitian yang tidak diberikan."
         },
         {
           "topic": "Riset skripsi",
           "title": "Mencari arah riset dan membandingkan referensi dengan Deep Research atau NotebookLM",
-          "demo": "Tunjukkan cara mencari ide atau menyusun perbandingan teori berdasarkan sumber yang dapat diperiksa; jangan mengarang jurnal, kutipan, atau referensi."
+          "demo": "Tunjukkan cara mencari ide atau menyusun perbandingan teori berdasarkan sumber yang dapat diperiksa; jangan mengarang jurnal, kutipan, atau referensi.",
+          "prompt_demo": "Bantu saya menyusun beberapa kemungkinan pertanyaan riset tentang [bidang/topik]. Jika memakai sumber, tampilkan judul, penulis, tahun, dan tautan yang benar-benar dapat dibuka. Pisahkan fakta dari saran, jangan mengarang referensi atau kutipan, dan tandai hal yang perlu saya cek di sumber asli. Berikan juga kata kunci pencarian untuk saya telusuri sendiri."
         },
         {
           "topic": "Olah data",
           "title": "Menjelajahi spreadsheet dan membuat visualisasi data dengan Gemini",
-          "demo": "Gunakan data sintetis atau yang telah dianonimkan untuk mencari informasi dalam tabel dan menyarankan grafik; verifikasi hasil terhadap data asli."
+          "demo": "Gunakan data sintetis atau yang telah dianonimkan untuk mencari informasi dalam tabel dan menyarankan grafik; verifikasi hasil terhadap data asli.",
+          "prompt_demo": "Periksa spreadsheet latihan yang saya lampirkan. Sebutkan nama kolom dan kualitas data yang perlu diperiksa, lalu jawab pertanyaan [pertanyaan analisis] hanya dari angka yang tersedia. Sarankan grafik yang sesuai dan jelaskan alasannya. Jangan menebak nilai yang hilang atau menyimpulkan sebab-akibat; tampilkan langkah hitung agar bisa saya verifikasi."
         },
         {
           "topic": "Persiapan karier",
           "title": "Meninjau CV atau cover letter dengan Gem (Career Guide)",
-          "demo": "Minta masukan untuk memperjelas CV atau cover letter menggunakan pengalaman yang benar-benar dimiliki; hapus data pribadi sebelum demonstrasi."
+          "demo": "Minta masukan untuk memperjelas CV atau cover letter menggunakan pengalaman yang benar-benar dimiliki; hapus data pribadi sebelum demonstrasi.",
+          "prompt_demo": "Tinjau CV anonim saya untuk posisi [posisi]. Beri saran agar poin pengalaman lebih jelas dan relevan, tetapi jangan menambahkan keterampilan, pencapaian, atau angka yang tidak ada di CV. Tandai informasi yang masih perlu saya lengkapi dan berikan contoh revisi yang tetap sesuai fakta."
         },
         {
           "topic": "Persiapan karier",
           "title": "Simulasi wawancara kerja dengan Gemini Live",
-          "demo": "Peragakan simulasi wawancara suara dengan Gemini sebagai pewawancara; jelaskan bahwa jawaban latihan harus tetap mencerminkan pengalaman sendiri."
+          "demo": "Peragakan simulasi wawancara suara dengan Gemini sebagai pewawancara; jelaskan bahwa jawaban latihan harus tetap mencerminkan pengalaman sendiri.",
+          "prompt_demo": "Berperanlah sebagai pewawancara untuk posisi [posisi]. Lakukan simulasi wawancara dalam bahasa Indonesia dengan satu pertanyaan setiap giliran dan tunggu jawaban saya. Setelah setiap jawaban, beri masukan singkat tentang kejelasan dan relevansinya, lalu ajukan pertanyaan berikutnya. Jangan mengarang pengalaman untuk saya."
         }
       ],
+      "draft_template": {
+        "series_label": "Belajar Mandiri bareng Gemini",
+        "recurring_elements": [
+          "Awali dengan keluh kesah mahasiswa yang relevan dengan hack terpilih.",
+          "Kenalkan hack sebagai satu eksperimen belajar atau persiapan, bukan janji hasil instan.",
+          "Tampilkan screen-record saat prompt dimasukkan dan jelaskan langkah yang sedang dilakukan.",
+          "Bedakan hasil ilustratif dari hasil yang benar-benar didapat saat demo; verifikasi fitur dan hasil sebelum produksi.",
+          "Tutup dengan satu takeaway yang bisa dicoba audiens dan CTA kampanye yang sama."
+        ],
+        "format_templates": {
+          "short_video": "Hook masalah mahasiswa -> kenalkan hack -> screen-record prompt dan demo -> satu insight/verifikasi -> CTA wajib.",
+          "carousel": "Cover hook -> masalah -> langkah penggunaan -> prompt siap salin -> contoh hasil/hal yang perlu dicek -> takeaway dan CTA wajib.",
+          "story": "Frame 1 hook/poll -> frame 2 langkah dan prompt -> frame 3 demo/pertanyaan interaktif -> frame 4 takeaway dan CTA wajib."
+        }
+      },
       "mandatory_cta": {
         "spoken_follow": "Jangan lupa follow Instagram @geminiacademybyrefo untuk info dan hacks AI seru lainnya!",
         "spoken_link": "Untuk mencoba lebih lanjut hacks-hacks ini, kalian bisa buka link ini: https://bit.ly/belajarmandirigemini, dan bisa taruh QR-nya: https://drive.google.com/file/d/1tWnHjuzW36vvRbQH0i-tyKi_Gq9yE_9k/view?usp=sharing.",

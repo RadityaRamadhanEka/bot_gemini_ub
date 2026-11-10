@@ -344,7 +344,7 @@ def generate_belajar_mandiri_plan(hack_count, attendance_url=""):
 
 def save_belajar_mandiri_plan(hack_count, content):
     hack_count = validate_campaign_hack_count(hack_count)
-    output_dir = BASE_DIR / "Hasil Ide Konten"
+    output_dir = BASE_DIR / "Hasil Ide Konten" / "Belajar Mandiri"
     output_path = output_dir / f"belajar_mandiri_{hack_count}_hacks.md"
     try:
         output_dir.mkdir(parents=True, exist_ok=True)

@@ -413,6 +413,7 @@ def generate_belajar_mandiri_draft(
             "Template format Seri Belajar Mandiri tidak valid di "
             f"{KNOWLEDGE_BASE_PATH}."
         )
+    video_visual_direction = template.get("video_visual_direction")
     format_template_key = (
         "short_video"
         if format_konten in ("Reels", "TikTok", "YouTube Short")
@@ -426,6 +427,25 @@ def generate_belajar_mandiri_draft(
     )
     format_template = format_templates.get(format_template_key)
     recurring_elements = template.get("recurring_elements")
+    if format_template_key == "short_video" and (
+        not isinstance(video_visual_direction, dict)
+        or not isinstance(video_visual_direction.get("style"), str)
+        or not video_visual_direction["style"].strip()
+        or not isinstance(video_visual_direction.get("story_arc"), str)
+        or not video_visual_direction["story_arc"].strip()
+        or any(
+            not isinstance(video_visual_direction.get(field), list)
+            or any(
+                not isinstance(item, str) or not item.strip()
+                for item in video_visual_direction[field]
+            )
+            for field in ("scene_requirements", "production_guardrails")
+        )
+    ):
+        raise RuntimeError(
+            "Arahan animasi 3D Seri Belajar Mandiri tidak lengkap di "
+            f"{KNOWLEDGE_BASE_PATH}."
+        )
     if (
         not isinstance(template.get("series_label"), str)
         or not template["series_label"].strip()
@@ -480,6 +500,29 @@ def generate_belajar_mandiri_draft(
     - Jangan mengklaim hasil ilustrasi sebagai hasil live. Verifikasi akses,
       nama, dan ketersediaan fitur Gemini sebelum produksi; jangan menjanjikan
       fitur ekspor atau kemampuan yang belum terlihat saat demo.
+    """
+    if format_template_key == "short_video":
+        campaign_instructions += f"""
+
+    ARAHAN KHUSUS VISUAL VIDEO SERI (WAJIB):
+    - Gaya visual: {video_visual_direction['style']}
+    - Alur cerita: {video_visual_direction['story_arc']}
+    - Persyaratan storyboard:
+      {json.dumps(video_visual_direction['scene_requirements'], ensure_ascii=False)}
+    - Batas produksi dan akurasi:
+      {json.dumps(video_visual_direction['production_guardrails'], ensure_ascii=False)}
+    - Jadikan adegan animasi 3D sebagai visual utama; jangan membuat konsep yang
+      hanya berupa teks bergerak, kinetic typography, atau kumpulan screenshot.
+    - Tambahkan tabel storyboard terperinci dengan kolom: durasi/adegan, lokasi
+      dan latar 3D, karakter/aksi, kamera, dialog atau voice-over, teks layar,
+      penempatan screen-record Gemini, dan prompt visual/video 3D adegan.
+    - Sertakan deskripsi acuan karakter dan latar agar tampil konsisten sepanjang
+      episode. Prompt visual harus menyebut aksi, ekspresi, komposisi, dan gerak
+      kamera; jangan mengandalkan teks yang dirender di dalam gambar.
+    - Pisahkan screen-record Gemini yang nyata dari animasi ilustratif. Tandai
+      adegan ilustratif, jangan mereka UI atau hasil Gemini.
+    - CTA lisan wajib tetap utuh dan terdengar jelas; sesuaikan durasi total
+      video agar CTA tidak dipercepat berlebihan atau terpotong.
     """
     judul = f"{template['series_label']} - {hack['title']}"
     hasil = generate_content_draft(

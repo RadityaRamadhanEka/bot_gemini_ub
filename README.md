@@ -47,6 +47,9 @@ Universitas Brawijaya (UB). Bot tidak memerlukan API key.
   atau `Festival`).
 - Menggunakan struktur seri yang konsisten sesuai format, prompt demo khusus
   untuk hack terpilih, panduan screen-record, serta catatan verifikasi dan etika.
+- Untuk Reels/TikTok/YouTube Short, memakai arahan storyboard animasi 3D
+  bergaya dongeng dengan karakter, latar, aksi kamera, dan prompt per adegan;
+  bukan teks bergerak sebagai visual utama.
 - Menyisipkan CTA lisan dan pembuka caption kampanye secara otomatis. Jika
   tautan daftar hadir belum diberikan, draf mempertahankan placeholder.
 - Menyimpan draf ke `Hasil Draft Konten\Belajar Mandiri` tanpa menimpa draf lama.
@@ -163,6 +166,11 @@ berlaku untuk rencana itu.
 4. Draf berisi prompt demo khusus hack, alur seri, screen-record, CTA lisan dan
    caption wajib. File disimpan di
    `Hasil Draft Konten\Belajar Mandiri`.
+5. Untuk Reels/TikTok/YouTube Short, storyboard mengarahkan animasi 3D dengan
+   karakter dan latar bercerita, termasuk prompt visual untuk setiap adegan.
+   Gemini diperlakukan sebagai pembuat naskah/storyboard kecuali kemampuan
+   generasi video 3D benar-benar tersedia dan sudah diuji; produksi animasi
+   mungkin memerlukan tool lain.
 
 ### Membuat draf konten
 

@@ -125,6 +125,23 @@
       ],
       "draft_template": {
         "series_label": "Belajar Mandiri bareng Gemini",
+        "video_visual_direction": {
+          "style": "Animasi 3D sinematik bergaya dongeng modern yang cocok untuk video vertikal TikTok/Reels/Shorts. Cerita memiliki tokoh mahasiswa atau karakter metaforis, latar 3D yang spesifik dan relevan, aksi nyata, ekspresi, serta perubahan visual antaradegan. Bukan motion typography atau teks bergerak sebagai visual utama.",
+          "story_arc": "Tokoh menghadapi masalah belajar/karier -> masuk ke situasi atau dunia cerita yang menggambarkan masalah -> mencoba hack Gemini dengan screen-record yang benar-benar terlihat -> memahami atau memeriksa hasil -> kembali dengan satu takeaway dan CTA.",
+          "scene_requirements": [
+            "Susun storyboard per adegan berisi durasi, lokasi/latar 3D, karakter dan aksi, framing/pergerakan kamera, dialog/narasi, teks layar seperlunya, serta transisi.",
+            "Jaga desain karakter, pakaian, properti, palet warna, dan gaya visual tetap konsisten di semua adegan; tulis deskripsi karakter acuan sekali dan gunakan kembali.",
+            "Buat satu prompt visual/video 3D per adegan yang siap disesuaikan untuk tool produksi pilihan kreator. Sertakan aksi yang terlihat dan gerak kamera; hindari mengandalkan teks dalam gambar.",
+            "Integrasikan screen-record Gemini sebagai layar perangkat yang dipegang karakter, portal/layar di dalam adegan, atau cutaway singkat yang jelas terbaca; jangan menggantinya dengan UI atau hasil Gemini rekaan.",
+            "Tutup cerita dengan CTA kampanye yang wajib. Sisihkan adegan akhir yang sederhana agar CTA lisan dapat terdengar jelas dan tidak terpotong."
+          ],
+          "production_guardrails": [
+            "Anggap Gemini sebagai alat bantu membuat naskah, storyboard, atau prompt kecuali fitur pembuat video 3D memang tersedia dan sudah diuji pada akun produksi.",
+            "Jangan mengklaim prompt ini otomatis menghasilkan video 3D di Gemini. Catat bila animasi perlu dibuat dengan software atau layanan produksi lain.",
+            "Jika anggaran atau tool 3D terbatas, sederhanakan jumlah karakter dan latar, tetapi pertahankan karakter 3D, aksi bercerita, dan staging; jangan beralih menjadi teks bergerak sebagai visual utama.",
+            "Pastikan voice-over, screen-record, contoh hasil, dan nama fitur sesuai demo yang benar-benar dilakukan."
+          ]
+        },
         "recurring_elements": [
           "Awali dengan keluh kesah mahasiswa yang relevan dengan hack terpilih.",
           "Kenalkan hack sebagai satu eksperimen belajar atau persiapan, bukan janji hasil instan.",
@@ -133,7 +150,7 @@
           "Tutup dengan satu takeaway yang bisa dicoba audiens dan CTA kampanye yang sama."
         ],
         "format_templates": {
-          "short_video": "Hook masalah mahasiswa -> kenalkan hack -> screen-record prompt dan demo -> satu insight/verifikasi -> CTA wajib.",
+          "short_video": "Cerita animasi 3D: tokoh mengalami masalah mahasiswa -> latar/aksi dongeng menggambarkan tantangan -> screen-record Gemini masuk alami ke cerita -> tokoh memahami atau memverifikasi hasil -> adegan penutup CTA wajib. Animasi karakter dan latar adalah visual utama, bukan teks motion.",
           "carousel": "Cover hook -> masalah -> langkah penggunaan -> prompt siap salin -> contoh hasil/hal yang perlu dicek -> takeaway dan CTA wajib.",
           "poster": "Satu desain ringkas: headline masalah -> manfaat hack yang realistis -> langkah singkat/prompt -> CTA pada desain dan caption.",
           "story": "Frame 1 hook/poll -> frame 2 langkah dan prompt -> frame 3 demo/pertanyaan interaktif -> frame 4 takeaway dan CTA wajib.",

@@ -64,6 +64,78 @@
       ]
     }
   },
+  "campaigns": {
+    "belajar_mandiri": {
+      "name": "Belajar Mandiri",
+      "objective": "Mengedukasi mahasiswa dan fresh graduate tentang cara menggunakan Gemini sebagai asisten untuk memahami materi sulit, menyusun riset, membuat presentasi, dan mempersiapkan diri memasuki dunia kerja.",
+      "audiences": [
+        "Mahasiswa baru",
+        "Mahasiswa tingkat akhir",
+        "Fresh graduate yang sedang mencari kerja"
+      ],
+      "hacks": [
+        {
+          "topic": "Menaklukkan materi sulit",
+          "title": "Belajar konsep sulit dengan Guided Learning atau Premade Gem (Learning Coach)",
+          "demo": "Minta Gemini menjelaskan satu konsep sulit dengan analogi kehidupan sehari-hari, lalu menguji pemahaman secara bertahap."
+        },
+        {
+          "topic": "Persiapan ujian",
+          "title": "Membuat latihan soal atau flashcard dari catatan kuliah di Gemini Canvas",
+          "demo": "Gunakan catatan milik sendiri untuk membuat 10 pertanyaan pilihan ganda atau flashcard; jadikan sebagai latihan, bukan kunci jawaban."
+        },
+        {
+          "topic": "Presentasi",
+          "title": "Mengubah dokumen panjang menjadi draf presentasi 8 slide di Gemini Canvas",
+          "demo": "Minta Gemini merangkum dokumen yang boleh dibagikan menjadi draf 8 slide dengan poin ringkas, lalu tunjukkan opsi ekspor ke Google Slides."
+        },
+        {
+          "topic": "Presentasi",
+          "title": "Membuat visual presentasi menggunakan Nano Banana",
+          "demo": "Tunjukkan proses menyusun prompt dan membuat visual pendukung presentasi dengan fitur pembuat gambar AI Nano Banana."
+        },
+        {
+          "topic": "Riset skripsi",
+          "title": "Mencari arah riset dan membandingkan referensi dengan Deep Research atau NotebookLM",
+          "demo": "Tunjukkan cara mencari ide atau menyusun perbandingan teori berdasarkan sumber yang dapat diperiksa; jangan mengarang jurnal, kutipan, atau referensi."
+        },
+        {
+          "topic": "Olah data",
+          "title": "Menjelajahi spreadsheet dan membuat visualisasi data dengan Gemini",
+          "demo": "Gunakan data sintetis atau yang telah dianonimkan untuk mencari informasi dalam tabel dan menyarankan grafik; verifikasi hasil terhadap data asli."
+        },
+        {
+          "topic": "Persiapan karier",
+          "title": "Meninjau CV atau cover letter dengan Gem (Career Guide)",
+          "demo": "Minta masukan untuk memperjelas CV atau cover letter menggunakan pengalaman yang benar-benar dimiliki; hapus data pribadi sebelum demonstrasi."
+        },
+        {
+          "topic": "Persiapan karier",
+          "title": "Simulasi wawancara kerja dengan Gemini Live",
+          "demo": "Peragakan simulasi wawancara suara dengan Gemini sebagai pewawancara; jelaskan bahwa jawaban latihan harus tetap mencerminkan pengalaman sendiri."
+        }
+      ],
+      "mandatory_cta": {
+        "spoken_follow": "Jangan lupa follow Instagram @geminiacademybyrefo untuk info dan hacks AI seru lainnya!",
+        "spoken_link": "Untuk mencoba lebih lanjut hacks-hacks ini, kalian bisa buka link ini: https://bit.ly/belajarmandirigemini, dan bisa taruh QR-nya: https://drive.google.com/file/d/1tWnHjuzW36vvRbQH0i-tyKi_Gq9yE_9k/view?usp=sharing.",
+        "spoken_attendance_template": "Dan pastikan kalian mengisi daftar hadir Festival di: {attendance_url}",
+        "caption_follow": "Jangan lupa follow Instagram @geminiacademybyrefo untuk info dan hacks AI seru lainnya!",
+        "caption_link": "Untuk mencoba lebih lanjut hacks-hacks ini, buka https://bit.ly/belajarmandirigemini dan gunakan QR: https://drive.google.com/file/d/1tWnHjuzW36vvRbQH0i-tyKi_Gq9yE_9k/view?usp=sharing.",
+        "caption_attendance_template": "Isi daftar hadir Festival di: {attendance_url}"
+      },
+      "dos": [
+        "Gunakan bahasa kasual dan relatable dengan keseharian mahasiswa.",
+        "Tampilkan screen-record saat mengetik prompt dan menggunakan fitur yang didemokan.",
+        "Sematkan https://bit.ly/belajarmandirigemini di bio Instagram atau TikTok selama periode kampanye."
+      ],
+      "donts": [
+        "Jangan menggambarkan Gemini sebagai alat untuk menyontek atau melakukan plagiarisme.",
+        "Fokus pada belajar mandiri, riset, verifikasi, dan persiapan.",
+        "Jangan mengarang fitur, sumber, hasil, atau ketersediaan produk; verifikasi demo sebelum publikasi."
+      ],
+      "source_note": "Daftar hacks disusun dari contoh yang tersedia dalam brief kampanye pengguna. Materi folder Slides belum dapat diverifikasi."
+    }
+  },
   "weekly_focuses": [
     {
       "week": 1,

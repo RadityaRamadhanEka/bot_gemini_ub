@@ -30,7 +30,18 @@ Universitas Brawijaya (UB). Bot tidak memerlukan API key.
   `Hasil Ide Konten\hasil_minggu_N.md`, misalnya `hasil_minggu_1.md`.
 - Jika minggu yang sama dibuat kembali, file sebelumnya akan diperbarui.
 
-### 2. Draf konten
+### 2. Kampanye Belajar Mandiri
+
+- Membuat rencana kampanye satu minggu dengan memilih 4-6 hacks Gemini dari
+  `campaigns.belajar_mandiri` di `knowledge_base.json`.
+- Menyertakan demo/prompt Gemini, CTA lisan wajib, pembuka caption wajib, dan
+  checklist verifikasi serta etika untuk tiap ide.
+- Meminta tautan daftar hadir Festival saat dijalankan. Jika belum tersedia,
+  hasil memakai placeholder yang harus dilengkapi sebelum publikasi.
+- Menampilkan hasil di terminal dan menyimpannya ke
+  `Hasil Ide Konten\belajar_mandiri_N_hacks.md`.
+
+### 3. Draf konten
 
 Jalur draf menerima input manual: judul dan penjelasan ide/isi konten wajib,
 format, dan jenis konten (`Rutin` atau `Festival`). Pilar, pesan utama, prompt
@@ -97,6 +108,7 @@ Bot menampilkan menu berikut:
 1. Generate 7 Ide Konten Mingguan (Editorial Plan)
 2. Generate Draf dari Ide Manual
 3. Generate Draft dari Seri Kulik Data With Gemini
+4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)
 ```
 
 ### Membuat ide mingguan
@@ -116,6 +128,18 @@ kampus, literasi digital, kolaborasi, eksplorasi kreatif, persiapan karier,
 hingga refleksi. Atur peta tersebut pada `weekly_focuses` di
 `knowledge_base.json`; konteks yang dimasukkan saat menjalankan bot hanya
 berlaku untuk rencana itu.
+
+### Membuat rencana kampanye Belajar Mandiri
+
+1. Masukkan `4`, lalu pilih 4, 5, atau 6 hacks untuk didemonstrasikan.
+2. Masukkan tautan daftar hadir Festival jika tersedia. Jika dikosongkan,
+   generator mempertahankan placeholder; lengkapi sebelum caption atau video
+   dipublikasikan.
+3. Hasil berisi rencana ide, demo/prompt, CTA lisan dan pembuka caption yang
+   wajib disalin ke setiap konten, lalu tersimpan di
+   `Hasil Ide Konten\belajar_mandiri_N_hacks.md`.
+4. Sumber hack dan CTA dapat diperbarui pada `campaigns.belajar_mandiri` di
+   `knowledge_base.json`.
 
 ### Membuat draf konten
 

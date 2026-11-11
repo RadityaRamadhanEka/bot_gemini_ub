@@ -1,4 +1,4 @@
-# Episode 1 — Bikin Gem Tutor Pribadi di Gemini
+# Episode 1: Bikin Gem Tutor Pribadi di Gemini
 
 **Pilar:** Study Hack  
 **Format:** Reel vertikal 9:16  
@@ -10,7 +10,7 @@
 
 **Angle:** Daripada mengulang instruksi belajar setiap kali membuka chat, atur satu Gem sebagai tutor dengan gaya belajar yang kamu mau.
 
-**Pesan utama:** Gem adalah versi Gemini yang dikustomisasi untuk tujuan tertentu. Dengan memberi nama dan instruksi khusus, mahasiswa bisa menyiapkan pendamping belajar yang konsisten untuk membantu memahami materi—bukan menggantikan usaha atau verifikasi sendiri.
+**Pesan utama:** Gem adalah versi Gemini yang dikustomisasi untuk tujuan tertentu. Dengan memberi nama dan instruksi khusus, mahasiswa bisa menyiapkan pendamping belajar yang konsisten untuk membantu memahami materi, bukan menggantikan usaha atau verifikasi sendiri.
 
 **Batas klaim:** Fokus episode ini adalah fitur Gems. Jangan menyebut Gems sebagai Guided Learning atau menyamakan keduanya. Nama menu dan ketersediaan fitur dapat berbeda; rekam antarmuka yang benar-benar tersedia di akun produksi.
 
@@ -29,9 +29,9 @@
 | 13–20 dtk | Screen-record membuka pembuatan Gem baru. | “Yuk bikin dari awal. Pertama, kasih nama dan deskripsi supaya fungsi Gem-mu langsung jelas.” | Tampilkan proses di antarmuka asli; nama dan deskripsi ada di bawah. |
 | 20–29 dtk | Isi kolom nama “Teman Belajar” dan deskripsinya. | “Namanya Teman Belajar. Deskripsinya: pendamping belajar yang membantumu memahami materi secara bertahap.” | Pastikan kedua kolom terbaca di screen-record. |
 | 29–43 dtk | Isi kolom Instructions dengan arahan tutor. | “Di instruksi, tentukan gaya jawabnya: jelaskan sederhana, pakai analogi, tanya dulu, lalu beri umpan balik.” | Tampilkan instruksi utuh atau sorot bagian penting saat proses pengisian; jangan hanya menampilkan chat prompt. |
-| 43–52 dtk | Buka bagian Knowledge dan unggah file catatan kuliah yang benar-benar dipakai sebagai sumber demo. | “Nah, di Knowledge, tambahkan materi kuliah yang jadi pegangan Gem—misalnya PDF catatan yang boleh kamu bagikan.” | Tampilkan pemilihan dan status file berhasil ditambahkan. Gunakan materi nonrahasia; jangan mengarang file atau mengklaim file terunggah jika belum. |
+| 43–52 dtk | Buka bagian Knowledge dan unggah file catatan kuliah yang benar-benar dipakai sebagai sumber demo. | “Nah, di Knowledge, tambahkan materi kuliah yang jadi pegangan Gem, misalnya PDF catatan yang boleh kamu bagikan.” | Tampilkan pemilihan dan status file berhasil ditambahkan. Gunakan materi nonrahasia; jangan mengarang file atau mengklaim file terunggah jika belum. |
 | 52–59 dtk | Simpan Gem, buka Gem yang baru dibuat, lalu mulai chat tentang topik dalam materi. | “Simpan, lalu coba tanyakan satu konsep dari materi yang kamu unggah.” | Tampilkan alur nyata; sesuaikan nama tombol dengan UI akun. |
-| 59–68 dtk | Perlihatkan potongan respons asli Gem. Visual penjelasan Remotion mengikuti analogi/konsep yang benar-benar muncul di respons; lalu tampilkan mahasiswa menjawab pertanyaan Gem dan mengecek materi sumber. | “Perhatikan penjelasan Gem ini. Visualnya membantu kita membayangkan konsep yang dijelaskan—dan jawabannya tetap kita cek ke materi.” | Gunakan cuplikan respons nyata yang sudah diverifikasi. Sinkronkan teks, narasi, dan animasi Remotion dengan cuplikan itu. |
+| 59–68 dtk | Perlihatkan potongan respons asli Gem. Visual penjelasan Remotion mengikuti analogi/konsep yang benar-benar muncul di respons; lalu tampilkan mahasiswa menjawab pertanyaan Gem dan mengecek materi sumber. | “Perhatikan penjelasan Gem ini. Visualnya membantu kita membayangkan konsep yang dijelaskan, dan jawabannya tetap kita cek ke materi.” | Gunakan cuplikan respons nyata yang sudah diverifikasi. Sinkronkan teks, narasi, dan animasi Remotion dengan cuplikan itu. |
 | 68–100 dtk | Shot stabil dengan ruang untuk QR asli dan teks. Sisipkan CTA lisan lengkap; jangan mempercepat atau memotongnya. | Bacakan CTA wajib di bawah secara utuh. | QR dan tautan hanya ditambahkan saat editing dan harus diuji sebelum publikasi. |
 
 ## Demo Gem
@@ -98,7 +98,7 @@ Jika respons terlalu panjang, pilih satu bagian pendek tanpa mengubah kalimatnya
 
 “Setiap belajar kamu harus ngasih instruksi yang sama ke Gemini? Kenalan sama Gems: kamu bisa mengatur Gemini jadi asisten khusus untuk kebutuhan tertentu. Yuk bikin Gem Teman Belajar. Isi namanya, tulis deskripsi singkat, lalu atur instruksinya supaya dia menjelaskan dengan sederhana dan menguji pemahamanmu. Di bagian Knowledge, tambahkan catatan kuliah yang jadi bahan rujukan. Simpan dan coba tanyakan konsep dari materi itu. Perhatikan penjelasan Gem ini, lalu lihat visualisasinya. Gem membantu kamu belajar bertahap, tapi tetap cek jawabannya ke sumber asli.”
 
-**CTA lisan wajib — bacakan persis dan utuh:**
+**CTA lisan wajib: bacakan persis dan utuh:**
 
 ```text
 Jangan lupa follow Instagram @geminiacademybyrefo untuk info dan hacks AI seru lainnya!
@@ -109,11 +109,13 @@ Dan pastikan kalian mengisi daftar hadir Festival di: bit.ly/belajarmandirigemin
 ## Caption
 
 ```text
-Jangan lupa follow Instagram @geminiacademybyrefo untuk info dan hacks AI seru lainnya!
-Untuk mencoba lebih lanjut hacks-hacks ini, buka https://bit.ly/belajarmandirigemini dan gunakan QR: https://drive.google.com/file/d/1tWnHjuzW36vvRbQH0i-tyKi_Gq9yE_9k/view?usp=sharing.
-Isi daftar hadir Festival di: bit.ly/belajarmandirigemini
+Prompt belajar yang sama diketik berulang-ulang? 😵‍💫 Bikin Gem Teman Belajar sekali, lalu pakai lagi setiap kali kamu belajar! ✨
 
-Pernah mengulang instruksi yang sama setiap kali belajar bareng Gemini? Dengan Gems, kamu bisa mengatur asisten khusus sesuai kebutuhan—misalnya Gem Teman Belajar yang menjelaskan bertahap dan menguji pemahamanmu. Atur instruksinya, coba di topik kuliahmu, lalu sesuaikan dengan gaya belajarmu. Tetap cek fakta penting ke catatan atau sumber tepercaya.
+Atur Gems agar Gemini menjelaskan materi secara bertahap dan menguji pemahamanmu 📚💡 Coba di topik kuliahmu, lalu cek jawabannya ke catatan atau sumber tepercaya, ya!
+
+Mau coba hacks AI lainnya? Follow Instagram @geminiacademybyrefo 🚀
+Mulai di https://bit.ly/belajarmandirigemini. Scan QR: https://drive.google.com/file/d/1tWnHjuzW36vvRbQH0i-tyKi_Gq9yE_9k/view?usp=sharing 🔗
+Jangan lupa isi daftar hadir Festival di: bit.ly/belajarmandirigemini ✅
 
 @REFO Indonesia
 #GeminiAcademy #GeminiAcademyUB

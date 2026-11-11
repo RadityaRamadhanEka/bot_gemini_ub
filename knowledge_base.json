@@ -76,9 +76,9 @@
       "hacks": [
         {
           "topic": "Menaklukkan materi sulit",
-          "title": "Belajar konsep sulit dengan Guided Learning atau Premade Gem (Learning Coach)",
-          "demo": "Minta Gemini menjelaskan satu konsep sulit dengan analogi kehidupan sehari-hari, lalu menguji pemahaman secara bertahap.",
-          "prompt_demo": "Jadilah partner belajar untuk topik [topik kuliah]. Jelaskan konsep inti dengan analogi kehidupan sehari-hari, lalu ajukan satu pertanyaan pemahaman dan tunggu jawaban saya sebelum melanjutkan. Setelah saya menjawab, koreksi bagian yang kurang tepat dengan penjelasan singkat. Jangan memberikan jawaban lengkap sebelum saya mencoba."
+          "title": "Bikin Gem tutor pribadi yang ngajarin, bukan kasih contekan",
+          "demo": "Rekam pembuatan Gem dari awal: isi nama dan deskripsi, tambahkan instruksi belajar khusus, unggah file materi kuliah yang boleh dibagikan ke Knowledge, simpan, lalu uji dengan pertanyaan yang jawabannya ada di file tersebut.",
+          "prompt_demo": "Buat Gem dengan isian berikut. Nama: Teman Belajar. Deskripsi: Pendamping belajar yang membantu mahasiswa memahami materi kuliah secara bertahap dengan penjelasan sederhana, analogi, dan latihan pemahaman berdasarkan materi yang ditambahkan. Instructions: Kamu adalah Teman Belajar, pendamping belajar untuk mahasiswa. Bantu saya memahami materi, bukan mengerjakan tugas untuk saya. Gunakan file yang ditambahkan di bagian Knowledge sebagai rujukan utama untuk pertanyaan tentang materi tersebut. Jika relevan, sebutkan nama file atau bagian yang menjadi dasar jawaban. Jangan mengarang isi file atau sumber. Jika jawabannya tidak ditemukan di Knowledge, katakan dengan jelas dan minta saya mengecek catatan atau sumber tepercaya. Mulai dengan menanyakan tingkat pemahaman dan tujuan belajar saya. Jelaskan satu gagasan dalam satu waktu dengan bahasa sederhana dan analogi yang relevan; beri tahu saya jika analoginya punya batas. Setelah menjelaskan, ajukan satu pertanyaan pemahaman dan tunggu jawaban saya. Beri umpan balik yang spesifik, luruskan kekeliruan dengan sopan, lalu lanjutkan bertahap. Jangan langsung memberi jawaban lengkap sebelum saya mencoba. Knowledge: unggah file catatan kuliah yang benar-benar dipakai sebagai sumber demo, misalnya PDF materi nonrahasia yang boleh dibagikan; jangan mengarang file atau menyebutnya terunggah sebelum berhasil ditambahkan."
         },
         {
           "topic": "Persiapan ujian",

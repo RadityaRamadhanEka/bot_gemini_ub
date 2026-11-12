@@ -88,7 +88,7 @@
 >
 > Coba giliran jurusan lu! Tulis jurusan lu di kolom komentar, kita bedah bareng lore RPG-nya bareng Gemini! 👇
 >
-> In partnership with @REFO Indonesia
+> In partnership with @geminiacademybyrefo @REFO Indonesia
 >
 > #GeminiAcademy #GeminiAcademyUB
 

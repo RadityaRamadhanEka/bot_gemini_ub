@@ -96,7 +96,7 @@ Geser slide sampai akhir buat lihat contoh prompt dan breakdown simulasinya ya! 
 
 Berapa biasanya alokasi bujet makan mingguan versi kamu di Malang? Share tips hematmu di kolom komentar! 👇
 
-Tag: @REFO Indonesia
+Tag: @geminiacademybyrefo @REFO Indonesia
 Hashtag: #GeminiAcademy #GeminiAcademyUB
 ```
 

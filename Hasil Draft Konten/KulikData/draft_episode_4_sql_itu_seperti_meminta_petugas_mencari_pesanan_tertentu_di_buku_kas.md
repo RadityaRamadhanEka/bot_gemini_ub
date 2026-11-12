@@ -52,7 +52,7 @@ Konteks: Data sintetis/fiktif, tidak menggunakan data pribadi.
 ```text
 Mau belajar SQL dasar tanpa ribet? Coba ikuti tutorial ini dan latihan sederhana dari Gemini! 📚  
 Coba buat query sederhana untuk menu favoritmu di komentar!  
-#GeminiAcademy #GeminiAcademyUB @REFO Indonesia
+#GeminiAcademy #GeminiAcademyUB @geminiacademybyrefo @REFO Indonesia
 ```
 
 **7. Checklist produksi**  

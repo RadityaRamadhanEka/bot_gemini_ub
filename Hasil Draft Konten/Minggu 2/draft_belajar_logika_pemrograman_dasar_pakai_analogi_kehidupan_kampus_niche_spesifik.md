@@ -94,7 +94,7 @@ Eksperimen bareng Gemini kali ini ngebuktiin kalau materi teknis dari jurusan ma
 
 Kira-kira materi kuliah apa lagi yang paling bikin pusing di semester ini? Coba tulis di kolom komentar, nanti kita bedah bareng pakai Gemini! 👇
 
-Tag: @REFO Indonesia
+Tag: @geminiacademybyrefo @REFO Indonesia
 Hashtag: #GeminiAcademy #GeminiAcademyUB
 ```
 

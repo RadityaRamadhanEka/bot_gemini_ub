@@ -52,7 +52,7 @@ Dalam seri Kulik Data With Gemini, kita kembali ke kantin kampus untuk memahami 
 👉 Coba eksplorasi lebih lanjut di Reel berikutnya!  
 Jika kamu ingin belajar lebih lanjut tentang data, ikuti seri Kulik Data With Gemini!  
 
-#GeminiAcademy #GeminiAcademyUB @REFO Indonesia
+#GeminiAcademy #GeminiAcademyUB @geminiacademybyrefo @REFO Indonesia
 ```  
 
 **7. Checklist produksi**  

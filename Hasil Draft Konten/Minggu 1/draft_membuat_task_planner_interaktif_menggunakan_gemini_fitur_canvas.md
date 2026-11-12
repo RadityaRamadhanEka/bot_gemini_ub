@@ -133,6 +133,7 @@ Gemini hadir bukan sebagai jalan pintas instan, tapi sebagai ruang eksplorasi pr
 Kira-kira mata kuliah apa nih yang tugasnya paling numpuk minggu ini? Tulis di kolom komentar, ya! 👇
 
 Mention teman sekelompokmu yang butuh planner ini!
+@geminiacademybyrefo
 @REFO Indonesia
 
 #GeminiAcademy #GeminiAcademyUB

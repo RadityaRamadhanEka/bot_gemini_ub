@@ -76,7 +76,7 @@ Berikut adalah draf produksi konten Instagram Story sebagai bahan kerja persiapa
 >  
 > Ingat, selalu periksa kembali drafnya dan sesuaikan dengan kultur komunikasi dosen masing-masing, ya! 🎓✨  
 >  
-> @REFO Indonesia  
+> @geminiacademybyrefo @REFO Indonesia
 > #GeminiAcademy #GeminiAcademyUB
 
 ---

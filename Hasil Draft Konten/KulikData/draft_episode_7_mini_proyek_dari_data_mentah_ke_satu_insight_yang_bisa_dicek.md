@@ -70,12 +70,12 @@ Data sintetis:
 #### **6. Caption siap unggah, CTA, hashtag, dan tag wajib**  
 **Caption**:  
 *"Dari data mentah ke satu insight yang bisa dicek—tanpa klaim berlebihan, hanya langkah-langkah yang bisa diuji. Coba analisis data kamu sendiri di Gemini dan bagikan hasilnya di komentar! 📊✨  
-#GeminiAcademy #GeminiAcademyUB @REFO Indonesia"*  
+#GeminiAcademy #GeminiAcademyUB @geminiacademybyrefo @REFO Indonesia"*
 
 **CTA**: *"Coba analisis data kamu sendiri di Gemini—lalu bagikan hasilnya di komentar!"*  
 
 **Hashtag wajib**: `#GeminiAcademy #GeminiAcademyUB` (tidak ada #GeminiAcademyFestival karena konten rutin).  
-**Tag wajib**: `@REFO Indonesia`.
+**Tag wajib**: `@geminiacademybyrefo` dan `@REFO Indonesia`.
 
 ---
 

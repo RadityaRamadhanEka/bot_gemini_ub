@@ -61,7 +61,7 @@ Data yang berantakan? Gemini bantu cek kekacauannya—tanpa mengubah data asli, 
 Coba prompt ini di Gemini:  
 "Periksa tabel transaksi fiktif berikut untuk menemukan nilai kosong, kemungkinan duplikat, dan nama menu yang penulisannya tidak konsisten. Tampilkan temuan dan usulan perbaikannya dalam tabel. Jangan mengubah data diam-diam; tandai baris yang perlu keputusan manusia."  
 
-#GeminiAcademy #GeminiAcademyUB @REFO Indonesia  
+#GeminiAcademy #GeminiAcademyUB @geminiacademybyrefo @REFO Indonesia
 *(CTA)* Coba prompt ini untuk data kuliahmu! Kita bisa jadi lebih akurat bersama. 💡  
 ```  
 

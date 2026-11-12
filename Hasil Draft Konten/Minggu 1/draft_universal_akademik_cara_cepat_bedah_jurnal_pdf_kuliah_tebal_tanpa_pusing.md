@@ -112,6 +112,7 @@ Cek detail prompt siap pakai di slide 3 dan 4 ya! 👆
 
 Kira-kira materi kuliah apa yang paling sering bikin kamu pusing baca literatur tebal? Tulis di kolom komentar, yuk diskusi bareng! 💬
 
+@geminiacademybyrefo
 @REFO Indonesia
 
 #GeminiAcademy #GeminiAcademyUB

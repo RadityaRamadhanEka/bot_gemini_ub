@@ -105,7 +105,7 @@ Cobain sekarang di rapat evaluasi atau koordinasi panitia kamu berikutnya, yuk!
 
 Mention teman panitia kamu yang sering pusing ngerapihin notulensi! 👥
 
-cc: @REFO Indonesia
+cc: @geminiacademybyrefo @REFO Indonesia
 #GeminiAcademy #GeminiAcademyUB
 ```
 

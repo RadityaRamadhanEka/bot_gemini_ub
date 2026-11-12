@@ -455,7 +455,7 @@ Jangan sampai ketinggalan keseruannya!
 
 ✨ Segera daftar dan share link YouTube festival ini ke teman-temanmu!
 
-#GeminiAcademy #GoLimitless #GeminiForEducation #GeminiForHigherEducation #CampusFestival
+#GeminiAcademy #GoLimitless #GeminiForEducation #GeminiForHigherEducation #CampusFestival @geminiacademybyrefo
 
 
 ---

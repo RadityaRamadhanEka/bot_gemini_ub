@@ -41,7 +41,7 @@ Ucapan narasi (suara ringan, cepat): *"Apa pertanyaan pertama yang harus kita ja
 **6. Caption siap unggah, CTA, hashtag, dan tag wajib**  
 **Caption**:  
 *"Sebelum menghitung transaksi, kita harus tahu: apa pertanyaan yang ingin dijawab? 🌟 Dari data transaksi fiktif sederhana, Gemini bisa membantu merancang 5 pertanyaan bisnis yang bisa dijawab hanya dari kolom yang tersedia. Coba buat pertanyaan bisnis dari data transaksimu sendiri! ✨*  
-*#GeminiAcademy #GeminiAcademyUB*  
+*@geminiacademybyrefo #GeminiAcademy #GeminiAcademyUB*
 @REFO Indonesia*  
 
 **CTA**: *"Coba buat pertanyaan bisnis dari data transaksimu sendiri!"*  

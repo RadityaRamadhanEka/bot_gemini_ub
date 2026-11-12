@@ -115,7 +115,7 @@ Geser slide untuk lihat struktur prompt lengkapnya dan langsung cobain di Gemini
 
 Paling sering keteteran di bagian mana nih: ngerjain tugas atau review materi kelas? Tulis di kolom komentar, ya! 👇
 
-cc: @REFO Indonesia
+cc: @geminiacademybyrefo @REFO Indonesia
 #GeminiAcademy #GeminiAcademyUB
 ```
 

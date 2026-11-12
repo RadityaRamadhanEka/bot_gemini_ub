@@ -56,6 +56,7 @@ Dari tujuan analisis [menentukan menu yang paling laku] dan kolom yang tersedia 
 👉 [Klik link di bio] untuk tutorial lengkap!  
 
 #GeminiAcademy #GeminiAcademyUB  
+@geminiacademybyrefo
 @REFO Indonesia  
 ```  
 

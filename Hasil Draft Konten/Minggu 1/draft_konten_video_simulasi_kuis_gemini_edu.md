@@ -141,6 +141,7 @@ Dokumen ini dirancang sebagai panduan skrip sekaligus prompt arsitektur video un
 ## 4. Master Prompt Template (Asset untuk Teks Layar & Caption)
 
 Berikut teks prompt presisi yang ditampilkan dalam video dan dapat disematkan pada komponen Remotion:
+Tambahkan mention wajib @geminiacademybyrefo pada caption publikasi.
 
 ```text
 Bertindaklah sebagai Dosen Penguji senior untuk mata kuliah berdasarkan dokumen yang saya lampirkan. 

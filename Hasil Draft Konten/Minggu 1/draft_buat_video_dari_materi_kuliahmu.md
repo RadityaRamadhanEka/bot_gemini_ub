@@ -84,7 +84,7 @@ Catatan penting: Jadikan Gemini sebagai rekan diskusi dan visualisasi konsep kre
 
 Mata kuliah apa nih yang paling menantang buatmu semester ini di UB? Tulis di kolom komentar, yuk kita brainstorm bareng! 👇
 
-cc: @REFO Indonesia
+cc: @geminiacademybyrefo @REFO Indonesia
 
 #GeminiAcademy #GeminiAcademyUB
 

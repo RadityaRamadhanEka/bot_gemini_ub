@@ -118,7 +118,7 @@ Geser slide sampai akhir buat lihat prompt lengkap dan hasil simulasinya! 📲
 
 Fasilitas kampus UB mana lagi nih yang seru buat kita bedah solusinya bareng Gemini? Tulis ide kamu di kolom komentar ya! 👇
 
-cc: @REFO Indonesia
+cc: @geminiacademybyrefo @REFO Indonesia
 
 #GeminiAcademy #GeminiAcademyUB
 ```

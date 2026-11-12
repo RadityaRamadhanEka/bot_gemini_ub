@@ -50,7 +50,7 @@ Mulai dari pengingat jadwal, pengaturan tugas, sampai pengelolaan data kampus, s
 
 Kalau kamu tertarik, coba buat versimu sendiri di Gemini dan lihat cara kerjanya! Klik link di bio untuk tutorial lengkap.  
 
-#GeminiAcademy #GeminiAcademyUB #AIuntukMahasiswa #BelajarMandiri #MahasiswaUB #Productivity #DigitalSkills @REFO Indonesia  
+#GeminiAcademy #GeminiAcademyUB #AIuntukMahasiswa #BelajarMandiri #MahasiswaUB #Productivity #DigitalSkills @geminiacademybyrefo @REFO Indonesia
 ```  
 
 **7. Checklist Produksi**  

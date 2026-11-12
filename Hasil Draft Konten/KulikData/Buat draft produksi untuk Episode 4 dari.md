@@ -20,7 +20,7 @@ SUSUN DRAFT DENGAN BAGIAN BERIKUT
 3. Rencana adegan dalam tabel berisi waktu, framing/aksi, teks overlay persis, narasi persis, dan aksi layar/demo.
 4. Demo Gemini: prompt lengkap siap ditempel dan contoh hasil ilustratif yang sesuai dengan prompt.
 5. Naskah lisan lengkap yang durasinya realistis untuk Reel 30–45 detik.
-6. Caption siap unggah, CTA, hashtag #GeminiAcademy dan #GeminiAcademyUB, serta tag @REFO Indonesia.
+6. Caption siap unggah, CTA, hashtag #GeminiAcademy dan #GeminiAcademyUB, serta mention @geminiacademybyrefo dan tag @REFO Indonesia.
 7. Checklist produksi singkat, termasuk keterbacaan teks, safe area, dan penggunaan data fiktif.
 
 BATASAN DAN PENGECEKAN

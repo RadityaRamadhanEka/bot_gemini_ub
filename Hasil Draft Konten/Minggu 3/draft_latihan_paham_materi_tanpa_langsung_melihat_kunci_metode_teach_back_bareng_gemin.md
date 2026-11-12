@@ -53,7 +53,7 @@ Hook: "Mau coba latihan paham materi? Tanpa baca kunci jawaban!"
    *Klik link di bio untuk tutorial lengkap cara menggunakan metode teach-back*  
    CTA: **"Coba latihan paham materi dengan Gemini hari ini!"**  
    Hashtag: #GeminiAcademy #GeminiAcademyUB  
-   Tag: @REFO Indonesia  
+   Tag: @geminiacademybyrefo @REFO Indonesia
 
 7. **Checklist produksi**  
    - [x] Properti/asset: Buku kuliah, ponsel dengan aplikasi Gemini, layar demo  

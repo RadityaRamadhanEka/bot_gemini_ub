@@ -126,6 +126,7 @@ Slide postingan ini untuk melihat struktur prompt dan contoh drafnya! 👉
 Yuk, coba buat draf komunikasimu sendiri pakai Gemini sekarang!
 Simpan postingan ini biar nggak bingung pas mau bimbingan tugas kelompok atau skripsi. 📌
 
+@geminiacademybyrefo
 @REFO Indonesia
 #GeminiAcademy #GeminiAcademyUB
 ```

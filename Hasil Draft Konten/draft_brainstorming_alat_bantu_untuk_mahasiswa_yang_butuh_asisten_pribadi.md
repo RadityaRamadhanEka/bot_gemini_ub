@@ -43,12 +43,14 @@ Ide utama: Mahasiswa UB membutuhkan asisten pribadi sederhana yang bisa dibangun
 
 **6. Caption & CTA**  
 ```  
-Coba 3 alat bantu sederhana dengan AI untuk kebutuhan sehari-hari! 🚀  
-Tanpa koding, tanpa kompleksitas. Bisa dibangun sendiri di Gemini.  
+Mahasiswa butuh bantuan ekstra untuk mengatur jadwal kuliah, tugas, dan data kampus? 🤖✨  
+Di video ini, kita bahas 3 alat AI sederhana yang bisa kamu bangun sendiri untuk bikin hidup lebih tertata—tanpa coding yang rumit, tanpa ribet, dan tetap praktis untuk kebutuhan harian.  
 
-👉 Coba buat alat ini sendiri di Gemini! Klik link di bio untuk tutorial lengkap.  
+Mulai dari pengingat jadwal, pengaturan tugas, sampai pengelolaan data kampus, semua bisa dibantu lebih cepat dan efisien.  
 
-#GeminiAcademy #GeminiAcademyUB @REFO Indonesia  
+Kalau kamu tertarik, coba buat versimu sendiri di Gemini dan lihat cara kerjanya! Klik link di bio untuk tutorial lengkap.  
+
+#GeminiAcademy #GeminiAcademyUB #AIuntukMahasiswa #BelajarMandiri #MahasiswaUB #Productivity #DigitalSkills @REFO Indonesia  
 ```  
 
 **7. Checklist Produksi**  

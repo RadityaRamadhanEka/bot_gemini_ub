@@ -193,13 +193,16 @@ draf satu desain statis.
 
 ### Membuat draf dari Seri Kulik Data With Gemini
 
-1. Masukkan `3`, lalu pilih salah satu dari tujuh episode yang ditampilkan.
+1. Masukkan `3`, lalu pilih salah satu dari empat belas episode yang ditampilkan.
 2. Tentukan format dan jenis konten (`Rutin` atau `Festival`).
 3. Isi pilar, pesan utama, CTA, atau konteks tambahan jika diinginkan. Topik,
    analogi sehari-hari, dan prompt demo Gemini diambil otomatis dari episode.
 4. Hasil tampil di terminal dan tersimpan di
    `Hasil Draft Konten\KulikData`.
 
+Episode 8–14 melanjutkan materi dengan agregasi SQL (`GROUP BY`), mean dan
+median, pivot table, korelasi versus sebab-akibat, storytelling data, privasi,
+serta dashboard sederhana.
 Gunakan data sintetis/fiktif untuk demonstrasi analisis; jangan masukkan data
 pribadi atau transaksi asli. Rincian episode tersedia di
 `Kulik Data With Gemini\Seri Kulik Data With Gemini.md`.

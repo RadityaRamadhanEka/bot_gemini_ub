@@ -60,6 +60,41 @@
           "title": "Mini proyek: dari data mentah ke satu insight yang bisa dicek",
           "analogy": "Seperti merapikan buku kas, menghitung penjualan, lalu menyampaikan satu temuan beserta bukti hitungannya.",
           "prompt_demo": "Bimbing saya menganalisis tabel transaksi kantin sintetis ini langkah demi langkah: cek kualitas data, hitung total transaksi per menu, lalu rangkum satu temuan yang didukung angka. Tampilkan cara perhitungannya agar bisa saya cek, tanyakan jika format data tidak jelas, dan jangan menyimpulkan sebab-akibat. Data: [tempel data sintetis]."
+        },
+        {
+          "title": "Mengelompokkan data dengan GROUP BY: hitung per menu",
+          "analogy": "Seperti mengelompokkan struk berdasarkan menu sebelum menghitung berapa kali tiap menu dipesan dan berapa total penjualannya.",
+          "prompt_demo": "Ajari saya memakai GROUP BY pada tabel transaksi kantin sintetis untuk menghitung jumlah pesanan dan total penjualan per menu. Jelaskan peran SELECT, SUM, COUNT, FROM, dan GROUP BY dengan bahasa sehari-hari, tampilkan query beserta hasil contoh yang konsisten dengan data yang diberikan, lalu beri satu latihan tanpa jawabannya. Jangan mengarang hasil. Data: [tempel data sintetis]."
+        },
+        {
+          "title": "Rata-rata bisa menipu: kenali median dan nilai ekstrem",
+          "analogy": "Seperti menghitung uang saku: satu angka yang sangat besar bisa menarik rata-rata naik, meskipun sebagian besar orang membawa jumlah yang lebih kecil.",
+          "prompt_demo": "Gunakan daftar pengeluaran mahasiswa sintetis berikut untuk menghitung mean dan median, lalu periksa apakah ada nilai ekstrem yang membuat mean kurang mewakili data. Tunjukkan langkah hitung, bandingkan arti kedua ukuran, dan jangan menghapus nilai ekstrem tanpa alasan. Jika data belum cukup untuk menyebut nilai ekstrem, jelaskan keterbatasannya. Data: [tempel data sintetis]."
+        },
+        {
+          "title": "Pivot table: meringkas banyak baris tanpa hitung manual",
+          "analogy": "Seperti menyusun ulang tumpukan struk menjadi ringkasan per menu atau per hari tanpa menyalin dan menghitung setiap baris satu per satu.",
+          "prompt_demo": "Jelaskan cara membuat pivot table dari spreadsheet transaksi kantin sintetis untuk merangkum total penjualan menurut menu dan hari. Sebutkan field yang diletakkan pada Rows, Columns, dan Values, jelaskan cara memeriksa hasilnya terhadap data sumber, dan jangan menyimpulkan hal yang tidak ditunjukkan tabel. Data: [tempel contoh kolom dan beberapa baris sintetis]."
+        },
+        {
+          "title": "Korelasi bukan sebab-akibat: baca hubungan dengan hati-hati",
+          "analogy": "Jika penjualan minuman dingin dan suhu sama-sama naik, itu belum membuktikan suhu satu-satunya penyebab perubahan penjualan; mungkin ada faktor lain seperti hari libur atau promosi.",
+          "prompt_demo": "Analisis dua kolom data sintetis tentang suhu harian dan penjualan minuman kantin. Jelaskan apakah pola keduanya tampak bergerak bersama, bedakan korelasi dari sebab-akibat, dan sebutkan faktor lain yang perlu diperiksa sebelum membuat klaim. Jangan mengarang angka, jangan menyatakan hubungan sebab-akibat dari korelasi saja, dan tampilkan keterbatasan data. Data: [tempel data sintetis]."
+        },
+        {
+          "title": "Dari angka ke cerita data: sampaikan insight dengan bukti",
+          "analogy": "Seperti melaporkan hasil penjualan kepada pengelola kantin: mulai dari pertanyaan, tunjukkan angka pendukung, lalu jelaskan batas kesimpulannya.",
+          "prompt_demo": "Dari ringkasan transaksi kantin sintetis berikut, bantu susun cerita data singkat dengan urutan pertanyaan, temuan utama, angka pendukung, batas interpretasi, dan satu rekomendasi yang masih perlu diuji. Pisahkan fakta dari saran, jangan menambah angka atau menyimpulkan sebab-akibat. Data: [tempel ringkasan sintetis]."
+        },
+        {
+          "title": "Privasi data: analisis tanpa membuka identitas",
+          "analogy": "Seperti membahas jumlah pengunjung kantin per jam tanpa perlu menempelkan nama dan nomor telepon setiap orang di papan pengumuman.",
+          "prompt_demo": "Tinjau contoh tabel survei mahasiswa yang sepenuhnya sintetis. Identifikasi kolom yang tidak diperlukan untuk menjawab pertanyaan analisis [pertanyaan], jelaskan cara meminimalkan atau menghapus pengenal langsung, dan tunjukkan risiko identifikasi ulang dari gabungan kolom. Sarankan analisis agregat yang lebih aman. Jangan meminta atau menggunakan data pribadi nyata."
+        },
+        {
+          "title": "Dashboard sederhana: pantau pertanyaan utama dengan visual yang tepat",
+          "analogy": "Seperti papan ringkasan di kantin yang menampilkan beberapa angka penting agar pengelola cepat melihat kondisi, bukan memajang semua catatan transaksi.",
+          "prompt_demo": "Rancang dashboard sederhana untuk memantau data transaksi kantin sintetis berdasarkan tujuan [tujuan]. Pilih maksimal tiga metrik yang dapat dihitung dari kolom tersedia, sarankan visual dan periode pembanding yang sesuai, serta jelaskan satu batas interpretasi. Berikan susunan dashboard yang mudah dibaca dan jangan membuat angka atau tren yang tidak ada pada data. Data: [tempel ringkasan sintetis]."
         }
       ]
     }

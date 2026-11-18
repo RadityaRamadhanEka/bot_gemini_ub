@@ -1,0 +1,21 @@
+{
+  "name": "gemini-academy-remotion-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "render:episode-12": "remotion render src/index.ts KulikDataEpisode12 out/episode-12.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.544",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.0"
+  }
+}

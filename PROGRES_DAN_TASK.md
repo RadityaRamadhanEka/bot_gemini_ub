@@ -77,3 +77,5 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
 - Draf produksi menampilkan peringatan otomatis untuk elemen wajib dan format
   dasar sebelum disimpan. Pemeriksaan tidak mengubah draf dan tetap meminta
   verifikasi manual atas fakta serta hitungan.
+- Judul draf lama di seluruh subfolder dipakai sebagai konteks pencegah
+  pengulangan saat membuat draf baru; file handoff tidak dihitung sebagai draf.

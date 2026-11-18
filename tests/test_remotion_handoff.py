@@ -109,6 +109,31 @@ class RemotionHandoffTests(unittest.TestCase):
 
         self.assertEqual(generator.audit_draft_content(draft, "Reels"), [])
 
+    def test_previous_draft_titles_skip_handoff_and_extract_content_heading(self):
+        handoff_directory = self.drafts_directory / "Remotion Handoff"
+        handoff_directory.mkdir()
+        (handoff_directory / "old_remotion_handoff.md").write_text(
+            "# Instruksi Implementasi Video Remotion\n# Episode Lama",
+            encoding="utf-8",
+        )
+        nested_directory = self.drafts_directory / "KulikData"
+        nested_directory.mkdir()
+        nested_draft = nested_directory / "draf_baru.md"
+        nested_draft.write_text(
+            "# Brief Asli Pengguna\n\n## Episode Dua: Visualisasi Data",
+            encoding="utf-8",
+        )
+
+        titles = generator.load_previous_draft_titles()
+
+        self.assertEqual(
+            titles,
+            [
+                "draft_episode_satu.md: Episode Satu",
+                "KulikData/draf_baru.md: Episode Dua: Visualisasi Data",
+            ],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

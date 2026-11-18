@@ -61,6 +61,9 @@ format, dan jenis konten (`Rutin` atau `Festival`). Pilar, pesan utama, prompt
 demo Gemini, CTA, serta konteks tambahan bersifat opsional. Jika tidak diisi,
 Gemini dapat melengkapinya sebagai asumsi/rekomendasi. Inti dan angle ide harus
 tetap dipertahankan; saran perubahan ide ditampilkan terpisah dari draf.
+Bot menyertakan judul draf lama sebagai referensi agar model menghindari
+pengulangan topik dan angle pada ide baru. Pilihan topik/episode eksplisit atau
+permintaan revisi pengguna tetap diprioritaskan.
 
 Draf tetap ditampilkan dan disimpan sebagai Markdown; draf ini adalah bahan
 untuk membuat aset final, bukan pengajuan approval otomatis. Format yang

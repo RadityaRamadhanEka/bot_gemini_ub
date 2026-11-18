@@ -7,7 +7,7 @@ Episode 11 - *Korelasi bukan sebab-akibat: baca hubungan dengan hati-hati* dari 
 
 **1. Tujuan Konten dan Pesan Utama**  
 *Tujuan*: Membantu mahasiswa UB memahami perbedaan korelasi dan sebab-akibat dalam analisis data dengan contoh sehari-hari.  
-*Pesan Utama*: "Penjualan minuman dingin dan suhu naik tidak berarti suhu adalah penyebab peningkatan penjualan—mungkin ada faktor lain seperti hari libur atau promosi."  
+*Pesan Utama*: "Penjualan minuman dingin dan suhu naik tidak berarti suhu adalah penyebab peningkatan penjualan. Mungkin ada faktor lain seperti hari libur atau promosi."  
 
 **2. HOOK Pembuka (0-3 detik)**  
 - **Teks Overlay**: *"Penjualan minuman dingin dan suhu naik... tapi sebabnya apa?"*  
@@ -19,7 +19,7 @@ Episode 11 - *Korelasi bukan sebab-akibat: baca hubungan dengan hati-hati* dari 
 |-------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | 0-3s        | Layar putih dengan teks bergerak (animasi slow motion)                                      | *"Penjualan minuman dingin dan suhu naik... tapi sebabnya apa?"*                     | *"Kamu mungkin pernah lihat penjualan minuman dingin naik seiring suhu naik..."*     | Tidak ada demo (teks overlay)                                                                                               |
 | 3-8s        | Grafik garis sederhana (data sintetis) dengan label "Suhu (°C)" dan "Penjualan Minuman Dingin" | *"Suhu (°C) vs Penjualan Minuman Dingin"*                                         | *"Data menunjukkan korelasi positif..."*                                           | **Ilustrasi**: Grafik dengan data sintetis 7 hari (contoh: 22°C → 150 unit, 28°C → 210 unit) → *Perlu diverifikasi di Gemini* |
-| 8-12s       | Adegan kantin kampus dengan siswa berbelanja minuman dingin                               | *"Korelasi ada, tapi sebabnya? Mungkin ada faktor lain!"*                           | *"Tapi jangan cepat menyimpulkan—mungkin ada faktor lain seperti hari libur atau promosi!"* | Tidak ada demo (aksi visual)                                                                                               |
+| 8-12s       | Adegan kantin kampus dengan siswa berbelanja minuman dingin                               | *"Korelasi ada, tapi sebabnya? Mungkin ada faktor lain!"*                           | *"Tapi jangan cepat menyimpulkan. Mungkin ada faktor lain seperti hari libur atau promosi!"* | Tidak ada demo (aksi visual)                                                                                               |
 | 12-20s      | Teks bergerak dengan contoh faktor eksternal (misal: "Hari libur", "Promosi kantin")        | *"Contoh: Hari libur bisa meningkatkan penjualan, bukan suhu!"*                    | *"Contoh: Hari libur bisa meningkatkan penjualan, bukan suhu!"*                     | **Ilustrasi**: Tanda "Promo Hari Libur" di kantin (simulasi) → *Perlu diverifikasi di Gemini*                              |
 | 20-25s      | Teks bergerak dengan konklusi sederhana                                                   | *"Korelasi ≠ Sebab-akibat. Cek faktor lain sebelum klaim!"*                       | *"Korelasi ≠ Sebab-akibat. Selalu cek faktor lain sebelum klaim!"*                 | Tidak ada demo (teks overlay)                                                                                               |
 | 25-30s      | Teks bergerak dengan CTA                                                                  | *"Coba analisis data kalian sendiri di Gemini!"*                                   | *"Coba analisis data kalian sendiri di Gemini!"*                                   | Tidak ada demo (teks overlay)                                                                                               |
@@ -32,12 +32,17 @@ Episode 11 - *Korelasi bukan sebab-akibat: baca hubungan dengan hati-hati* dari 
 
 **5. Naskah Lisan (Siap Direkam)**  
 *(Durasi total: 30 detik)*  
-> *"Kamu mungkin pernah lihat penjualan minuman dingin naik seiring suhu naik... Tapi jangan cepat menyimpulkan—mungkin ada faktor lain seperti hari libur atau promosi! Data menunjukkan korelasi positif, tapi korelasi bukan berarti sebab-akibat. Selalu cek faktor lain sebelum klaim. Coba analisis data kalian sendiri di Gemini!"*  
+> *"Kamu mungkin pernah lihat penjualan minuman dingin naik seiring suhu naik... Tapi jangan cepat menyimpulkan. Mungkin ada faktor lain seperti hari libur atau promosi! Data menunjukkan korelasi positif, tapi korelasi bukan berarti sebab-akibat. Selalu cek faktor lain sebelum klaim. Coba analisis data kalian sendiri di Gemini!"*  
 
 **6. Caption, CTA, Hashtag, dan Tag Wajib**  
 - **Caption**:  
-  *"Korelasi ≠ Sebab-akibat. Jika penjualan minuman dingin dan suhu naik, jangan langsung menyimpulkan suhu adalah penyebab! Mungkin ada faktor lain seperti hari libur atau promosi. Coba analisis data kalian sendiri di Gemini untuk memahami perbedaan korelasi dan sebab-akibat. #GeminiAcademy #GeminiAcademyUB"*  
-- **CTA**: *"Coba analisis data kalian sendiri di Gemini!"*  
+  *"Naik bareng belum tentu berarti saling sebab-akibat. 🌡️  
+  Suhu dan penjualan minuman dingin bisa bergerak bersama, tetapi bisa ada faktor lain yang berubah, misalnya hari libur, promosi, atau jumlah pengunjung kantin.  
+
+  Jadi, korelasi hanya menunjukkan pola bersama. Sebelum membuat klaim sebab-akibat, cek faktor lain dan keterbatasan data. Contoh ini hanya menggunakan data sintetis selama 7 hari.  
+
+  Simpan Reel ini, coba prompt demo Gemini, lalu tulis satu faktor lain yang perlu diperiksa di kolom komentar. #GeminiAcademy #GeminiAcademyUB @REFO Indonesia"*  
+- **CTA**: *"Simpan Reel ini, coba prompt Gemini, lalu tulis faktor lain yang perlu diperiksa di komentar!"*  
 - **Hashtag Wajib**: `#GeminiAcademy #GeminiAcademyUB`  
 - **Tag Wajib**: `@REFO Indonesia`  
 

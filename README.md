@@ -91,6 +91,10 @@ syuting atau publikasi. Draf disimpan di `Hasil Draft Konten` dengan nama dari
 judul, misalnya
 `draft_budgeting_bulanan_anak_kos.md`. Jika nama tersebut sudah digunakan,
 bot menambahkan nomor agar draf lama tidak tertimpa.
+Sebelum draf produksi disimpan, bot menampilkan pemeriksaan dasar untuk tag
+wajib, hashtag Festival, placeholder, format vertikal, waktu adegan, dan caption.
+Pemeriksaan hanya memberi peringatan dan tidak mengubah atau membuang draf;
+akurasi fakta dan hitungan tetap harus diperiksa manual.
 
 Untuk mengajukan konten ke REFO, buat baris spreadsheet secara manual setelah
 aset final (video/desain) tersedia di Drive. Gunakan status awal `Please Check`;

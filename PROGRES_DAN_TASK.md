@@ -74,3 +74,6 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
   langsung ke Antigravity tanpa mengulang arahan teknis.
 - Handoff disimpan di `Hasil Draft Konten\Remotion Handoff` dan tidak menimpa
   paket yang sudah ada.
+- Draf produksi menampilkan peringatan otomatis untuk elemen wajib dan format
+  dasar sebelum disimpan. Pemeriksaan tidak mengubah draf dan tetap meminta
+  verifikasi manual atas fakta serta hitungan.

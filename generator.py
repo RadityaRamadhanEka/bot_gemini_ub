@@ -145,6 +145,60 @@ def load_previous_weekly_plans(week_number):
     return "\n\n".join(previous_plans)
 
 
+def load_previous_draft_titles():
+    drafts_dir = BASE_DIR / "Hasil Draft Konten"
+    handoff_dir = drafts_dir / "Remotion Handoff"
+    if not drafts_dir.is_dir():
+        return []
+
+    generic_headings = {
+        "brief asli pengguna",
+        "draf produksi",
+        "saran pengembangan (opsional)",
+        "caption siap unggah",
+        "demo gemini",
+        "checklist produksi",
+    }
+    previous_titles = []
+    try:
+        for draft_path in sorted(
+            drafts_dir.rglob("*.md"),
+            key=lambda path: str(path.relative_to(drafts_dir)).casefold(),
+        ):
+            if (
+                not draft_path.is_file()
+                or handoff_dir in draft_path.resolve().parents
+                or draft_path.stem.endswith("_remotion_handoff")
+            ):
+                continue
+            try:
+                content = draft_path.read_text(encoding="utf-8")
+            except OSError as exc:
+                raise RuntimeError(
+                    f"Draf lama tidak bisa dibaca: {draft_path}. Detail: {exc}"
+                ) from exc
+
+            title = ""
+            for line in content.splitlines():
+                match = re.match(r"^\s{0,3}#{1,2}\s+(.+?)\s*#*\s*$", line)
+                if not match:
+                    continue
+                candidate = match.group(1).strip().strip("*").strip()
+                if candidate.casefold() not in generic_headings:
+                    title = candidate
+                    break
+            if not title:
+                title = draft_path.stem.replace("_", " ").strip()
+            previous_titles.append(
+                f"{draft_path.relative_to(drafts_dir)}: {title}"
+            )
+    except OSError as exc:
+        raise RuntimeError(
+            f"Draf lama tidak bisa ditelusuri di {drafts_dir}. Detail: {exc}"
+        ) from exc
+    return previous_titles
+
+
 def generate_weekly_plan(week_number, weekly_context=""):
     week_number = validate_week_number(week_number)
     system_instruction, knowledge_base = load_supporting_files()
@@ -870,6 +924,11 @@ def generate_content_draft(
         "dropdown_options", {}
     ).get("Pillar", [])
     pilar = normalize_content_pillar(pilar, pillar_options)
+    previous_draft_titles = load_previous_draft_titles()
+    previous_draft_reference = (
+        "\n".join(f"- {title}" for title in previous_draft_titles)
+        or "- Belum ada draf lama."
+    )
     short_video_instructions = """
         Buat video vertikal 9:16 berdurasi sekitar 30-45 detik, siap diproduksi.
         Ikuti default produksi video pendek pada instruksi sistem. Pertahankan
@@ -987,6 +1046,13 @@ def generate_content_draft(
     - Prompt/demo Gemini pilihan pengguna (opsional): {prompt_demo or "Belum ditentukan"}
     - CTA pilihan pengguna (opsional): {cta or "Belum ditentukan"}
     - Konteks tambahan (opsional): {konteks_tambahan or "Tidak ada"}
+
+    Topik draf terdahulu untuk menghindari pengulangan yang tidak disengaja:
+    {previous_draft_reference}
+    Gunakan daftar ini sebagai referensi, bukan larangan. Jika brief secara
+    eksplisit memilih topik/episode yang sama atau meminta revisi/lanjutan,
+    pertahankan permintaan tersebut. Untuk ide baru, hindari mengulang topik dan
+    angle yang sama; pilih sudut yang benar-benar berbeda bila ada kemiripan.
 
     {format_instructions}
 

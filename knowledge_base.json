@@ -382,5 +382,29 @@
         "Posted"
       ]
     }
+  },
+  "production_preferences": {
+    "short_video": {
+      "main_character_gender": "male",
+      "voice_gender": "male",
+      "default_duration_seconds": {
+        "minimum": 30,
+        "maximum": 45
+      },
+      "aspect_ratio": "9:16",
+      "resolution": "1080x1920",
+      "frames_per_second": 30,
+      "visual_style": "Story-driven, connected scenes, concise overlays, not text-heavy",
+      "setting": "Use one consistent main setting that fits the content brief",
+      "campaign_logo": {
+        "name": "Gemini Academy",
+        "asset_rule": "Use the official asset; do not redraw it",
+        "placement_rule": "Follow the position and size used in previous campaign content"
+      }
+    },
+    "caption": {
+      "avoid_em_dash": true,
+      "emoji_style": "A few relevant emojis, without overuse"
+    }
   }
 }

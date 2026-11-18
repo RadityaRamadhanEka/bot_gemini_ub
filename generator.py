@@ -190,7 +190,7 @@ def load_previous_draft_titles():
             if not title:
                 title = draft_path.stem.replace("_", " ").strip()
             previous_titles.append(
-                f"{draft_path.relative_to(drafts_dir)}: {title}"
+                f"{draft_path.relative_to(drafts_dir).as_posix()}: {title}"
             )
     except OSError as exc:
         raise RuntimeError(

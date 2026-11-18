@@ -134,6 +134,26 @@ class RemotionHandoffTests(unittest.TestCase):
             ],
         )
 
+    def test_generation_receives_existing_draft_titles(self):
+        knowledge_base = {
+            "spreadsheet_approval": {"dropdown_options": {"Pillar": []}}
+        }
+        with patch.object(
+            generator, "load_supporting_files", return_value=("", knowledge_base)
+        ):
+            with patch.object(
+                generator, "_generate_text", return_value="generated draft"
+            ) as model:
+                result = generator.generate_content_draft(
+                    "Topik baru",
+                    "Reels",
+                    "Rutin",
+                    "Jelaskan ide baru.",
+                )
+
+        self.assertEqual(result, "generated draft")
+        self.assertIn("Episode Satu", model.call_args.args[0])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -79,3 +79,5 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
   verifikasi manual atas fakta serta hitungan.
 - Judul draf lama di seluruh subfolder dipakai sebagai konteks pencegah
   pengulangan saat membuat draf baru; file handoff tidak dihitung sebagai draf.
+- Preferensi produksi video/caption kini dapat diubah pada
+  `production_preferences` di `knowledge_base.json`, tanpa mengedit kode.

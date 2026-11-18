@@ -135,9 +135,7 @@ class RemotionHandoffTests(unittest.TestCase):
         )
 
     def test_generation_receives_existing_draft_titles(self):
-        knowledge_base = {
-            "spreadsheet_approval": {"dropdown_options": {"Pillar": []}}
-        }
+        _, knowledge_base = generator.load_supporting_files()
         with patch.object(
             generator, "load_supporting_files", return_value=("", knowledge_base)
         ):
@@ -153,6 +151,7 @@ class RemotionHandoffTests(unittest.TestCase):
 
         self.assertEqual(result, "generated draft")
         self.assertIn("Episode Satu", model.call_args.args[0])
+        self.assertIn("Default gender VO: male", model.call_args.args[0])
 
 
 if __name__ == "__main__":

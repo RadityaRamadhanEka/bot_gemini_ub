@@ -86,7 +86,9 @@ overlay ringkas, dan spesifikasi handoff Remotion (9:16, 1080x1920, 30 fps).
 Arahan eksplisit pada brief pengguna tetap diutamakan. Logo Gemini Academy
 menggunakan aset resmi sesuai identitas konten; jika aset tidak tersedia, draf
 menandainya sebagai placeholder. Caption video menggunakan emoji relevan dan
-menghindari em dash. Aturan default ini dapat disesuaikan di `system_prompt.txt`.
+menghindari em dash. Nilai preferensi, termasuk gender tokoh/VO, durasi, format,
+logo, dan gaya caption dapat disesuaikan pada `production_preferences` di
+`knowledge_base.json`; aturan dasarnya ada di `system_prompt.txt`.
 
 Semua draf meminta prompt demo dan contoh hasil yang ditandai sebagai ilustrasi
 bila belum dibuat langsung di Gemini. Buat ulang dan verifikasi hasil sebelum

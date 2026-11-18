@@ -76,6 +76,39 @@ class RemotionHandoffTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             generator.create_remotion_handoff(handoff_draft)
 
+    def test_audit_reports_missing_campaign_items_and_unresolved_placeholders(self):
+        warnings = generator.audit_draft_content(
+            "## Caption\nCoba di sini — [masukkan tautan].",
+            "Reels",
+            "Festival",
+        )
+
+        self.assertTrue(
+            any("geminiacademy" in warning.casefold() for warning in warnings)
+        )
+        self.assertTrue(
+            any("refo indonesia" in warning.casefold() for warning in warnings)
+        )
+        self.assertTrue(
+            any("geminiacademyfestival" in warning.casefold() for warning in warnings)
+        )
+        self.assertTrue(any("em dash" in warning for warning in warnings))
+        self.assertTrue(any("placeholder" in warning for warning in warnings))
+        self.assertTrue(any("9:16" in warning for warning in warnings))
+
+    def test_audit_accepts_a_complete_short_video_brief(self):
+        draft = """
+        # Contoh Reel
+        Format vertikal 9:16.
+        | 0-5 detik | Raka di meja belajar |
+        Logo Gemini Academy di penutup.
+        @REFO Indonesia #GeminiAcademy #GeminiAcademyUB
+        ## Caption
+        Angka jadi cerita 📊 Cek lagi hasilnya ✅
+        """
+
+        self.assertEqual(generator.audit_draft_content(draft, "Reels"), [])
+
 
 if __name__ == "__main__":
     unittest.main()

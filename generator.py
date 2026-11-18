@@ -595,6 +595,74 @@ def save_content_draft(judul, content, subfolder=None):
     return output_path
 
 
+def audit_draft_content(content, format_konten="", jenis_konten=""):
+    warnings = []
+    normalized_content = content.casefold()
+
+    required_tags = ("#geminiacademy", "#geminiacademyub", "@refo indonesia")
+    for required_tag in required_tags:
+        if required_tag not in normalized_content:
+            warnings.append(f"Tag wajib belum ditemukan: {required_tag}")
+    if (
+        jenis_konten.strip().casefold() == "festival"
+        and "#geminiacademyfestival" not in normalized_content
+    ):
+        warnings.append("Hashtag Festival #GeminiAcademyFestival belum ditemukan.")
+
+    caption_lines = []
+    in_caption = False
+    for line in content.splitlines():
+        is_heading = line.lstrip().startswith("#") or line.strip().startswith("**")
+        if is_heading and "caption" in line.casefold():
+            in_caption = True
+            continue
+        if in_caption and line.lstrip().startswith("#"):
+            break
+        if in_caption:
+            caption_lines.append(line)
+    if caption_lines and "—" in "\n".join(caption_lines):
+        warnings.append("Caption masih mengandung em dash (—).")
+
+    if re.search(
+        r"\[(?:masukkan|isi|lengkapi|tautan|link)\b",
+        normalized_content,
+    ):
+        warnings.append(
+            "Periksa placeholder dalam tanda kurung siku sebelum publikasi."
+        )
+
+    normalized_format = (
+        normalize_content_format(format_konten) if format_konten.strip() else ""
+    )
+    if normalized_format in ("Reels", "TikTok", "YouTube Short"):
+        if "9:16" not in normalized_content:
+            warnings.append("Spesifikasi video vertikal 9:16 belum dicantumkan.")
+        if not re.search(
+            r"\b\d{1,2}\s*[-–]\s*\d{1,2}\s*(?:detik|dtk|s|sec)\b",
+            normalized_content,
+        ):
+            warnings.append("Rentang waktu adegan video belum ditemukan.")
+        if "logo gemini academy" not in normalized_content:
+            warnings.append("Arahan penggunaan logo Gemini Academy belum ditemukan.")
+
+    return warnings
+
+
+def print_draft_audit(content, format_konten="", jenis_konten=""):
+    warnings = audit_draft_content(content, format_konten, jenis_konten)
+    print("\n--- PEMERIKSAAN OTOMATIS DRAF ---")
+    if warnings:
+        for warning in warnings:
+            print(f"- PERLU DIPERIKSA: {warning}")
+    else:
+        print("Pemeriksaan dasar tidak menemukan masalah.")
+    print(
+        "Pemeriksaan ini tidak memverifikasi fakta, hitungan, atau hasil Gemini; "
+        "tetap lakukan pengecekan manual."
+    )
+    return warnings
+
+
 def list_remotion_source_drafts():
     drafts_dir = BASE_DIR / "Hasil Draft Konten"
     handoff_dir = drafts_dir / "Remotion Handoff"
@@ -648,6 +716,12 @@ def create_remotion_handoff(draft_path):
     if not draft_content:
         raise ValueError(f"Draf kosong dan tidak bisa dipaketkan: {source_path}")
 
+    audit_warnings = audit_draft_content(draft_content, "Reels")
+    if audit_warnings:
+        audit_summary = "\n".join(f"- {warning}" for warning in audit_warnings)
+    else:
+        audit_summary = "- Pemeriksaan dasar tidak menemukan masalah."
+
     handoff_content = f"""# Instruksi Implementasi Video Remotion
 
 Gunakan file ini sebagai brief lengkap untuk implementasi. Bagian **Draf sumber**
@@ -680,6 +754,13 @@ ulang, mengganti, atau menambah isi yang mengubah maksud draf.
 - Setelah implementasi, jalankan pemeriksaan atau render preview yang tersedia.
   Laporkan file yang diubah, cara render/preview, hasil validasi, dan aset yang
   masih diperlukan.
+
+## Catatan pemeriksaan otomatis draf
+
+Pemeriksaan dasar ini hanya mendeteksi beberapa elemen yang bisa diperiksa
+secara otomatis. Verifikasi fakta, hitungan, dan hasil Gemini secara manual.
+
+{audit_summary}
 
 ## Draf sumber
 
@@ -1075,6 +1156,7 @@ def main():
             konteks_tambahan=konteks_tambahan,
         )
         print(hasil)
+        print_draft_audit(hasil, format_konten, jenis_konten)
         output_path = save_content_draft(judul, hasil)
         print(f"\nFile Markdown tersimpan: {output_path}")
     elif pilihan == "3":
@@ -1109,6 +1191,7 @@ def main():
             konteks_tambahan=konteks_tambahan,
         )
         print(hasil)
+        print_draft_audit(hasil, format_konten, jenis_konten)
         output_path = save_content_draft(judul, hasil, subfolder="KulikData")
         print(f"\nFile Markdown tersimpan: {output_path}")
     elif pilihan == "4":
@@ -1152,6 +1235,7 @@ def main():
             attendance_url,
         )
         print(hasil)
+        print_draft_audit(hasil, format_konten, jenis_konten)
         output_path = save_content_draft(
             judul, hasil, subfolder="Belajar Mandiri"
         )

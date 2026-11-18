@@ -43,6 +43,70 @@ def load_supporting_files():
     return system_instruction, knowledge_base
 
 
+def validate_production_preferences(knowledge_base):
+    preferences = knowledge_base.get("production_preferences")
+    if not isinstance(preferences, dict):
+        raise RuntimeError(
+            "Bagian production_preferences tidak tersedia atau bukan objek "
+            f"di {KNOWLEDGE_BASE_PATH}."
+        )
+
+    short_video = preferences.get("short_video")
+    caption = preferences.get("caption")
+    duration = (
+        short_video.get("default_duration_seconds")
+        if isinstance(short_video, dict)
+        else None
+    )
+    logo = short_video.get("campaign_logo") if isinstance(short_video, dict) else None
+    string_fields = (
+        ("main_character_gender", short_video),
+        ("voice_gender", short_video),
+        ("aspect_ratio", short_video),
+        ("resolution", short_video),
+        ("visual_style", short_video),
+        ("setting", short_video),
+        ("name", logo),
+        ("asset_rule", logo),
+        ("placement_rule", logo),
+        ("emoji_style", caption),
+    )
+    for field, section in string_fields:
+        if (
+            not isinstance(section, dict)
+            or not isinstance(section.get(field), str)
+            or not section[field].strip()
+        ):
+            raise RuntimeError(
+                f"Preferensi production_preferences.{field} tidak valid di "
+                f"{KNOWLEDGE_BASE_PATH}."
+            )
+    if (
+        not isinstance(duration, dict)
+        or type(duration.get("minimum")) is not int
+        or type(duration.get("maximum")) is not int
+        or duration["minimum"] <= 0
+        or duration["maximum"] < duration["minimum"]
+    ):
+        raise RuntimeError(
+            "Preferensi rentang default_duration_seconds tidak valid di "
+            f"{KNOWLEDGE_BASE_PATH}."
+        )
+    if type(short_video.get("frames_per_second")) is not int or short_video[
+        "frames_per_second"
+    ] <= 0:
+        raise RuntimeError(
+            "Preferensi frames_per_second tidak valid di "
+            f"{KNOWLEDGE_BASE_PATH}."
+        )
+    if type(caption.get("avoid_em_dash")) is not bool:
+        raise RuntimeError(
+            "Preferensi caption.avoid_em_dash harus bernilai boolean di "
+            f"{KNOWLEDGE_BASE_PATH}."
+        )
+    return preferences
+
+
 def get_model_name():
     return os.getenv("OLLAMA_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
 
@@ -917,6 +981,9 @@ def generate_content_draft(
 
     format_konten = normalize_content_format(format_konten)
     system_instruction, knowledge_base = load_supporting_files()
+    production_preferences = validate_production_preferences(knowledge_base)
+    video_preferences = production_preferences["short_video"]
+    caption_preferences = production_preferences["caption"]
     draft_knowledge_base = {
         key: value for key, value in knowledge_base.items() if key != "campaigns"
     }
@@ -929,10 +996,22 @@ def generate_content_draft(
         "\n".join(f"- {title}" for title in previous_draft_titles)
         or "- Belum ada draf lama."
     )
-    short_video_instructions = """
-        Buat video vertikal 9:16 berdurasi sekitar 30-45 detik, siap diproduksi.
+    short_video_instructions = f"""
+        Buat video vertikal {video_preferences['aspect_ratio']} berdurasi
+        {video_preferences['default_duration_seconds']['minimum']}-
+        {video_preferences['default_duration_seconds']['maximum']} detik sebagai
+        default, siap diproduksi. Gunakan resolusi
+        {video_preferences['resolution']} dan
+        {video_preferences['frames_per_second']} fps kecuali brief menentukan lain.
         Ikuti default produksi video pendek pada instruksi sistem. Pertahankan
         brief pengguna jika memberikan durasi, tokoh, VO, atau arahan visual khusus.
+        Default gender tokoh utama: {video_preferences['main_character_gender']}.
+        Default gender VO: {video_preferences['voice_gender']}.
+        Gaya visual: {video_preferences['visual_style']}.
+        Latar default: {video_preferences['setting']}.
+        Logo {video_preferences['campaign_logo']['name']}: gunakan aset resmi
+        ({video_preferences['campaign_logo']['asset_rule']}); penempatan:
+        {video_preferences['campaign_logo']['placement_rule']}.
         Susun output:
         1. Tujuan konten dan satu pesan utama.
         2. HOOK pembuka dalam 0-3 detik, berupa teks overlay dan ucapan.
@@ -948,12 +1027,14 @@ def generate_content_draft(
            sebagai ilustrasi yang perlu dibuat ulang dan diverifikasi di Gemini
            sebelum syuting; jangan mengarangnya seolah hasil live.
         6. Naskah lisan lengkap dan arahan karakter VO yang siap direkam serta
-           selaras dengan storyboard. Default tokoh dan VO adalah laki-laki,
-           kecuali brief pengguna menyatakan lain.
+           selaras dengan storyboard. Ikuti preferensi gender di atas kecuali
+           brief pengguna menyatakan lain.
         7. Catatan handoff Remotion: 9:16, 1080x1920, 30 fps, durasi total,
            rentang waktu adegan, safe area, serta kebutuhan aset/logo resmi.
-        8. Caption siap unggah tanpa em dash, dengan beberapa emoji relevan,
-           CTA yang jelas, hashtag wajib, dan tag wajib.
+        8. Caption siap unggah dengan gaya emoji berikut:
+           {caption_preferences['emoji_style']}. Hindari em dash:
+           {caption_preferences['avoid_em_dash']}. Sertakan CTA yang jelas,
+           hashtag wajib, dan tag wajib.
         9. Checklist produksi singkat: properti/aset, konsistensi tokoh dan latar,
            keterbacaan teks, safe area vertikal, logo resmi, dan perlindungan data.
         """

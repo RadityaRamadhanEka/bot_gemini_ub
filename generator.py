@@ -595,6 +595,118 @@ def save_content_draft(judul, content, subfolder=None):
     return output_path
 
 
+def list_remotion_source_drafts():
+    drafts_dir = BASE_DIR / "Hasil Draft Konten"
+    handoff_dir = drafts_dir / "Remotion Handoff"
+    if not drafts_dir.is_dir():
+        raise RuntimeError(
+            f"Folder draf konten tidak ditemukan: {drafts_dir}"
+        )
+
+    try:
+        return sorted(
+            (
+                path
+                for path in drafts_dir.rglob("*.md")
+                if path.is_file()
+                and handoff_dir not in path.resolve().parents
+                and not path.stem.endswith("_remotion_handoff")
+            ),
+            key=lambda path: str(path.relative_to(drafts_dir)).casefold(),
+        )
+    except OSError as exc:
+        raise RuntimeError(
+            f"Daftar draf tidak bisa dibaca dari {drafts_dir}. Detail: {exc}"
+        ) from exc
+
+
+def create_remotion_handoff(draft_path):
+    drafts_dir = (BASE_DIR / "Hasil Draft Konten").resolve()
+    handoff_dir = drafts_dir / "Remotion Handoff"
+    source_path = Path(draft_path).resolve()
+    try:
+        relative_source = source_path.relative_to(drafts_dir)
+    except ValueError as exc:
+        raise ValueError(
+            "Pilih file Markdown yang berada di dalam folder Hasil Draft Konten."
+        ) from exc
+    if (
+        source_path.suffix.casefold() != ".md"
+        or not source_path.is_file()
+        or relative_source.parts[0] == "Remotion Handoff"
+    ):
+        raise ValueError(
+            "Sumber handoff harus berupa draf Markdown, bukan file handoff."
+        )
+
+    try:
+        draft_content = source_path.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise RuntimeError(
+            f"Draf tidak bisa dibaca: {source_path}. Detail: {exc}"
+        ) from exc
+    if not draft_content:
+        raise ValueError(f"Draf kosong dan tidak bisa dipaketkan: {source_path}")
+
+    handoff_content = f"""# Instruksi Implementasi Video Remotion
+
+Gunakan file ini sebagai brief lengkap untuk implementasi. Bagian **Draf sumber**
+adalah acuan utama untuk judul, alur, dialog, data, dan pesan. Jangan menyalin
+ulang, mengganti, atau menambah isi yang mengubah maksud draf.
+
+## Arahan produksi
+
+- Periksa workspace untuk menemukan proyek Remotion, pola komponen, perintah
+  render, aset, dan identitas visual yang sudah ada. Ikuti pola yang tersedia;
+  jangan mengubah bagian proyek yang tidak terkait.
+- Ikuti storyboard dan durasi di draf. Jika durasi tidak dicantumkan, gunakan
+  30-45 detik. Video vertikal 9:16, 1080x1920, 30 fps.
+- Pertahankan tokoh, lokasi, alur cerita, angka, dan dialog sesuai draf. Buat
+  latar dan aksi terasa konsisten; jika detail visual belum ditentukan, isi
+  seperlunya tanpa mengubah cerita.
+- Gunakan visual dan gerak sebagai pencerita utama. Hindari layar yang padat
+  teks; sinkronkan subtitle dengan VO dan jaga semua elemen dalam safe area.
+- Gunakan arahan gender VO yang tercantum di draf. Jika draf tidak menentukan,
+  gunakan tokoh utama dan VO laki-laki yang konsisten.
+- Cari aset resmi logo Gemini Academy dan ikuti penempatan konten sebelumnya.
+  Jangan menggambar ulang logo. Jika aset tidak ditemukan, gunakan placeholder
+  yang jelas dan laporkan.
+- Gunakan VO/audio yang tersedia di workspace. Jika belum tersedia, jangan
+  mengarang audio atau memakai pengganti yang bertentangan dengan arahan draf;
+  siapkan placeholder yang jelas dan laporkan.
+- Jika workspace belum memiliki proyek Remotion, jangan memasang dependency atau
+  membuat aplikasi baru tanpa arahan pengguna. Berhenti dan jelaskan yang
+  dibutuhkan.
+- Setelah implementasi, jalankan pemeriksaan atau render preview yang tersedia.
+  Laporkan file yang diubah, cara render/preview, hasil validasi, dan aset yang
+  masih diperlukan.
+
+## Draf sumber
+
+<!-- BEGIN SOURCE DRAFT: {relative_source.as_posix()} -->
+
+{draft_content}
+
+<!-- END SOURCE DRAFT -->
+"""
+
+    base_name = f"{source_path.stem}_remotion_handoff"
+    output_path = handoff_dir / f"{base_name}.md"
+    try:
+        handoff_dir.mkdir(parents=True, exist_ok=True)
+        suffix = 2
+        while output_path.exists():
+            output_path = handoff_dir / f"{base_name}_{suffix}.md"
+            suffix += 1
+        output_path.write_text(handoff_content, encoding="utf-8")
+    except OSError as exc:
+        raise RuntimeError(
+            f"Paket handoff tidak bisa disimpan ke {output_path}. "
+            f"Detail: {exc}"
+        ) from exc
+    return output_path
+
+
 def normalize_content_format(format_konten):
     normalized = format_konten.strip().casefold()
     if normalized == "reels":
@@ -679,21 +791,31 @@ def generate_content_draft(
     pilar = normalize_content_pillar(pilar, pillar_options)
     short_video_instructions = """
         Buat video vertikal 9:16 berdurasi sekitar 30-45 detik, siap diproduksi.
+        Ikuti default produksi video pendek pada instruksi sistem. Pertahankan
+        brief pengguna jika memberikan durasi, tokoh, VO, atau arahan visual khusus.
         Susun output:
         1. Tujuan konten dan satu pesan utama.
         2. HOOK pembuka dalam 0-3 detik, berupa teks overlay dan ucapan.
-        3. Rencana pengambilan gambar per adegan dalam tabel dengan kolom waktu,
-           framing/aksi yang bisa direkam, teks overlay persis, ucapan/narasi
-           persis, dan aksi layar/demo bila ada. Gunakan arahan konkret, bukan
-           deskripsi abstrak.
-        4. DEMO GEMINI yang menyebutkan apa yang direkam di layar, prompt lengkap
+        3. Ringkasan alur cerita, tokoh utama, acuan tampilan tokoh yang konsisten,
+           lokasi/latar utama, dan situasi cerita.
+        4. Storyboard terperinci per adegan dalam tabel dengan kolom waktu,
+           lokasi/latar, aksi dan ekspresi tokoh, framing/gerak kamera, transisi,
+           teks overlay persis, ucapan/VO persis, serta aksi visual atau demo.
+           Gunakan arahan konkret. Buat visual sebagai pencerita utama dan
+           hindari layar yang padat teks.
+        5. DEMO GEMINI yang menyebutkan apa yang direkam di layar, prompt lengkap
            yang siap ditempel, dan contoh hasil yang relevan. Tandai hasil contoh
            sebagai ilustrasi yang perlu dibuat ulang dan diverifikasi di Gemini
            sebelum syuting; jangan mengarangnya seolah hasil live.
-        5. Naskah lisan lengkap yang siap direkam dan selaras dengan urutan adegan.
-        6. Caption siap unggah, CTA yang jelas, hashtag wajib, dan tag wajib.
-        7. Checklist produksi singkat: properti/asset, keterbacaan teks di layar,
-           safe area vertikal, dan perlindungan data pribadi.
+        6. Naskah lisan lengkap dan arahan karakter VO yang siap direkam serta
+           selaras dengan storyboard. Default tokoh dan VO adalah laki-laki,
+           kecuali brief pengguna menyatakan lain.
+        7. Catatan handoff Remotion: 9:16, 1080x1920, 30 fps, durasi total,
+           rentang waktu adegan, safe area, serta kebutuhan aset/logo resmi.
+        8. Caption siap unggah tanpa em dash, dengan beberapa emoji relevan,
+           CTA yang jelas, hashtag wajib, dan tag wajib.
+        9. Checklist produksi singkat: properti/aset, konsistensi tokoh dan latar,
+           keterbacaan teks, safe area vertikal, logo resmi, dan perlindungan data.
         """
     format_instructions = {
         "Reels": f"""
@@ -910,8 +1032,9 @@ def main():
     print("4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)")
     print("5. Generate Draf dari Seri Belajar Mandiri")
     print("6. Keluar")
+    print("7. Buat Paket Handoff Remotion dari Draf")
 
-    pilihan = input("Pilih menu (1/2/3/4/5/6): ").strip()
+    pilihan = input("Pilih menu (1/2/3/4/5/6/7): ").strip()
     if pilihan == "1":
         minggu = input("Masukkan Minggu Ke-berapa (1-7): ").strip()
         konteks_mingguan = input(
@@ -1035,9 +1158,34 @@ def main():
         print(f"\nFile Markdown tersimpan: {output_path}")
     elif pilihan == "6":
         print("Terima kasih, bot ditutup.")
+    elif pilihan == "7":
+        drafts = list_remotion_source_drafts()
+        if not drafts:
+            raise RuntimeError(
+                "Belum ada draf Markdown di folder Hasil Draft Konten."
+            )
+        drafts_dir = BASE_DIR / "Hasil Draft Konten"
+        print("\nPilih draf untuk dibuatkan paket handoff Remotion:")
+        for draft_number, draft_path in enumerate(drafts, start=1):
+            print(f"{draft_number}. {draft_path.relative_to(drafts_dir)}")
+
+        selection = input(f"Pilih draf (1-{len(drafts)}): ").strip()
+        try:
+            selection_number = int(selection)
+        except ValueError as exc:
+            raise ValueError(
+                f"Pilihan draf harus berupa angka 1 sampai {len(drafts)}."
+            ) from exc
+        if not 1 <= selection_number <= len(drafts):
+            raise ValueError(
+                f"Pilihan draf harus berada di antara 1 sampai {len(drafts)}."
+            )
+
+        output_path = create_remotion_handoff(drafts[selection_number - 1])
+        print(f"\nPaket handoff Remotion tersimpan: {output_path}")
     else:
         raise ValueError(
-            "Pilihan menu tidak valid. Masukkan 1, 2, 3, 4, 5, atau 6."
+            "Pilihan menu tidak valid. Masukkan 1, 2, 3, 4, 5, 6, atau 7."
         )
 
 

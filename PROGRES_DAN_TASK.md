@@ -66,3 +66,11 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
   sebelum membuat draf produksi.
 - Data episode disimpan di `knowledge_base.json`; dokumen seri untuk dibaca
   tersedia di `Kulik Data With Gemini\Seri Kulik Data With Gemini.md`.
+
+## Pembaruan 18 November 2026
+
+- Menu 7 membuat paket handoff Remotion dari draf Markdown yang dipilih.
+- Paket berisi instruksi produksi dan salinan draf sumber agar dapat dilampirkan
+  langsung ke Antigravity tanpa mengulang arahan teknis.
+- Handoff disimpan di `Hasil Draft Konten\Remotion Handoff` dan tidak menimpa
+  paket yang sudah ada.

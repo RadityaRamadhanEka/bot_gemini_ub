@@ -239,6 +239,22 @@ Jika workspace target belum memiliki proyek Remotion, paket menginstruksikan
 Antigravity untuk berhenti dan melaporkan kebutuhan proyek, bukan memasang
 dependency atau membuat aplikasi baru tanpa arahan.
 
+### Template Remotion
+
+Starter project Remotion terpisah tersedia di `remotion-template`. Template ini
+berisi composition contoh Episode 12, karakter/visual sintetis, subtitle, grafik,
+dan placeholder untuk logo serta VO resmi. Jalankan dari PowerShell:
+
+```powershell
+Set-Location .\remotion-template
+npm install
+npm run studio
+```
+
+Untuk render contoh, jalankan `npm run render:episode-12` dari folder tersebut.
+Lihat `remotion-template\README.md` untuk mengganti aset placeholder dan
+menyesuaikan adegan.
+
 Jalankan kembali `py .\generator.py` untuk setiap konten atau minggu yang ingin
 dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.
 

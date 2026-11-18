@@ -81,3 +81,6 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
   pengulangan saat membuat draf baru; file handoff tidak dihitung sebagai draf.
 - Preferensi produksi video/caption kini dapat diubah pada
   `production_preferences` di `knowledge_base.json`, tanpa mengedit kode.
+- Starter Remotion terpisah tersedia di `remotion-template`; composition contoh
+  memakai ilustrasi sintetis dan tetap membutuhkan aset logo serta VO resmi
+  sebelum menjadi video final.

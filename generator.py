@@ -851,6 +851,8 @@ ulang, mengganti, atau menambah isi yang mengubah maksud draf.
 - Periksa workspace untuk menemukan proyek Remotion, pola komponen, perintah
   render, aset, dan identitas visual yang sudah ada. Ikuti pola yang tersedia;
   jangan mengubah bagian proyek yang tidak terkait.
+- Jika draf ini diproduksi dari repository bot ini, gunakan starter pada
+  `remotion-template` dan jangan memasang dependency Remotion pada root bot.
 - Ikuti storyboard dan durasi di draf. Jika durasi tidak dicantumkan, gunakan
   30-45 detik. Video vertikal 9:16, 1080x1920, 30 fps.
 - Pertahankan tokoh, lokasi, alur cerita, angka, dan dialog sesuai draf. Buat

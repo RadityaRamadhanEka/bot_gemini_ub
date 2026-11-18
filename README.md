@@ -82,13 +82,16 @@ tersedia:
 
 Untuk draf video pendek, bot secara default menyusun alur cerita yang nyambung
 dengan tokoh laki-laki dan VO laki-laki, latar serta aksi per adegan yang jelas,
-overlay ringkas, dan spesifikasi handoff Remotion (9:16, 1080x1920, 30 fps).
-Arahan eksplisit pada brief pengguna tetap diutamakan. Logo Gemini Academy
-menggunakan aset resmi sesuai identitas konten; jika aset tidak tersedia, draf
-menandainya sebagai placeholder. Caption video menggunakan emoji relevan dan
-menghindari em dash. Nilai preferensi, termasuk gender tokoh/VO, durasi, format,
-logo, dan gaya caption dapat disesuaikan pada `production_preferences` di
-`knowledge_base.json`; aturan dasarnya ada di `system_prompt.txt`.
+overlay ringkas, dan catatan produksi teknis di dalam Markdown. Arahan eksplisit
+pada brief pengguna tetap diutamakan. Logo Gemini Academy menggunakan aset
+resmi; jika aset tidak tersedia, draf menandainya sebagai placeholder. Caption
+video menggunakan emoji relevan dan menghindari em dash. Nilai preferensi,
+termasuk gender tokoh/VO, durasi, format, logo, dan gaya caption dapat
+disesuaikan pada `production_preferences` di `knowledge_base.json`; aturan
+dasarnya ada di `system_prompt.txt`.
+
+Bot ini menghasilkan ide dan draf Markdown saja. Kode Remotion, render video,
+VO, dan desain aset dikerjakan melalui alur produksi terpisah.
 
 Semua draf meminta prompt demo dan contoh hasil yang ditandai sebagai ilustrasi
 bila belum dibuat langsung di Gemini. Buat ulang dan verifikasi hasil sebelum
@@ -141,7 +144,6 @@ Bot menampilkan menu berikut:
 4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)
 5. Generate Draf dari Seri Belajar Mandiri
 6. Keluar
-7. Buat Paket Handoff Remotion dari Draf
 ```
 
 ### Membuat ide mingguan
@@ -224,36 +226,6 @@ serta dashboard sederhana.
 Gunakan data sintetis/fiktif untuk demonstrasi analisis; jangan masukkan data
 pribadi atau transaksi asli. Rincian episode tersedia di
 `Kulik Data With Gemini\Seri Kulik Data With Gemini.md`.
-
-### Membuat paket handoff Remotion
-
-1. Pastikan draf Markdown sudah tersedia di `Hasil Draft Konten`.
-2. Masukkan `7`, lalu pilih draf dari daftar. Draf di subfolder, termasuk
-   `KulikData` dan `Belajar Mandiri`, juga akan ditampilkan.
-3. Bot membuat satu file mandiri yang berisi instruksi produksi Remotion dan
-   salinan draf sumber di `Hasil Draft Konten\Remotion Handoff`.
-4. Lampirkan file handoff tersebut ke Antigravity. Paket tidak menimpa file
-   sebelumnya; jika namanya sudah ada, nomor ditambahkan.
-
-Jika workspace target belum memiliki proyek Remotion, paket menginstruksikan
-Antigravity untuk berhenti dan melaporkan kebutuhan proyek, bukan memasang
-dependency atau membuat aplikasi baru tanpa arahan.
-
-### Template Remotion
-
-Starter project Remotion terpisah tersedia di `remotion-template`. Template ini
-berisi composition contoh Episode 12, karakter/visual sintetis, subtitle, grafik,
-dan placeholder untuk logo serta VO resmi. Jalankan dari PowerShell:
-
-```powershell
-Set-Location .\remotion-template
-npm install
-npm run studio
-```
-
-Untuk render contoh, jalankan `npm run render:episode-12` dari folder tersebut.
-Lihat `remotion-template\README.md` untuk mengganti aset placeholder dan
-menyesuaikan adegan.
 
 Jalankan kembali `py .\generator.py` untuk setiap konten atau minggu yang ingin
 dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.

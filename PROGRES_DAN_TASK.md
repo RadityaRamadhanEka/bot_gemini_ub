@@ -69,18 +69,12 @@ Untuk memakai model lain, unduh dengan `ollama pull NAMA_MODEL`, lalu atur
 
 ## Pembaruan 18 November 2026
 
-- Menu 7 membuat paket handoff Remotion dari draf Markdown yang dipilih.
-- Paket berisi instruksi produksi dan salinan draf sumber agar dapat dilampirkan
-  langsung ke Antigravity tanpa mengulang arahan teknis.
-- Handoff disimpan di `Hasil Draft Konten\Remotion Handoff` dan tidak menimpa
-  paket yang sudah ada.
 - Draf produksi menampilkan peringatan otomatis untuk elemen wajib dan format
   dasar sebelum disimpan. Pemeriksaan tidak mengubah draf dan tetap meminta
   verifikasi manual atas fakta serta hitungan.
 - Judul draf lama di seluruh subfolder dipakai sebagai konteks pencegah
-  pengulangan saat membuat draf baru; file handoff tidak dihitung sebagai draf.
+  pengulangan saat membuat draf baru.
 - Preferensi produksi video/caption kini dapat diubah pada
   `production_preferences` di `knowledge_base.json`, tanpa mengedit kode.
-- Starter Remotion terpisah tersedia di `remotion-template`; composition contoh
-  memakai ilustrasi sintetis dan tetap membutuhkan aset logo serta VO resmi
-  sebelum menjadi video final.
+- Bot menghasilkan draf Markdown saja. Kode Remotion, render video, VO, dan
+  desain aset dikerjakan melalui alur produksi terpisah.

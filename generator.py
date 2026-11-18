@@ -211,7 +211,6 @@ def load_previous_weekly_plans(week_number):
 
 def load_previous_draft_titles():
     drafts_dir = BASE_DIR / "Hasil Draft Konten"
-    handoff_dir = drafts_dir / "Remotion Handoff"
     if not drafts_dir.is_dir():
         return []
 
@@ -229,11 +228,7 @@ def load_previous_draft_titles():
             drafts_dir.rglob("*.md"),
             key=lambda path: str(path.relative_to(drafts_dir)).casefold(),
         ):
-            if (
-                not draft_path.is_file()
-                or handoff_dir in draft_path.resolve().parents
-                or draft_path.stem.endswith("_remotion_handoff")
-            ):
+            if not draft_path.is_file():
                 continue
             try:
                 content = draft_path.read_text(encoding="utf-8")
@@ -781,133 +776,6 @@ def print_draft_audit(content, format_konten="", jenis_konten=""):
     return warnings
 
 
-def list_remotion_source_drafts():
-    drafts_dir = BASE_DIR / "Hasil Draft Konten"
-    handoff_dir = drafts_dir / "Remotion Handoff"
-    if not drafts_dir.is_dir():
-        raise RuntimeError(
-            f"Folder draf konten tidak ditemukan: {drafts_dir}"
-        )
-
-    try:
-        return sorted(
-            (
-                path
-                for path in drafts_dir.rglob("*.md")
-                if path.is_file()
-                and handoff_dir not in path.resolve().parents
-                and not path.stem.endswith("_remotion_handoff")
-            ),
-            key=lambda path: str(path.relative_to(drafts_dir)).casefold(),
-        )
-    except OSError as exc:
-        raise RuntimeError(
-            f"Daftar draf tidak bisa dibaca dari {drafts_dir}. Detail: {exc}"
-        ) from exc
-
-
-def create_remotion_handoff(draft_path):
-    drafts_dir = (BASE_DIR / "Hasil Draft Konten").resolve()
-    handoff_dir = drafts_dir / "Remotion Handoff"
-    source_path = Path(draft_path).resolve()
-    try:
-        relative_source = source_path.relative_to(drafts_dir)
-    except ValueError as exc:
-        raise ValueError(
-            "Pilih file Markdown yang berada di dalam folder Hasil Draft Konten."
-        ) from exc
-    if (
-        source_path.suffix.casefold() != ".md"
-        or not source_path.is_file()
-        or relative_source.parts[0] == "Remotion Handoff"
-    ):
-        raise ValueError(
-            "Sumber handoff harus berupa draf Markdown, bukan file handoff."
-        )
-
-    try:
-        draft_content = source_path.read_text(encoding="utf-8").strip()
-    except OSError as exc:
-        raise RuntimeError(
-            f"Draf tidak bisa dibaca: {source_path}. Detail: {exc}"
-        ) from exc
-    if not draft_content:
-        raise ValueError(f"Draf kosong dan tidak bisa dipaketkan: {source_path}")
-
-    audit_warnings = audit_draft_content(draft_content, "Reels")
-    if audit_warnings:
-        audit_summary = "\n".join(f"- {warning}" for warning in audit_warnings)
-    else:
-        audit_summary = "- Pemeriksaan dasar tidak menemukan masalah."
-
-    handoff_content = f"""# Instruksi Implementasi Video Remotion
-
-Gunakan file ini sebagai brief lengkap untuk implementasi. Bagian **Draf sumber**
-adalah acuan utama untuk judul, alur, dialog, data, dan pesan. Jangan menyalin
-ulang, mengganti, atau menambah isi yang mengubah maksud draf.
-
-## Arahan produksi
-
-- Periksa workspace untuk menemukan proyek Remotion, pola komponen, perintah
-  render, aset, dan identitas visual yang sudah ada. Ikuti pola yang tersedia;
-  jangan mengubah bagian proyek yang tidak terkait.
-- Jika draf ini diproduksi dari repository bot ini, gunakan starter pada
-  `remotion-template` dan jangan memasang dependency Remotion pada root bot.
-- Ikuti storyboard dan durasi di draf. Jika durasi tidak dicantumkan, gunakan
-  30-45 detik. Video vertikal 9:16, 1080x1920, 30 fps.
-- Pertahankan tokoh, lokasi, alur cerita, angka, dan dialog sesuai draf. Buat
-  latar dan aksi terasa konsisten; jika detail visual belum ditentukan, isi
-  seperlunya tanpa mengubah cerita.
-- Gunakan visual dan gerak sebagai pencerita utama. Hindari layar yang padat
-  teks; sinkronkan subtitle dengan VO dan jaga semua elemen dalam safe area.
-- Gunakan arahan gender VO yang tercantum di draf. Jika draf tidak menentukan,
-  gunakan tokoh utama dan VO laki-laki yang konsisten.
-- Cari aset resmi logo Gemini Academy dan ikuti penempatan konten sebelumnya.
-  Jangan menggambar ulang logo. Jika aset tidak ditemukan, gunakan placeholder
-  yang jelas dan laporkan.
-- Gunakan VO/audio yang tersedia di workspace. Jika belum tersedia, jangan
-  mengarang audio atau memakai pengganti yang bertentangan dengan arahan draf;
-  siapkan placeholder yang jelas dan laporkan.
-- Jika workspace belum memiliki proyek Remotion, jangan memasang dependency atau
-  membuat aplikasi baru tanpa arahan pengguna. Berhenti dan jelaskan yang
-  dibutuhkan.
-- Setelah implementasi, jalankan pemeriksaan atau render preview yang tersedia.
-  Laporkan file yang diubah, cara render/preview, hasil validasi, dan aset yang
-  masih diperlukan.
-
-## Catatan pemeriksaan otomatis draf
-
-Pemeriksaan dasar ini hanya mendeteksi beberapa elemen yang bisa diperiksa
-secara otomatis. Verifikasi fakta, hitungan, dan hasil Gemini secara manual.
-
-{audit_summary}
-
-## Draf sumber
-
-<!-- BEGIN SOURCE DRAFT: {relative_source.as_posix()} -->
-
-{draft_content}
-
-<!-- END SOURCE DRAFT -->
-"""
-
-    base_name = f"{source_path.stem}_remotion_handoff"
-    output_path = handoff_dir / f"{base_name}.md"
-    try:
-        handoff_dir.mkdir(parents=True, exist_ok=True)
-        suffix = 2
-        while output_path.exists():
-            output_path = handoff_dir / f"{base_name}_{suffix}.md"
-            suffix += 1
-        output_path.write_text(handoff_content, encoding="utf-8")
-    except OSError as exc:
-        raise RuntimeError(
-            f"Paket handoff tidak bisa disimpan ke {output_path}. "
-            f"Detail: {exc}"
-        ) from exc
-    return output_path
-
-
 def normalize_content_format(format_konten):
     normalized = format_konten.strip().casefold()
     if normalized == "reels":
@@ -1031,8 +899,9 @@ def generate_content_draft(
         6. Naskah lisan lengkap dan arahan karakter VO yang siap direkam serta
            selaras dengan storyboard. Ikuti preferensi gender di atas kecuali
            brief pengguna menyatakan lain.
-        7. Catatan handoff Remotion: 9:16, 1080x1920, 30 fps, durasi total,
+        7. Catatan produksi video: rasio, resolusi, frame rate, durasi total,
            rentang waktu adegan, safe area, serta kebutuhan aset/logo resmi.
+           Hasil proyek ini adalah naskah Markdown, bukan kode atau video.
         8. Caption siap unggah dengan gaya emoji berikut:
            {caption_preferences['emoji_style']}. Hindari em dash:
            {caption_preferences['avoid_em_dash']}. Sertakan CTA yang jelas,
@@ -1262,9 +1131,8 @@ def main():
     print("4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)")
     print("5. Generate Draf dari Seri Belajar Mandiri")
     print("6. Keluar")
-    print("7. Buat Paket Handoff Remotion dari Draf")
 
-    pilihan = input("Pilih menu (1/2/3/4/5/6/7): ").strip()
+    pilihan = input("Pilih menu (1/2/3/4/5/6): ").strip()
     if pilihan == "1":
         minggu = input("Masukkan Minggu Ke-berapa (1-7): ").strip()
         konteks_mingguan = input(
@@ -1391,34 +1259,9 @@ def main():
         print(f"\nFile Markdown tersimpan: {output_path}")
     elif pilihan == "6":
         print("Terima kasih, bot ditutup.")
-    elif pilihan == "7":
-        drafts = list_remotion_source_drafts()
-        if not drafts:
-            raise RuntimeError(
-                "Belum ada draf Markdown di folder Hasil Draft Konten."
-            )
-        drafts_dir = BASE_DIR / "Hasil Draft Konten"
-        print("\nPilih draf untuk dibuatkan paket handoff Remotion:")
-        for draft_number, draft_path in enumerate(drafts, start=1):
-            print(f"{draft_number}. {draft_path.relative_to(drafts_dir)}")
-
-        selection = input(f"Pilih draf (1-{len(drafts)}): ").strip()
-        try:
-            selection_number = int(selection)
-        except ValueError as exc:
-            raise ValueError(
-                f"Pilihan draf harus berupa angka 1 sampai {len(drafts)}."
-            ) from exc
-        if not 1 <= selection_number <= len(drafts):
-            raise ValueError(
-                f"Pilihan draf harus berada di antara 1 sampai {len(drafts)}."
-            )
-
-        output_path = create_remotion_handoff(drafts[selection_number - 1])
-        print(f"\nPaket handoff Remotion tersimpan: {output_path}")
     else:
         raise ValueError(
-            "Pilihan menu tidak valid. Masukkan 1, 2, 3, 4, 5, 6, atau 7."
+            "Pilihan menu tidak valid. Masukkan 1, 2, 3, 4, 5, atau 6."
         )
 
 

@@ -84,11 +84,15 @@ Membantu mahasiswa UB menyusun dashboard sederhana yang menjawab satu pertanyaan
 ```text
 📊 Dashboard yang baik dimulai dari satu pertanyaan.
 
-Contoh ini mencari menu dengan jumlah porsi terjual terbanyak dari data sintetis. Grafik merangkum data yang tersedia—bukan penyebab penjualan atau gambaran semua hari.
+Contoh ini mencari menu dengan jumlah porsi terjual terbanyak dari data sintetis. Dari 10 transaksi contoh, Nasi Ayam paling laris (7 porsi) dengan rata-rata nilai transaksi Rp 17.900—dan grafik hanya merangkum data yang tersedia, bukan penyebab penjualan atau gambaran semua hari.
 
 👉 Coba buat dashboard dari data sintetismu di Gemini.
 
-#GeminiAcademy #GeminiAcademyUB @REFO Indonesia
+Mau belajar mandiri lebih lanjut? Pakai modul ini sebagai acuan dan scan QR Belajar Mandiri bareng Gemini di akhir video untuk membuka modul & panduan lainnya! Follow @geminiacademybyrefo atau buka https://bit.ly/belajarmandirigemini.
+
+@geminiacademybyrefo @REFO Indonesia
+
+#KulikData #LiterasiData #DashboardSederhana #GeminiAcademy #GeminiAcademyUB #MahasiswaUB
 ```
 
 ### 9. Checklist Produksi

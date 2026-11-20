@@ -52,11 +52,11 @@ Angka-angka ini hanya untuk sepuluh baris latihan. Jangan gunakan sebagai gambar
 | 3–10 dtk | Raka menggeser kedua kolom sampai hilang dari tabel. | “Nama dan NIM bisa dihapus agar identitas langsung tidak terlihat.” | **Hapus Nama + NIM** | Animasi sederhana menghapus dua kolom. Sisakan Kuliah dan Kebutuhan. Jangan menampilkan nama atau NIM nyata. |
 | 10–18 dtk | Raka menunjuk kombinasi Kuliah dan Kebutuhan; satu baris disorot dengan tanda hati-hati. | “Kuliah dan kebutuhan tetap dapat menjadi gabungan yang unik. Artinya, risiko identifikasi bisa tetap ada.” | **Gabungan kolom bisa mengidentifikasi** | Tunjukkan Hukum + Makanan Berat sebagai contoh konsep, lalu beri catatan “potensi risiko”, bukan klaim bahwa identitas tertentu pasti terbongkar. |
 | 18–26 dtk | Raka membatalkan daftar baris dan menggantinya dengan kartu ringkasan jumlah. | “Kalau pertanyaannya hanya jumlah per jurusan, cukup tampilkan ringkasan: Teknik Informatika lima, Ekonomi tiga, Hukum dua.” | **Lihat angka, bukan individu** | Tiga kartu jumlah. Gunakan angka dari dataset 10 baris. Beri tanda bahwa kelompok yang terlalu kecil perlu disembunyikan atau dikelompokkan lagi. |
-| 26–35 dtk | Raka mengetik prompt singkat di antarmuka generik dan menunjuk hasil yang perlu dicek. | “Gemini dapat membantu meninjau risiko dan menyusun ringkasan. Namun keputusan privasi tetap perlu kamu periksa.” | **Bantu analisis. Tetap cek risikonya.** | Tampilkan prompt singkat, tabel agregat, dan checklist “cek kombinasi”, “cek kelompok kecil”, “cek ulang hasil”. Logo Gemini Academy ditampilkan melalui aset resmi. |
+| 26–35 dtk | Raka mengetik prompt singkat di antarmuka generik, lalu kartu CTA Belajar Mandiri bareng Gemini ditampilkan. | “Gemini dapat membantu meninjau risiko dan menyusun ringkasan. Namun keputusan privasi tetap perlu kamu periksa. Pakai modul ini sebagai acuan belajar mandiri dan pindai QR di layar untuk lanjut belajar.” | **Pakai modul ini sebagai acuan · Scan QR-nya** | Tampilkan prompt singkat, tabel agregat, lalu kartu CTA besar dengan QR resmi Belajar Mandiri bareng Gemini, handle `@geminiacademybyrefo`, dan tautan `https://bit.ly/belajarmandirigemini`. QR ditempatkan paling menonjol dan sisakan durasi cukup untuk di-scan. |
 
 ## Naskah lisan siap direkam
 
-> “Nama dan NIM itu pengenal langsung. Tapi apakah menghapusnya sudah cukup? Nama dan NIM bisa dihapus agar identitas langsung tidak terlihat. Namun, kuliah dan kebutuhan bisa menjadi gabungan yang unik. Jadi risiko identifikasi masih bisa ada. Kalau pertanyaannya hanya jumlah per jurusan, gunakan ringkasan: Teknik Informatika lima, Ekonomi tiga, dan Hukum dua. Gemini dapat membantu meninjau risiko dan menyusun ringkasan, tetapi keputusan privasi tetap perlu kamu periksa.”
+> “Nama dan NIM itu pengenal langsung. Tapi apakah menghapusnya sudah cukup? Nama dan NIM bisa dihapus agar identitas langsung tidak terlihat. Namun, kuliah dan kebutuhan bisa menjadi gabungan yang unik. Jadi risiko identifikasi masih bisa ada. Kalau pertanyaannya hanya jumlah per jurusan, gunakan ringkasan: Teknik Informatika lima, Ekonomi tiga, dan Hukum dua. Gemini dapat membantu meninjau risiko dan menyusun ringkasan, tetapi keputusan privasi tetap perlu kamu periksa. Pakai modul ini sebagai acuan belajar mandiri. Untuk modul dan panduan Gemini lainnya, ikuti Instagram Gemini Academy, buka tautan di layar, atau pindai QR Belajar Mandiri di ujung video ini.”
 
 **Arahan VO:**
 
@@ -130,6 +130,8 @@ Gemini bisa membantu meninjau risiko dan menyusun ringkasan. Namun, hasil dan ke
 
 Coba prompt di video. Dari hasilnya, atribut atau kombinasi apa yang masih berpotensi mengidentifikasi seseorang?
 
+Mau belajar mandiri lebih lanjut? Pakai modul ini sebagai acuan dan scan QR Belajar Mandiri bareng Gemini di akhir video untuk membuka modul & panduan lainnya. Bisa juga follow @geminiacademybyrefo atau buka https://bit.ly/belajarmandirigemini.
+
 @geminiacademybyrefo @REFO Indonesia
 
 #KulikData #PrivasiData #LiterasiData #GeminiAcademy #GeminiAcademyUB #MahasiswaUB
@@ -137,7 +139,7 @@ Coba prompt di video. Dari hasilnya, atribut atau kombinasi apa yang masih berpo
 
 **CTA:**
 
-> “Coba analisis data sintetismu di Gemini, lalu periksa pengenal langsung, pengenal tidak langsung, dan risiko kelompok kecil. Jangan langsung menyimpulkan bahwa data sudah aman.”
+> “Coba analisis data latihan sintetismu di Gemini, lalu periksa pengenal langsung, pengenal tidak langsung, dan risiko kelompok kecil. Untuk memperdalam materi, pakai modul Belajar Mandiri bareng Gemini lewat QR di akhir video, @geminiacademybyrefo, atau https://bit.ly/belajarmandirigemini.”
 
 ## Checklist produksi
 
@@ -150,4 +152,6 @@ Coba prompt di video. Dari hasilnya, atribut atau kombinasi apa yang masih berpo
 - [ ] Overlay singkat, kontras, dan tidak menumpuk dengan tabel atau wajah.
 - [ ] Elemen penting berada di area aman vertikal.
 - [ ] Logo Gemini Academy memakai aset resmi; posisi dan ukurannya konsisten dengan konten sebelumnya.
+- [ ] QR resmi Belajar Mandiri ditampilkan besar, kontras tinggi, dan cukup lama di bagian akhir video.
+- [ ] Tautan CTA, handle `@geminiacademybyrefo`, dan tag akun diperiksa sebelum publikasi.
 - [ ] Caption sudah menggunakan tag dan hashtag wajib yang berlaku.

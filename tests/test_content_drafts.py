@@ -78,6 +78,22 @@ class ContentDraftTests(unittest.TestCase):
             ],
         )
 
+    def test_content_pillar_normalizes_emoji_position_and_spacing(self):
+        options = ["📚 Study Hack", "🧠 Think Better", "✍️ Create"]
+
+        self.assertEqual(
+            generator.normalize_content_pillar("Study Hack", options),
+            "📚 Study Hack",
+        )
+        self.assertEqual(
+            generator.normalize_content_pillar("Study  Hack 📚", options),
+            "📚 Study Hack",
+        )
+        self.assertEqual(
+            generator.normalize_content_pillar("📚 Study   Hack", options),
+            "📚 Study Hack",
+        )
+
     def test_generation_receives_existing_draft_titles_and_preferences(self):
         _, knowledge_base = generator.load_supporting_files()
         with patch.object(

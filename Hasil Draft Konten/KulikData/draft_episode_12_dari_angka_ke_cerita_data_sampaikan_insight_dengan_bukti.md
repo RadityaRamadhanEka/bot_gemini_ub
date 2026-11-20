@@ -24,7 +24,7 @@
 | 12–21 dtk | Raka menggeser kartu ke grafik batang sederhana. | “Nasi Ayam tercatat tiga dari lima transaksi. Itu temuan dari sampel kecil ini—bukan bukti semua orang paling suka Nasi Ayam.” | **3 dari 5 transaksi** | Batang Nasi Ayam = 3; Mie Ayam = 1; Es Teh = 1. Angka muncul bersamaan dengan label kategori. Sorot frasa “dalam data ini”. |
 | 21–30 dtk | Muncul gelembung saran “Karena lebih murah?”; Raka menggeleng dan mencoretnya. | “Kita belum tahu alasannya. Tidak ada data harga, promo, atau jumlah pengunjung. Jadi jangan menebak penyebab.” | **Pola ≠ penyebab** | Tampilkan gelembung dugaan sebentar, lalu beri tanda tanya/coret. Jangan tampilkan dugaan sebagai fakta. |
 | 30–39 dtk | Raka mengetik prompt singkat; kartu “temuan” dan “batas” tersusun rapi. | “Aku minta Gemini membantu merapikan temuan dan batasnya. Setelah itu, aku cek lagi apakah angkanya sesuai data.” | **Bantu susun. Tetap cek.** | Tampilkan antarmuka generik, bukan klaim hasil pasti. Sorot prompt: “Ringkas pola dari data ini. Pisahkan fakta dan dugaan; jangan menambah angka.” |
-| 39–45 dtk | Raka menutup laptop dan menghadap kamera dengan gestur mengajak. | “Coba mulai dari satu pertanyaan. Biar angka punya cerita—dengan bukti.” | **Tanya → cek → ceritakan** | Grafik berubah menjadi tiga kartu berurutan. Akhiri dengan lockup “Kulik Data With Gemini” dan logo Gemini Academy. |
+| 39–45 dtk | Raka menutup laptop dan menghadap kamera dengan gestur mengajak. | “Coba mulai dari satu pertanyaan. Biar angka punya cerita—dengan bukti. Pakai modul Belajar Mandiri sebagai acuan dan pindai QR di layar untuk lanjut belajar.” | **Pakai modul ini sebagai acuan · Scan QR-nya** | Tampilkan kartu CTA besar dengan QR resmi Belajar Mandiri bareng Gemini, handle `@geminiacademybyrefo`, dan tautan `https://bit.ly/belajarmandirigemini`. QR ditempatkan paling menonjol dan sisakan durasi cukup untuk di-scan. |
 
 ### Catatan tempo dan penyajian
 
@@ -64,17 +64,29 @@ Tempelkan data sintetis di atas setelah prompt ini:
 
 ## Caption siap unggah
 
-Angka belum otomatis jadi cerita 📊 Mulai dari pertanyaan yang jelas, tunjukkan angka pendukung, lalu sebutkan apa yang belum bisa disimpulkan 🔎
+```text
+Punya banyak angka, tapi bingung mau mulai ceritanya dari mana? 🤔
 
-Di contoh lima transaksi fiktif ini, Nasi Ayam tercatat 3 kali 🍗 Tapi kita belum tahu alasannya. Data ini tidak memuat harga, promo, atau informasi pembeli.
+Coba mulai dari satu pertanyaan yang jelas:
+“Menu apa yang paling sering tercatat?”
 
-Gemini bisa membantu merapikan draf analisis ✨ Tetap cek hitungan dan pastikan kesimpulannya sesuai data ✅
+Di lima transaksi kantin fiktif ini:
+• Nasi Ayam tercatat 3 kali
+• Mie Ayam 1 kali
+• Es Teh 1 kali
 
-**Coba:** gunakan prompt di video dengan data sintetis, lalu periksa kembali hasilnya 🧠  
-**CTA:** Lihat panduan cepat Gemini di sini 👇 [masukkan tautan panduan yang sudah diverifikasi]
+Temuannya: Nasi Ayam paling sering tercatat dalam data ini. Tapi kita belum tahu kenapa—informasi harga, promo, dan jumlah pengunjung tidak tersedia. Jadi, jangan ubah temuan jadi klaim sebab-akibat.
 
-#GeminiAcademy #GeminiAcademyUB #GeminiAcademyFestival  
-Tag: @REFO Indonesia
+Gemini bisa membantu merapikan temuan dan batasnya. Kamu tetap perlu mengecek hitungan dan memastikan drafnya tidak menambah atau menggeneralisasi data.
+
+Mau belajar mandiri lebih lanjut? Pakai modul ini sebagai acuan dan scan QR Belajar Mandiri bareng Gemini di akhir video untuk membuka modul & panduan lainnya. Bisa juga follow @geminiacademybyrefo atau buka https://bit.ly/belajarmandirigemini.
+
+Pertanyaan apa yang ingin kamu jawab dari data latihanmu?
+
+#KulikData #StorytellingData #LiterasiData #GeminiAcademy #GeminiAcademyUB #MahasiswaUB
+```
+
+**CTA:** *“Coba satu pertanyaan dengan data sintetismu, lalu cek temuan dan batasnya. Untuk memperdalam materi, pakai modul Belajar Mandiri bareng Gemini lewat QR di akhir video atau https://bit.ly/belajarmandirigemini.”*
 
 ## Checklist produksi
 
@@ -84,6 +96,7 @@ Tag: @REFO Indonesia
 - [ ] Tidak menampilkan dugaan sebagai fakta atau menyiratkan hubungan sebab-akibat.
 - [ ] Teks overlay singkat, kontras, dan terbaca pada layar ponsel; subtitle tidak menutupi grafik atau wajah.
 - [ ] Elemen penting berada di area aman video vertikal dan tetap terbaca tanpa audio.
-- [ ] Tautan CTA dan tag akun diperiksa sebelum publikasi.
+- [ ] QR resmi Belajar Mandiri ditampilkan besar, kontras tinggi, dan cukup lama di bagian akhir video.
+- [ ] Tautan CTA, handle `@geminiacademybyrefo`, dan tag akun diperiksa sebelum publikasi.
 - [ ] Gunakan aset resmi logo Gemini Academy dan samakan posisi/ukurannya dengan konten sebelumnya; jangan menggambar ulang logo.
 - [ ] Pastikan penggunaan nama/logo Gemini dan identitas kampanye mengikuti panduan merek yang berlaku.

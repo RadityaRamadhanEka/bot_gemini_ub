@@ -814,13 +814,14 @@ def normalize_content_pillar(pilar, pillar_options):
     if not pilar:
         return ""
 
-    normalized = pilar.strip().casefold()
+    def normalize_pillar_label(value):
+        label_without_emoji = re.sub(r"[^\w\s]", "", value, flags=re.UNICODE)
+        return re.sub(r"\s+", " ", label_without_emoji).strip().casefold()
+
+    normalized = normalize_pillar_label(pilar)
     for option in pillar_options:
-        if normalized == option.casefold():
-            return option
-        label_without_emoji = re.sub(r"[^\w\s]", "", option, flags=re.UNICODE)
-        label_without_emoji = re.sub(r"\s+", " ", label_without_emoji).strip()
-        if normalized == label_without_emoji.casefold():
+        option_normalized = normalize_pillar_label(option)
+        if normalized == option_normalized:
             return option
 
     pilihan_pilar = ", ".join(pillar_options)

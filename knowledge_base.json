@@ -97,6 +97,46 @@
           "prompt_demo": "Rancang dashboard sederhana untuk memantau data transaksi kantin sintetis berdasarkan tujuan [tujuan]. Pilih maksimal tiga metrik yang dapat dihitung dari kolom tersedia, sarankan visual dan periode pembanding yang sesuai, serta jelaskan satu batas interpretasi. Berikan susunan dashboard yang mudah dibaca dan jangan membuat angka atau tren yang tidak ada pada data. Data: [tempel ringkasan sintetis]."
         }
       ]
+    },
+    "keajaiban_gemini": {
+      "title": "Keajaiban Gemini",
+      "episodes": [
+        {
+          "title": "Tembok Besar China: apakah benar tembok tunggal yang bisa dilihat dari luar angkasa?",
+          "angle": "Meruntuhkan mitos satu tembok dan mengenalkan benteng lintas dinasti dengan tujuan serta bentuk yang berubah.",
+          "prompt_demo": "Buat ringkasan konten 45–60 detik tentang Tembok Besar China untuk mahasiswa. Pisahkan fakta, interpretasi, dan mitos. Jelaskan lokasi, tujuan awal pembangunan, pembangunan lintas dinasti, satu fungsi pertahanan yang mudah dipahami, dan kesalahpahaman tentang panjang atau visibilitas dari luar angkasa. Jangan mencantumkan panjang atau klaim fakta tanpa sumber yang dapat dibuka. Beri daftar sumber resmi atau lembaga yang dapat saya cek: UNESCO, kantor warisan pemerintah China, atau museum yang relevan."
+        },
+        {
+          "title": "Petra: kota batu yang mengelola air lebih cerdas daripada tampilannya",
+          "angle": "Membahas batuan dan arsitektur sambil menyoroti kanal, waduk, dan pengelolaan air sebagai rekayasa utama.",
+          "prompt_demo": "Susun cerita singkat tentang Kota Petra sebagai pusat kuno di Yordania. Bahas lokasi, penduduk Nabatea, The Treasury, dan sistem pengelolaan air secara proporsional. Beri tiga fakta yang dapat diverifikasi, satu kesalahpahaman populer, dan satu pertanyaan yang masih menjadi ruang kajian. Pisahkan bukti arkeologis dari interpretasi. Jangan mengarang nama, fungsi bangunan, atau sumber kutipan. Cantumkan tautan sumber resmi dari UNESCO, Badan Situs Petra, atau lembaga arkeologi yang dapat dibuka."
+        },
+        {
+          "title": "Christ the Redeemer: mengapa patungnya berdiri di atas Gunung Corcovado?",
+          "angle": "Menjelaskan desain, material, konstruksi, dan fungsi simbolik sambil membedakan fakta dari mitos populer.",
+          "prompt_demo": "Buat naskah ringkas berbahasa Indonesia tentang Patung Christ the Redeemer di Rio de Janeiro. Jaga nada edukatif dan menghormati makna keagamaan. Jelaskan lokasi, latar pembangunan, desainer dan keterlibatannya, material utama, tantangan konstruksi, serta satu kesalahpahaman populer. Tunjukkan apa yang merupakan fakta dokumentasi, interpretasi, dan klaim yang masih perlu dicek. Sertakan sumber resmi museum, situs kota Rio, atau lembaga warisan yang relevan."
+        },
+        {
+          "title": "Machu Picchu: kota Inka yang tetap menyimpan pertanyaan",
+          "angle": "Menunjukkan bukti arkeologi yang dikenal dan memperjelas fungsi yang masih diperdebatkan, tanpa mengubah spekulasi menjadi kepastian.",
+          "prompt_demo": "Jelaskan Machu Picchu untuk pemula dalam lima poin. Sertakan lokasi, periode pembangunannya, bukti arkeologinya, dan beberapa interpretasi fungsi yang pernah diajukan. Jelaskan secara tegas mana fungsi yang belum ada konsensus. Hindari klaim tentang alien, misteri tak terjelaskan, atau penghuni tanpa bukti. Cantumkan sumber UNESCO, Kementerian Kebudayaan Peru, atau institusi arkeologi resmi yang dapat diverifikasi."
+        },
+        {
+          "title": "Chichen Itza: bagaimana cahaya dan geometri bertemu di El Castillo?",
+          "angle": "Menghubungkan arsitektur Maya dengan geometri dan astronomi, lalu membedakan fenomena terverifikasi dari mitos equinox.",
+          "prompt_demo": "Susun hook dan enam fakta ringkas tentang Chichen Itza, khususnya El Castillo. Jelaskan konteks Maya, periode pembangunan yang dapat dipastikan, bentuk dan geometri bangunan, serta fenomena cahaya yang diamati pada equinox. Bedakan fakta pengamatan dari interpretasi, dan jelaskan bila rincian festival atau arti ritual modern belum tercantum dalam bukti arkeologi. Jangan membuat klaim angka atau korelasi yang tidak didukung. Tampilkan sumber resmi UNESCO, INAH, atau lembaga arkeologi terverifikasi."
+        },
+        {
+          "title": "Colosseum: arena Romawi yang juga adalah mesin pertunjukan",
+          "angle": "Melihat Colosseum sebagai bangunan rekayasa, politik, hiburan, dan perubahan penggunaan sepanjang sejarah.",
+          "prompt_demo": "Buat cerita 45–60 detik tentang Colosseum untuk audiens muda. Jelaskan tujuan awal, struktur utama, jenis pertunjukan yang terdokumentasi, dan satu perubahan bentuk bangunan setelah masa Kekaisaran Romawi. Pisahkan gladiator sebagai bagian pertunjukan dari legenda modern yang sering dibesar-besarkan. Sertakan tiga angka dengan satuan yang benar dan catatan sumber. Gunakan situs museum atau lembaga warisan Roma/Italia sebagai rujukan."
+        },
+        {
+          "title": "Taj Mahal: di balik marmer putih ada geometri dan sejarah Mughal",
+          "angle": "Mengajak penonton membaca seni, makam, taman, dan simetri sebagai satu sistem warisan sambil menjaga akurasi sejarah.",
+          "prompt_demo": "Susun ringkasan Taj Mahal yang akurat dan menghormati konteks sejarah Mughal. Jelaskan lokasi, fungsi utama, masa pembangunan, patron, unsur geometri dan simetri, serta bahan bangunan yang terdokumentasi. Bedakan fakta sejarah dari legenda populer tentang pembangun atau proses pembuatannya. Jangan mengulang klaim yang belum dapat diverifikasi. Beri sumber dari UNESCO, Archaeological Survey of India, atau museum berwenang."
+        }
+      ]
     }
   },
   "campaigns": {

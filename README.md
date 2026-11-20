@@ -141,9 +141,10 @@ Bot menampilkan menu berikut:
 1. Generate 7 Ide Konten Mingguan (Editorial Plan)
 2. Generate Draf dari Ide Manual
 3. Generate Draft dari Seri Kulik Data With Gemini
-4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)
-5. Generate Draf dari Seri Belajar Mandiri
-6. Keluar
+4. Generate Draf dari Seri Keajaiban Gemini
+5. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)
+6. Generate Draf dari Seri Belajar Mandiri
+7. Keluar
 ```
 
 ### Membuat ide mingguan
@@ -226,6 +227,22 @@ serta dashboard sederhana.
 Gunakan data sintetis/fiktif untuk demonstrasi analisis; jangan masukkan data
 pribadi atau transaksi asli. Rincian episode tersedia di
 `Kulik Data With Gemini\Seri Kulik Data With Gemini.md`.
+
+### Membuat draf dari Seri Keajaiban Gemini
+
+1. Masukkan `4`, lalu pilih salah satu dari tujuh keajaiban dunia yang
+   ditampilkan.
+2. Tentukan format dan jenis konten (`Rutin` atau `Festival`).
+3. Isi pilar, pesan utama, CTA, atau konteks tambahan jika diinginkan. Topik,
+   angle, dan prompt demo Gemini diambil otomatis dari
+   `knowledge_base.json`.
+4. Draf meminta Gemini menyusun fakta dan sumber, lalu menekankan pemeriksaan
+   manual terhadap nama, angka, tanggal, tautan, dan klaim.
+5. Hasil disimpan di `Hasil Draft Konten\Keajaiban Gemini` tanpa menimpa draf
+   lama.
+
+Rincian konsep dan tujuh episode tersedia di
+`Keajaiban Gemini\Seri Keajaiban Gemini.md`.
 
 Jalankan kembali `py .\generator.py` untuk setiap konten atau minggu yang ingin
 dibuat. Folder output dibuat otomatis ketika hasil pertama kali disimpan.

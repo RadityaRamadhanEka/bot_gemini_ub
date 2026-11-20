@@ -115,6 +115,34 @@ class ContentDraftTests(unittest.TestCase):
         self.assertIn("Default gender VO: male", prompt)
         self.assertIn("Hasil proyek ini adalah naskah Markdown", prompt)
 
+    def test_keajaiban_gemini_episode_loader_and_draft_generator(self):
+        episodes = generator.load_keajaiban_gemini_episodes()
+
+        self.assertEqual(len(episodes), 7)
+        self.assertIn("Tembok Besar China", episodes[0]["title"])
+
+        with patch.object(
+            generator,
+            "_generate_text",
+            return_value="generated Keajaiban Gemini draft",
+        ) as model:
+            judul, result = generator.generate_keajaiban_gemini_draft(
+                1,
+                "Reels",
+                "Rutin",
+            )
+
+        self.assertEqual(
+            judul,
+            "Episode 1 - Tembok Besar China: apakah benar tembok tunggal "
+            "yang bisa dilihat dari luar angkasa?",
+        )
+        self.assertEqual(result, "generated Keajaiban Gemini draft")
+        prompt = model.call_args.args[0]
+        self.assertIn("Keajaiban Gemini", prompt)
+        self.assertIn("Tembok Besar China", prompt)
+        self.assertIn("mengarang hasil Gemini", prompt)
+
 
 if __name__ == "__main__":
     unittest.main()

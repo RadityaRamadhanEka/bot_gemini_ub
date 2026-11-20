@@ -1124,16 +1124,100 @@ def generate_kulik_data_draft(
     return judul, hasil
 
 
+def load_keajaiban_gemini_episodes():
+    _, knowledge_base = load_supporting_files()
+    content_series = knowledge_base.get("content_series")
+    series = (
+        content_series.get("keajaiban_gemini")
+        if isinstance(content_series, dict)
+        else None
+    )
+    episodes = series.get("episodes") if isinstance(series, dict) else None
+    if not isinstance(episodes, list) or not episodes:
+        raise RuntimeError(
+            "Daftar episode Keajaiban Gemini tidak tersedia atau formatnya "
+            f"tidak valid di {KNOWLEDGE_BASE_PATH}."
+        )
+
+    required_fields = ("title", "angle", "prompt_demo")
+    for episode_number, episode in enumerate(episodes, start=1):
+        if not isinstance(episode, dict) or any(
+            not isinstance(episode.get(field), str)
+            or not episode[field].strip()
+            for field in required_fields
+        ):
+            raise RuntimeError(
+                f"Data episode ke-{episode_number} di {KNOWLEDGE_BASE_PATH} "
+                "harus memiliki title, angle, dan prompt_demo berupa teks."
+            )
+    return episodes
+
+
+def generate_keajaiban_gemini_draft(
+    episode_number,
+    format_konten,
+    jenis_konten,
+    pilar="",
+    pesan_utama="",
+    cta="",
+    konteks_tambahan="",
+):
+    episodes = load_keajaiban_gemini_episodes()
+    try:
+        episode_number = int(episode_number)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(
+            f"Nomor episode harus berupa angka 1 sampai {len(episodes)}."
+        ) from exc
+    if not 1 <= episode_number <= len(episodes):
+        raise ValueError(
+            f"Nomor episode harus berada di antara 1 sampai {len(episodes)}."
+        )
+
+    episode = episodes[episode_number - 1]
+    series_title = "Keajaiban Gemini"
+    judul = f"Episode {episode_number} - {episode['title']}"
+    ide_konten = (
+        f"Episode {episode_number} dari seri {series_title}. "
+        f"Keajaiban dunia: {episode['title']}. "
+        f"Angle cerita: {episode['angle']} "
+        "Mulai dari prompt Gemini untuk menyusun fakta dan sumber, lalu tampilkan "
+        "proses pemeriksaan agar cerita membedakan fakta, interpretasi, dan mitos."
+    )
+    konteks_seri = (
+        f"Nama seri: {series_title}. Gunakan sejarah, angka, nama, dan sumber yang "
+        "telah diverifikasi. Jelaskan bahwa New7Wonders 2007 adalah daftar pemungutan "
+        "suara, bukan daftar otoritatif UNESCO. Gunakan sumber resmi dan jangan "
+        "mengarang hasil Gemini."
+    )
+    if konteks_tambahan.strip():
+        konteks_seri = f"{konteks_seri}\n{konteks_tambahan.strip()}"
+
+    hasil = generate_content_draft(
+        judul,
+        format_konten,
+        jenis_konten,
+        ide_konten,
+        pilar=pilar,
+        pesan_utama=pesan_utama,
+        prompt_demo=episode["prompt_demo"],
+        cta=cta,
+        konteks_tambahan=konteks_seri,
+    )
+    return judul, hasil
+
+
 def main():
     print("=== ASSISTANT INFLUENCER GEMINI ACADEMY (UB EDITION) ===")
     print("1. Generate 7 Ide Konten Mingguan (Editorial Plan)")
     print("2. Generate Draf dari Ide Manual")
     print("3. Generate Draft dari Seri Kulik Data With Gemini")
-    print("4. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)")
-    print("5. Generate Draf dari Seri Belajar Mandiri")
-    print("6. Keluar")
+    print("4. Generate Draf dari Seri Keajaiban Gemini")
+    print("5. Generate Rencana Kampanye Belajar Mandiri (4-6 Hacks)")
+    print("6. Generate Draf dari Seri Belajar Mandiri")
+    print("7. Keluar")
 
-    pilihan = input("Pilih menu (1/2/3/4/5/6): ").strip()
+    pilihan = input("Pilih menu (1/2/3/4/5/6/7): ").strip()
     if pilihan == "1":
         minggu = input("Masukkan Minggu Ke-berapa (1-7): ").strip()
         konteks_mingguan = input(
@@ -1213,6 +1297,43 @@ def main():
         output_path = save_content_draft(judul, hasil, subfolder="KulikData")
         print(f"\nFile Markdown tersimpan: {output_path}")
     elif pilihan == "4":
+        episodes = load_keajaiban_gemini_episodes()
+        print("\nEpisode Seri Keajaiban Gemini:")
+        for episode_number, episode in enumerate(episodes, start=1):
+            print(f"{episode_number}. {episode['title']}")
+
+        episode_number = input(
+            f"Pilih episode (1-{len(episodes)}): "
+        ).strip()
+        format_konten = input(
+            "Format (Reel/IG Story/Static-Carousel-Poster/YouTube Short/"
+            "TikTok/Challenge card-prompt card): "
+        ).strip()
+        jenis_konten = input("Jenis (Rutin / Festival): ").strip()
+        pilar = input(
+            "Pilar (opsional, gunakan nama persis dari dropdown): "
+        ).strip()
+        pesan_utama = input("Pesan utama (opsional): ").strip()
+        cta = input("CTA yang diinginkan (opsional): ").strip()
+        konteks_tambahan = input("Konteks tambahan (opsional): ").strip()
+
+        print("\n--- MENGGENERATE DRAF SERI KEAJAIBAN GEMINI ---\n")
+        judul, hasil = generate_keajaiban_gemini_draft(
+            episode_number,
+            format_konten,
+            jenis_konten,
+            pilar=pilar,
+            pesan_utama=pesan_utama,
+            cta=cta,
+            konteks_tambahan=konteks_tambahan,
+        )
+        print(hasil)
+        print_draft_audit(hasil, format_konten, jenis_konten)
+        output_path = save_content_draft(
+            judul, hasil, subfolder="Keajaiban Gemini"
+        )
+        print(f"\nFile Markdown tersimpan: {output_path}")
+    elif pilihan == "5":
         jumlah_hacks = input(
             "Jumlah hacks untuk kampanye (4-6): "
         ).strip()
@@ -1225,7 +1346,7 @@ def main():
         print(hasil)
         output_path = save_belajar_mandiri_plan(jumlah_hacks, hasil)
         print(f"\nFile Markdown tersimpan: {output_path}")
-    elif pilihan == "5":
+    elif pilihan == "6":
         campaign = load_belajar_mandiri_campaign()
         print("\nPilihan hack Seri Belajar Mandiri:")
         for hack_number, hack in enumerate(campaign["hacks"], start=1):
@@ -1258,11 +1379,11 @@ def main():
             judul, hasil, subfolder="Belajar Mandiri"
         )
         print(f"\nFile Markdown tersimpan: {output_path}")
-    elif pilihan == "6":
+    elif pilihan == "7":
         print("Terima kasih, bot ditutup.")
     else:
         raise ValueError(
-            "Pilihan menu tidak valid. Masukkan 1, 2, 3, 4, 5, atau 6."
+            "Pilihan menu tidak valid. Masukkan 1, 2, 3, 4, 5, 6, atau 7."
         )
 
 

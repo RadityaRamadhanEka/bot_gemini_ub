@@ -8,7 +8,7 @@ Episode 1 - *Keajaiban Gemini*: "Tembok Besar China: apakah benar tembok tunggal
 
 ### 1. Tujuan Konten & Pesan Utama  
 **Tujuan**: Mengedukasi mahasiswa UB tentang mitos Tembok Besar China dengan fakta historis yang terverifikasi, menghindari klaim tidak akurat tentang visibilitas dari luar angkasa.  
-**Pesan Utama**: "Tembok Besar China bukan satu tembok tunggal yang bisa dilihat dari luar angkasa—ini adalah benteng lintas dinasti yang panjangnya berubah seiring waktu, dengan fungsi pertahanan yang jelas."  
+**Pesan Utama**: "Tembok Besar China bukan satu tembok tunggal yang dibangun sekaligus. Ini adalah sistem pertahanan yang dibangun dan dikembangkan selama berabad-abad. Gemini dapat membantu menyusun ringkasan, tetapi fakta tetap perlu diperiksa ke sumber tepercaya."  
 
 ---
 
@@ -30,29 +30,28 @@ Episode 1 - *Keajaiban Gemini*: "Tembok Besar China: apakah benar tembok tunggal
 
 | Waktu     | Lokasi/Latar                  | Aksi dan Ekspresi Tokoh                     | Framing/Kamera         | Transisi          | Teks Overlay (Singkat)                     | Ucapan/VO (Persis)                                                                 | Aksi Visual/Demo                                                                 |
 |-----------|-------------------------------|---------------------------------------------|------------------------|---------------------|--------------------------------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| 0-3s      | Ruang kelas UB (peta China)   | Raka menatap layar dengan ekspresi skeptis   | Close-up (80%)         | Fade-in             | *"Mitos: Tembok Besar China bisa dilihat dari luar angkasa?"* | *"Tidak. Ini bukan mitos kecil—tapi keajaiban sejarah yang sering salah diterjemahkan."* | Layar: Gambar Tembok Besar (versi sederhana) tanpa teks.                          |
-| 3-10s     | Ruang kelas (peta China)      | Raka menggenggam kertas berisi sketsa tembok | Medium shot (100%)     | Cut to animation    | *"Dibangun lintas 20+ dinasti"*            | *"Sejak Dinasti Qin (221 SM), Tembok Besar China terus diperbarui. Bukan satu tembok—tapi benteng yang berubah seiring waktu."* | Aksi: Sketsa tembok dengan garis waktu (Qin → Ming → Qing).                      |
-| 10-20s    | Ruang kelas (peta China)      | Raka menunjuk gambar "fungsi pertahanan"    | Medium shot (100%)     | Zoom-in             | *"Fungsi: Pertahanan, bukan 'menarik perhatian'"* | *"Fungsi utamanya adalah pertahanan—bukan menjadi 'benteng ikonik' untuk diambil foto dari luar angkasa."* | Aksi: Gambar tembok dengan ikon "pertahanan" (bukan "menarik perhatian").        |
-| 20-35s    | Ruang kelas (peta China)      | Raka menunjuk sumber resmi (UNESCO)         | Close-up (70%)         | Cut to logo         | *"Sumber resmi: UNESCO, Kantor Warisan China"* | *"Bukan panjang 21.100 km—tapi 500 km+ yang berubah seiring waktu. Sumber resmi: UNESCO dan Kantor Warisan China."* | Aksi: Tampilan logo UNESCO + kantor warisan China (tanpa teks panjang).          |
-| 35-40s    | Ruang kelas (peta China)      | Raka berdiri dengan ekspresi optimis        | Wide shot (100%)      | Fade-out            | *"Cek sumber resmi di sini!"*             | *"Jangan percaya mitos tentang visibilitas dari luar angkasa. Cek sumber resmi di [link] untuk fakta akurat."* | Aksi: Tampilan QR code (link ke sumber resmi) di latar.                         |
+| 0-3s      | Ruang kelas UB (peta China)   | Raka menatap layar dengan ekspresi skeptis   | Close-up (80%)         | Fade-in             | *"Tembok Besar terlihat dari luar angkasa?"* | *"Bisa dilihat dari luar angkasa? Faktanya, tidak sesederhana itu."* | Layar: Gambar Tembok Besar (versi sederhana) tanpa teks.                          |
+| 3-10s     | Ruang kelas (peta China)      | Raka menggenggam kertas berisi sketsa tembok | Medium shot (100%)     | Cut to animation    | *"Bukan dibangun sekaligus"*            | *"Sekitar 220 sebelum Masehi, Qin menyatukan bagian-bagian pertahanan yang sudah ada. Pembangunannya berlanjut hingga Dinasti Ming."* | Aksi: Sketsa garis waktu; tandai bagian yang sudah ada, Qin, lalu Ming. |
+| 10-20s    | Ruang kelas (peta China)      | Raka menunjuk gambar "fungsi pertahanan"    | Medium shot (100%)     | Zoom-in             | *"Sistem pertahanan berlapis"* | *"Tujuannya sebagai sistem pertahanan di perbatasan utara. Bentuknya bukan cuma tembok, tetapi juga menara pengawas, benteng, dan jalur."* | Aksi: Ilustrasi tembok, menara, benteng, dan jalur dengan label singkat. |
+| 20-35s    | Ruang kelas (peta China)      | Raka menunjukkan Gemini, lalu memeriksa sumber | Close-up (70%)         | Cut to sumber        | *"Gemini bantu merangkum. Cek sumbernya."* | *"UNESCO mencatat panjang keseluruhan lebih dari 20.000 kilometer, gabungan berbagai bagian pertahanan. Gemini bisa bantu merangkum, tapi cocokkan faktanya dengan sumber. NASA menjelaskan, tembok ini tidak terlihat dari Bulan dan sulit dilihat dari orbit tanpa lensa kuat."* | Tampilkan prompt di Gemini, lalu buka sumber UNESCO untuk sejarah/panjang dan NASA untuk klaim visibilitas. |
+| 35-40s    | Ruang kelas (peta China)      | Raka berdiri dengan ekspresi optimis        | Wide shot (100%)      | Fade-out            | *"Mitos sejarah apa lagi?"*             | *"Coba cek fakta bareng Gemini, lalu tulis mitos sejarah apa yang perlu kita bahas berikutnya!"* | Tampilkan kartu CTA Belajar Mandiri bareng Gemini dan QR resmi, cukup lama agar dapat dipindai. |
 
 ---
 
 ### 5. DEMO GEMINI  
 **Prompt Demo (siap ditempel)**:  
 ```text
-Buat ringkasan konten 45–60 detik tentang Tembok Besar China untuk mahasiswa. Pisahkan fakta, interpretasi, dan mitos. Jelaskan lokasi, tujuan awal pembangunan, pembangunan lintas dinasti, satu fungsi pertahanan yang mudah dipahami, dan kesalahpahaman tentang panjang atau visibilitas dari luar angkasa. Jangan mencantumkan panjang atau klaim fakta tanpa sumber yang dapat dibuka. Beri daftar sumber resmi atau lembaga yang dapat saya cek: UNESCO, kantor warisan pemerintah China, atau museum yang relevan.
+Buat ringkasan konten 45–60 detik tentang Tembok Besar China untuk mahasiswa. Pisahkan fakta, interpretasi, dan mitos. Jelaskan bahwa sekitar 220 SM Qin menyatukan bagian-bagian pertahanan yang telah ada dan pembangunan berlanjut hingga Dinasti Ming; jelaskan fungsi pertahanan dan unsur-unsurnya. Bahas klaim panjang dan visibilitas dari luar angkasa dengan hati-hati. Untuk setiap fakta, sertakan tautan sumber tepercaya yang spesifik dan dapat dibuka. Gunakan halaman UNESCO World Heritage Centre (https://whc.unesco.org/en/list/438/) untuk sejarah dan panjang, serta sumber NASA (https://www.nasa.gov/image-article/great-wall/) untuk visibilitas. Jangan mengarang angka atau menyimpulkan bahwa Gemini adalah sumber primer. Tandai informasi yang perlu diverifikasi.
 ```
 
-**Contoh Hasil (Ilustrasi yang perlu dibuat ulang)**:  
-> *"Tembok Besar China dibangun lintas 20+ dinasti (Qin hingga Qing) dengan tujuan pertahanan. Fungsi utamanya adalah melindungi wilayah dari invasi—bukan menjadi 'benteng ikonik' yang bisa dilihat dari luar angkasa. Mitos tentang panjang 21.100 km tidak akurat; sumber resmi UNESCO menyatakan panjang aktual 500 km+. Cek sumber resmi di [UNESCO] dan [Kantor Warisan China] untuk fakta akurat."*  
-> *(Catatan: Hasil ini perlu diverifikasi di Gemini sebelum syuting—pastikan tidak ada klaim panjang tanpa sumber.)*
+**Contoh Hasil (Ilustrasi, tetap verifikasi sebelum syuting)**:  
+> *"Tembok Besar China bukan satu tembok yang dibangun sekaligus. Menurut UNESCO, sekitar 220 SM Qin menyatukan bagian-bagian benteng yang sudah ada, lalu pembangunannya berlanjut hingga Dinasti Ming. Keseluruhan situsnya membentang lebih dari 20.000 km dan mencakup tembok, menara, benteng, serta jalur. NASA menyebut tembok ini tidak terlihat dari Bulan dan sulit dilihat dari orbit tanpa lensa kuat. Gemini membantu menyusun ringkasan ini; rujuk sumber UNESCO dan NASA untuk memeriksa faktanya."*
 
 ---
 
 ### 6. Naskah Lisan & Arahan VO  
 **Naskah Lisan (Persis)**:  
-*"Tidak. Ini bukan mitos kecil—tapi keajaiban sejarah yang sering salah diterjemahkan. Sejak Dinasti Qin (221 SM), Tembok Besar China terus diperbarui. Bukan satu tembok—tapi benteng yang berubah seiring waktu. Fungsi utamanya adalah pertahanan, bukan menjadi 'benteng ikonik' untuk diambil foto dari luar angkasa. Bukan panjang 21.100 km—tapi 500 km+ yang berubah seiring waktu. Sumber resmi: UNESCO dan Kantor Warisan China. Jangan percaya mitos tentang visibilitas dari luar angkasa. Cek sumber resmi di [link] untuk fakta akurat."*  
+*"Bisa dilihat dari luar angkasa? Faktanya, tidak sesederhana itu. Tembok Besar bukan satu tembok yang dibangun sekaligus. Sekitar 220 sebelum Masehi, Qin menyatukan bagian-bagian pertahanan yang sudah ada; pembangunannya berlanjut hingga Dinasti Ming. Fungsinya sebagai sistem pertahanan di perbatasan utara, dengan tembok, menara, benteng, dan jalur. UNESCO mencatat panjang keseluruhan lebih dari 20.000 kilometer. NASA menjelaskan, tembok ini tidak terlihat dari Bulan dan sulit dilihat dari orbit tanpa lensa kuat. Gemini bisa membantu merangkum, tapi selalu cek sumbernya. Mitos sejarah apa lagi yang perlu kita bahas?"*
 
 **Arahan Karakter VO**:  
 - Suara berat namun jelas (30-40 dB), nada edukatif tanpa terlalu teknis.  
@@ -75,18 +74,26 @@ Buat ringkasan konten 45–60 detik tentang Tembok Besar China untuk mahasiswa. 
 ---
 
 ### 8. Caption Siap Unggah  
-> 🌐 **Tembok Besar China: Apakah benar bisa dilihat dari luar angkasa?**  
-> *Ini bukan mitos kecil—tapi keajaiban sejarah yang sering salah diterjemahkan.*  
-> ✅ Fakta: Dibangun lintas 20+ dinasti (Qin hingga Qing) untuk pertahanan.  
-> ✅ Sumber resmi: [UNESCO](https://www.unesco.org) | [Kantor Warisan China](https://www.culturalheritage.gov.cn)  
-> 🔍 *Jangan percaya klaim panjang 21.100 km—sumber resmi menyatakan 500 km+.*  
-> 👇 Cek sumber resmi di [link] untuk fakta akurat!  
-> \#GeminiAcademy \#GeminiAcademyUB @REFO Indonesia  
+> 🌏 **Tembok Besar China bisa dilihat dari luar angkasa?** Jawabannya ternyata nggak sesederhana mitos yang sering kita dengar!
+>
+> Tembok Besar bukan satu tembok lurus yang dibangun sekaligus. Menurut [UNESCO](https://whc.unesco.org/en/list/438/), sekitar 220 SM Qin menyatukan bagian-bagian pertahanan yang sudah ada, lalu pembangunannya berlanjut hingga Dinasti Ming. Keseluruhan situsnya membentang **lebih dari 20.000 km** dan terdiri dari tembok, menara pengawas, benteng, serta jalur.
+>
+> Terus, bagaimana dengan klaim bisa terlihat dari luar angkasa? [NASA](https://www.nasa.gov/image-article/great-wall/) menjelaskan bahwa tembok ini tidak terlihat dari Bulan dan sulit dilihat dari orbit tanpa lensa kuat.
+>
+> Di episode pertama **Keajaiban Gemini**, Gemini membantu kita menyusun ringkasan dan pertanyaan untuk ditelusuri—tetapi sumber tepercaya tetap jadi tempat mengecek faktanya. Mau coba? Minta Gemini membedakan fakta dan mitos tentang Tembok Besar China, lalu cocokkan jawabannya dengan sumber yang bisa dibuka.
+>
+> Mau lanjut belajar bareng Gemini? Pindai QR Belajar Mandiri di akhir video, ikuti @geminiacademybyrefo, atau buka https://bit.ly/belajarmandirigemini.
+>
+> 👇 **Drop komen:** mitos sejarah apa lagi yang pengin kamu cek bareng Gemini? Tag teman yang wajib tahu!
+>
+> #KeajaibanGemini #TembokBesarChina #LiterasiDigital #GeminiAcademy #GeminiAcademyUB #MahasiswaUB
+>
+> @geminiacademybyrefo @REFO Indonesia
 
 ---
 
 ### 9. Checklist Produksi Singkat  
-- [x] Properti/aset: Peta China, logo Gemini Academy (resmi), QR code sumber resmi.  
+- [x] Properti/aset: Peta China, logo Gemini Academy (resmi), QR resmi Belajar Mandiri bareng Gemini (`images/belajar-mandiri/qr-belajar-mandiri.png`), dan kartu sumber UNESCO/NASA.  
 - [x] Konsistensi tokoh dan latar: Raka (laki-laki) di ruang kelas UB dengan latar peta China.  
 - [x] Keterbacaan teks: Teks overlay maksimal 15 karakter per adegan.  
 - [x] Safe area vertikal: 10% dari tepi layar.  
@@ -96,6 +103,5 @@ Buat ringkasan konten 45–60 detik tentang Tembok Besar China untuk mahasiswa. 
 ---
 
 **Saran Pengembangan (Opsional)**  
-- *Tambahkan adegan visual*: Tampilkan animasi "panjang tembok" berubah seiring waktu (dari 500 km ke 2.100 km) untuk memperjelas mitos vs. fakta.  
-- *Perbaikan CTA*: Ubah "Cek sumber resmi di [link]" menjadi "Kunjungi [UNESCO] atau [Kantor Warisan China] untuk fakta akurat" agar lebih spesifik.  
-*(Catatan: Saran ini tidak mengubah pesan utama atau angle konten.)*
+- *Arahan visual*: Hindari menggambar Tembok Besar sebagai satu garis lurus tanpa putus; tampilkan beberapa bagian dan unsur pertahanannya. Pastikan kartu sumber dan QR dapat dibaca/dipindai sebelum video berakhir.  
+*(Catatan: Angka panjang dan klaim visibilitas pada naskah ini merujuk ke sumber yang ditautkan; jangan menampilkan klaim lama “500 km+” atau “terlihat dari Bulan”.)*

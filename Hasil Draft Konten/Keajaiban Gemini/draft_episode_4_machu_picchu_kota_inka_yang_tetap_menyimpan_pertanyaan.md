@@ -1,5 +1,11 @@
-**Brief Asli Pengguna**  
-Episode 4 - *Keajaiban Gemini*: Machu Picchu (kota Inka yang tetap menyimpan pertanyaan). Fokus: Menunjukkan bukti arkeologi yang dikenal, fungsi yang masih diperdebatkan, dan sumber resmi (UNESCO/Kementerian Kebudayaan Peru) tanpa klaim kepastian atau mitos. Format: Reel (30-45 detik). Pilar: 🤯 Experiment.  
+**Brief Konten**
+Episode 4 - *Keajaiban Gemini*: Machu Picchu (kota Inka yang tetap menyimpan pertanyaan). Fokus: fakta arkeologi yang dapat diverifikasi, fungsi situs yang belum sepenuhnya diketahui, dan sumber tepercaya. Format: Reel (30-45 detik). Pilar: 🤯 Experiment.
+
+### Catatan Audit
+- **Perlu dihapus atau diperbaiki:** “300 km dari Lima”, tahun “1438–1472”, “3.600 artefak”, dan “1.200 batu besar”. Draf tidak memberi rujukan yang dapat dilacak untuk klaim-klaim tersebut; jangan tampilkan sebagai fakta.
+- **Klaim fungsi perlu diluruskan:** UNESCO menyebut kompleks ini terkait fungsi keagamaan, upacara, astronomi, dan pertanian, tetapi peran tepatnya masih belum sepenuhnya diketahui. “Tempat perniagaan” dan “tidak ada bukti hunian permanen” tidak didukung sumber yang dicantumkan.
+- **Arahan sumber:** gunakan halaman UNESCO yang spesifik, bukan label umum seperti “UNESCO (2023)” atau “Kementerian Kebudayaan Peru (2022)”. Jangan tampilkan jawaban Gemini sebagai sumber primer; buka dan cek sumber yang dirujuk.
+- **Caption dan alur:** naskah awal lebih menyerupai daftar data daripada cerita; revisi di bawah memakai pertanyaan pembuka, fakta ringkas, konteks ketidakpastian, dan CTA. Pastikan ritme VO diuji saat latihan.
 
 ---
 
@@ -10,9 +16,9 @@ Edukasi mahasiswa UB tentang Machu Picchu melalui fakta arkeologis yang terverif
 
 ---
 
-### 2. HOOK Pembuka (0-3 detik)  
+### 2. HOOK Pembuka (0-4 detik)
 **Teks Overlay**: *"Machu Picchu: Kota Inka yang masih menyimpan pertanyaan?"*  
-**Ucapan (VO)**: *"Kamu tahu apa yang paling menarik tentang kota Inka ini? Bukan keajaiban yang tak terduga, tapi pertanyaan yang masih terbuka..."*  
+**Ucapan (VO)**: *"Machu Picchu dibangun pada abad ke-15. Tapi, sebenarnya tempat ini digunakan untuk apa?"*
 **Visual**: Layar biru dengan ikon *mata* (🔍) bergerak ke kiri, latar belakang gambar Machu Picchu yang minim detail (tanpa teks berlebihan).  
 
 ---
@@ -28,50 +34,37 @@ Edukasi mahasiswa UB tentang Machu Picchu melalui fakta arkeologis yang terverif
 ---
 
 ### 4. Storyboard Terperinci  
-| **Waktu** | **Lokasi/latar**                     | **Aksi dan Ekspresi Tokoh**                                                                 | **Framing/Kamera**                     | **Transisi**          | **Teks Overlay (Persis)**                                                                 | **Ucapan/VO (Persis)**                                                                                                                               | **Aksi Visual/Demo**                                                                 |
-|-----------|--------------------------------------|----------------------------------------------------------------------------------------|----------------------------------------|------------------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| 0-2 detik  | Ruang belajar UB                    | Raka menatap layar laptop dengan ekspresi penasaran, tangan bergerak ke kiri untuk menunjuk data | Close-up wajah (80% layar)             | Masuk dari layar laptop | *"Machu Picchu: Kota Inka yang masih menyimpan pertanyaan?"*                             | *"Kamu tahu apa yang paling menarik tentang kota Inka ini? Bukan keajaiban yang tak terduga, tapi pertanyaan yang masih terbuka..."* | Layar laptop menampilkan data arkeologi sederhana (tanpa teks berlebihan)         |
-| 2-5 detik  | Ruang belajar UB                    | Raka menggesek layar laptop, menunjuk peta Peru di layar | Mid-shot (70% layar)                 | Fade ke peta Peru      | *"Lokasi: Peru, 300 km dari kota Lima"*                                               | *"Lokasi: Peru, 300 km dari kota Lima"*                                                   | Layar menampilkan peta Peru dengan tanda *X* di area Machu Picchu                 |
-| 5-10 detik | Ruang belajar UB                    | Raka berdiri, menunjuk data "Periode Pembangunan" di layar | Wide shot (60% ruang)               | Fade ke data arkeologi | *"Periode: 1438–1472 Masehi (diperkirakan)"*                                          | *"Periode pembangunan: 1438–1472 Masehi (diperkirakan)"*                                   | Layar menampilkan tanggal dalam format arkeologi (tanpa klaim pasti)              |
-| 10-15 detik| Ruang belajar UB                    | Raka mengangkat tangan ke depan, ekspresi "menggali" | Close-up tangan (50% layar)         | Fade ke foto artefak   | *"Bukti Arkeologi: 3.600 artefak, 1.200 batu berukuran besar"*                        | *"Bukti arkeologi: 3.600 artefak, 1.200 batu berukuran besar"*                            | Layar menampilkan foto artefak Inka (tanpa teks berlebihan)                      |
-| 15-22 detik| Ruang belajar UB                    | Raka berdiri, menunjuk data "Fungsi yang diperdebatkan" di layar | Mid-shot (70% layar)               | Fade ke data sumber   | *"Fungsi yang diperdebatkan: Tempat ibadah? Tempat perniagaan? Bisa jadi keduanya?"*    | *"Fungsi yang diperdebatkan: Tempat ibadah? Tempat perniagaan? Bisa jadi keduanya?"*        | Layar menampilkan 3 opsi fungsi dengan tanda *?* (tanpa klaim pasti)             |
-| 22-35 detik| Ruang belajar UB                    | Raka berdiri di depan kamera, tersenyum dengan ekspresi "keterbukaan" | Wide shot (80% ruang)             | Fade ke CTA            | *"Coba prompt Gemini untuk mengeksplorasi lebih lanjut!"*                               | *"Coba prompt Gemini untuk mengeksplorasi lebih lanjut!"*                                  | Layar menampilkan ikon *mata* (🔍) dengan teks "Coba prompt"                      |
+| **Waktu** | **Visual/aksi** | **Teks overlay** | **VO** |
+|-----------|-----------------|-----------------|--------|
+| 0-4 detik | Raka menatap kamera; potongan cepat ke panorama Machu Picchu. | *Machu Picchu: sebenarnya untuk apa?* | *"Machu Picchu dibangun pada abad ke-15. Tapi, sebenarnya tempat ini digunakan untuk apa?"* |
+| 4-10 detik | Peta Peru, lalu penanda wilayah Cusco; tampilkan elevasi. | *Wilayah Cusco, Peru · 2.430 mdpl* | *"Situs ini berada di wilayah Cusco, Peru, pada ketinggian sekitar 2.430 meter."* |
+| 10-17 detik | Detail teras, dinding batu, lalu ilustrasi denah situs. | *Sekitar 200 struktur* | *"UNESCO mencatat sekitar 200 struktur, dengan kawasan hunian dan pertanian yang tertata."* |
+| 17-27 detik | Kata kunci muncul bergantian: keagamaan, upacara, astronomi, pertanian. | *Fungsi tepatnya? Belum sepenuhnya diketahui.* | *"Machu Picchu dikaitkan dengan fungsi keagamaan, upacara, astronomi, dan pertanian. Namun, peran tepatnya masih menyimpan pertanyaan."* |
+| 27-35 detik | Raka kembali ke kamera; tampilkan sumber UNESCO dan CTA. | *Cek sumber. Lalu, eksplorasi dengan Gemini.* | *"Yuk, telusuri sumbernya dan eksplorasi lebih lanjut dengan Gemini. Tetap cek ulang jawabannya!"* |
 
 ---
 
 ### 5. DEMO GEMINI  
 **Prompt Demo (Siap Ditempel)**:  
 ```text
-Jelaskan Machu Picchu untuk pemula dalam lima poin. Sertakan lokasi, periode pembangunannya, bukti arkeologinya, dan beberapa interpretasi fungsi yang pernah diajukan. Jelaskan secara tegas mana fungsi yang belum ada konsensus. Hindari klaim tentang alien, misteri tak terjelaskan, atau penghuni tanpa bukti. Cantumkan sumber UNESCO, Kementerian Kebudayaan Peru, atau institusi arkeologi resmi yang dapat diverifikasi.
+Jelaskan Machu Picchu untuk pemula dalam lima poin. Gunakan halaman UNESCO World Heritage Centre ini sebagai sumber utama: https://whc.unesco.org/en/list/274/. Sertakan lokasi, ketinggian, perkiraan abad pembangunannya, ciri arsitektur yang tercatat, dan fungsi situs menurut sumber tersebut. Bedakan fakta yang dinyatakan sumber dari hal yang belum diketahui; jangan menambahkan angka, tanggal spesifik, atau teori yang tidak didukung sumber. Untuk setiap poin, cantumkan kutipan singkat atau bagian sumber yang mendukungnya. Jika informasi tidak ada di sumber, katakan demikian.
 ```  
-**Contoh Hasil (Ilustrasi yang perlu diverifikasi di Gemini)**:  
-1. **Lokasi**: Peru, 300 km dari kota Lima (sumber: UNESCO).  
-2. **Periode**: 1438–1472 Masehi (diperkirakan, sumber: Kementerian Kebudayaan Peru).  
-3. **Bukti Arkeologi**: 3.600 artefak, 1.200 batu berukuran besar (sumber: Archaeological Survey of Peru).  
-4. **Interpretasi Fungsi**:  
-   - Tempat ibadah (bukti: struktur khusus untuk ritual).  
-   - Tempat perniagaan (bukti: jalur perdagangan di sekitarnya).  
-   - *Fungsi yang belum ada konsensus*: Bukan tempat penghuni permanen (tidak ada bukti arkeologi tentang hunian).  
-5. **Sumber Resmi**: UNESCO (2023), Kementerian Kebudayaan Peru (2022).  
-
-> ⚠️ Catatan: Hasil di atas **harus diverifikasi** di Gemini sebelum syuting. Tidak boleh mengubah data atau klaim tanpa sumber yang terverifikasi.
+**Panduan hasil demo**: Jangan mengunci contoh hasil dengan klaim atau daftar angka yang belum diverifikasi. Saat merekam, buka halaman UNESCO yang ditautkan, cocokkan setiap fakta dengan teks sumber, dan tampilkan sumber tersebut di layar. Jika Gemini memberi rincian yang tidak ditemukan di sumber, jangan masukkan ke video.
 
 ---
 
 ### 6. Naskah Lisan dan Arahan VO  
 **Naskah Lisan**:  
-*"Machu Picchu: Kota Inka yang masih menyimpan pertanyaan?  
-Lokasi: Peru, 300 km dari kota Lima.  
-Periode pembangunan: 1438–1472 Masehi (diperkirakan).  
-Bukti arkeologi: 3.600 artefak, 1.200 batu berukuran besar.  
-Fungsi yang diperdebatkan: Tempat ibadah? Tempat perniagaan? Bisa jadi keduanya?  
-Sumber resmi: UNESCO dan Kementerian Kebudayaan Peru.  
-Coba prompt Gemini untuk mengeksplorasi lebih lanjut!"*  
+*"Machu Picchu dibangun pada abad ke-15. Tapi, sebenarnya tempat ini digunakan untuk apa?
+Situs ini berada di wilayah Cusco, Peru, pada ketinggian sekitar 2.430 meter.
+UNESCO mencatat sekitar 200 struktur, dengan kawasan hunian dan pertanian yang tertata.
+Machu Picchu dikaitkan dengan fungsi keagamaan, upacara, astronomi, dan pertanian. Namun, peran tepatnya masih menyimpan pertanyaan.
+Yuk, telusuri sumbernya dan eksplorasi lebih lanjut dengan Gemini. Tetap cek ulang jawabannya!"*
 
 **Arahan VO**:  
 - Suara laki-laki (20-25 tahun), nada edukatif tapi energik.  
 - Kecepatan berbicara: 120-140 kata/menit.  
-- Teknik: Gunakan *paus* (pause) di akhir kalimat untuk efek penekanan.  
+- Teknik: Beri jeda singkat setelah hook dan sebelum pertanyaan tentang fungsi. Uji durasi dengan VO asli agar seluruh narasi tetap muat dalam 35 detik.
 
 ---
 
@@ -84,25 +77,26 @@ Coba prompt Gemini untuk mengeksplorasi lebih lanjut!"*
 | Durasi Total           | 35 detik                                                                   |
 | Rentang Waktu Adegan   | 0-35 detik                                                                 |
 | Safe Area (Vertikal)   | 10% dari tepi atas/bawah                                                   |
-| Logo Gemini Academy     | Plase di sudut kanan bawah (ukuran 15% dari layar), warna biru dengan ikon *mata* (🔍) |
-| Aset Resmi              | Foto Machu Picchu (sumber: UNESCO), peta Peru (sumber: Kementerian Kebudayaan Peru) |
+| Logo Gemini Academy     | Tempatkan sesuai panduan merek dan safe area; pastikan tidak menutupi sumber atau teks penting. |
+| Aset                    | Gunakan aset yang lisensinya jelas dan cantumkan atribusi sesuai ketentuan; peta menandai wilayah Cusco, Peru. |
 
 ---
 
 ### 8. Caption Siap Unggah  
-Machu Picchu: Kota Inka yang masih menyimpan pertanyaan? 🏔️  
-Lokasi: Peru, 300 km dari kota Lima.  
-Periode pembangunan: 1438–1472 Masehi (diperkirakan).  
-Bukti arkeologi: 3.600 artefak, 1.200 batu berukuran besar.  
-Fungsi yang diperdebatkan: Tempat ibadah? Tempat perniagaan? Bisa jadi keduanya?  
+Machu Picchu dibangun pada abad ke-15 dan berdiri sekitar 2.430 meter di atas permukaan laut, di wilayah Cusco, Peru. Kompleks ini memiliki sekitar 200 struktur, dengan kawasan hunian dan pertanian yang tertata. 🏔️
 
-Coba prompt Gemini untuk mengeksplorasi lebih lanjut! 🔍  
-*#GeminiAcademy #GeminiAcademyUB @REFO Indonesia*  
+UNESCO mengaitkannya dengan fungsi keagamaan, upacara, astronomi, dan pertanian. Namun, peran tepat situs ini masih belum sepenuhnya diketahui. Jadi, bagian mana yang paling bikin kamu penasaran?
+
+Telusuri sumbernya, lalu eksplorasi pertanyaannya dengan Gemini. Jangan lupa cek ulang jawabannya ke sumber tepercaya. 🔍
+
+Sumber: [UNESCO World Heritage Centre — Historic Sanctuary of Machu Picchu](https://whc.unesco.org/en/list/274/)
+
+#GeminiAcademy #GeminiAcademyUB @REFO Indonesia
 
 ---
 
 ### 9. Checklist Produksi Singkat  
-✅ **Aset/properti**: Foto Machu Picchu (UNESCO), peta Peru (Kementerian Kebudayaan Peru)  
+✅ **Aset/properti**: Pastikan lisensi dan atribusi foto/peta sesuai ketentuan
 ✅ **Konsistensi tokoh**: Raka (laki-laki, 20 tahun) dengan gaya kampus  
 ✅ **Keterbacaan teks**: Teks overlay singkat, tidak berlebihan  
 ✅ **Safe area**: 10% dari tepi atas/bawah  
@@ -112,6 +106,9 @@ Coba prompt Gemini untuk mengeksplorasi lebih lanjut! 🔍
 ---
 
 **Saran Pengembangan (Opsional)**  
-1. Tambahkan adegan *quick cut* ke peta Peru untuk menunjukkan lokasi Machu Picchu lebih visual (tanpa teks berlebihan).  
-2. Jika waktu memungkinkan, tambahkan efek suara ringan (seperti *ting* kecil) saat mengganti data di layar untuk menambah dinamika.  
-3. Untuk konten berikutnya, gunakan *prompt demo* yang sama dengan variasi topik (misalnya: Chichen Itza) untuk konsistensi angka dan sumber.
+1. Tambahkan *quick cut* peta untuk menunjukkan wilayah Cusco tanpa menampilkan jarak yang tidak diverifikasi.
+2. Tampilkan halaman UNESCO saat demo Gemini agar sumber mudah dikenali dan diverifikasi penonton.
+3. Jika waktu memungkinkan, gunakan efek suara ringan saat berpindah dari fakta ke pertanyaan terbuka.
+
+### Sumber untuk pengecekan
+- [UNESCO World Heritage Centre — Historic Sanctuary of Machu Picchu](https://whc.unesco.org/en/list/274/): ketinggian 2.430 m; dibangun pada abad ke-15; sekitar 200 struktur; pembagian kawasan hunian dan pertanian; serta fungsi yang berkaitan dengan keagamaan, upacara, astronomi, dan pertanian. UNESCO juga menyatakan beberapa peran situs masih belum terjawab.

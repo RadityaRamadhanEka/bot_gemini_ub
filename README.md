@@ -4,6 +4,8 @@ Bot berbasis Python yang menggunakan Ollama secara lokal untuk membantu Raditya
 Ramadhan menyiapkan ide dan draf konten Gemini Academy untuk mahasiswa
 Universitas Brawijaya (UB). Bot tidak memerlukan API key.
 
+Terakhir diperbarui: 28 November 2026.
+
 ## Tujuan
 
 - Membuat perencanaan konten mingguan yang sesuai target Tier C.
@@ -167,7 +169,7 @@ berlaku untuk rencana itu.
 
 ### Membuat rencana kampanye Belajar Mandiri
 
-1. Masukkan `4`, lalu pilih 4, 5, atau 6 hacks untuk didemonstrasikan.
+1. Masukkan `5`, lalu pilih 4, 5, atau 6 hacks untuk didemonstrasikan.
 2. Masukkan tautan daftar hadir Festival jika tersedia. Jika dikosongkan,
    generator mempertahankan placeholder; lengkapi sebelum caption atau video
    dipublikasikan.
@@ -179,7 +181,7 @@ berlaku untuk rencana itu.
 
 ### Membuat draf dari Seri Belajar Mandiri
 
-1. Masukkan `5`, lalu pilih salah satu dari delapan hacks yang ditampilkan.
+1. Masukkan `6`, lalu pilih salah satu dari delapan hacks yang ditampilkan.
 2. Pilih format. Tiap format memakai struktur seri yang sesuai; jenis konten
    default-nya `Festival` dan bisa diganti menjadi `Rutin`.
 3. Masukkan tautan daftar hadir Festival jika tersedia. Jika kosong, placeholder
@@ -266,6 +268,24 @@ kurang terperinci.
 File hasil menggunakan Markdown. Untuk melihat tabel atau formatnya dengan rapi
 di Visual Studio Code, buka file `.md`, lalu tekan `Ctrl+Shift+V` untuk membuka
 Markdown Preview.
+
+## Struktur proyek
+
+- `generator.py` — menu terminal, prompt, pemeriksaan draf, dan penyimpanan file.
+- `system_prompt.txt` — arahan dasar generator.
+- `knowledge_base.json` — seri konten, fokus mingguan, pilar, CTA, dan preferensi
+  produksi.
+- `Hasil Ide Konten\` — editorial plan mingguan dan rencana kampanye.
+- `Hasil Draft Konten\` — draf produksi, dikelompokkan menurut seri jika perlu.
+- `tests\test_content_drafts.py` — pengujian pemrosesan dan pembuatan draf.
+
+## Menjalankan pengujian
+
+Jalankan pengujian unit tanpa koneksi Ollama:
+
+```powershell
+py -m unittest tests.test_content_drafts
+```
 
 ## Pemecahan masalah
 
